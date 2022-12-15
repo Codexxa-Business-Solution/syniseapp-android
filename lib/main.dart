@@ -54,9 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
       padding: EdgeInsets.only(bottom: SizeConfig.screenBottom),
       child: Scaffold(
         backgroundColor: Colors.white,
-        body: Center(
-          child: Column(
-            children: [
+        body: Center(child: Column(children: [
               splashLogo(SizeConfig.screenHeight, SizeConfig.screenWidth),
              // text(SizeConfig.screenHeight, SizeConfig.screenWidth),
             ],

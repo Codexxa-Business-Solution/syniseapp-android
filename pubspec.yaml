@@ -35,3 +35,22 @@ flutter:
   assets:
     - assets/images/
 
+fonts:
+  - family: Roboto_Medium
+    fonts:
+      - asset: assets/fonts/Roboto-Medium.ttf
+  - family: Roboto_Bold
+    fonts:
+      - asset: assets/fonts/Roboto-Bold.ttf
+  - family: Roboto_Light
+    fonts:
+      - asset: assets/fonts/Roboto-Light.ttf
+  - family: Roboto_Regular
+    fonts:
+      - asset: assets/fonts/Roboto-Regular.ttf
+  - family: Roboto_Black
+    fonts:
+      - asset: assets/fonts/Roboto-Black.ttf
+  - family: Lato-Regular
+    fonts:
+      - asset: assets/fonts/Lato-Regular.ttf

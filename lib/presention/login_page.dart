@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:synise_project/common_file/colors.dart';
 import 'package:synise_project/common_file/size_config.dart';
 
 class LoginPage extends StatefulWidget {
@@ -8,7 +9,7 @@ class LoginPage extends StatefulWidget {
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
-
+int index = 0;
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
@@ -20,6 +21,8 @@ class _LoginPageState extends State<LoginPage> {
         padding: EdgeInsets.zero,
         children: [
           SyniseText(SizeConfig.screenHeight, SizeConfig.screenWidth),
+          LoginText(SizeConfig.screenHeight, SizeConfig.screenWidth),
+          TenderAuctionLogin(SizeConfig.screenHeight,SizeConfig.screenWidth),
         ],
       ),
     );
@@ -27,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget SyniseText(double parentHeight, double parentWidth) {
     return Container(
-        color: Colors.red,
+
         child: Padding(
           padding: EdgeInsets.only(
               top: parentHeight * 0.18,
@@ -41,7 +44,63 @@ class _LoginPageState extends State<LoginPage> {
         ));
   }
 
-  Widget Login(double parentHeight, double parentWidth) {
-    return Container();
+  Widget LoginText(double parentHeight, double parentWidth) {
+    return  Container(
+      height: parentHeight*0.15,
+
+      child: Center(
+        child: Text("Login",style:TextStyle(  color: CommonColor.BLACK_COLOR,
+          fontSize: SizeConfig.blockSizeHorizontal * 8.0,
+          fontWeight: FontWeight.w500,
+          fontFamily: 'Roboto_Bold',
+        ),
+    ),
+      ));
+  }
+
+  Widget TenderAuctionLogin(double parentHeight,double parentWidth){
+    return Container(
+      child:Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children:  [
+
+                GestureDetector(
+                  onTap: () {
+                    if (mounted)
+                      setState(() {
+                        index = 1;
+                      });
+                  },
+                  onDoubleTap: () {},
+                  child: Container(
+                    height: parentHeight * 0.07,
+                    width: parentWidth*0.4,
+                    decoration: BoxDecoration(
+                      color: index == 1
+                          ? CommonColor.TENDER_BOX_TEXT
+                          : CommonColor.TENDER_TEXT,
+                 /*     border: Border.all(
+                          width: 1,
+                          style: BorderStyle.solid,),*/ //Border.
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(10),
+                      ),
+                    ),
+                  child: Center(
+                    child: const Text("Tender",style: TextStyle(color: CommonColor.BLACK_COLOR,fontFamily: 'Roboto-Regular',fontWeight:FontWeight.w700,
+                      fontSize: 14, ),),
+                  ),
+              ),
+                ),
+              const Text("Auction",style: TextStyle(color: CommonColor.BLACK_COLOR,fontFamily: 'Roboto-Regular',fontWeight:FontWeight.w700,
+                fontSize: 14,))
+            ],
+          ),
+
+        ],
+      )
+    );
   }
 }
