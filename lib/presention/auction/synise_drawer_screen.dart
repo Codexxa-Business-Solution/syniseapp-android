@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:synise_project/common_file/colors.dart';
 import 'package:synise_project/common_file/size_config.dart';
 import 'package:synise_project/presention/auction/synise_change_password_screen.dart';
 import 'package:synise_project/presention/auction/synise_close_auction_screen.dart';
@@ -18,10 +19,39 @@ class _DrawerScreen extends State<DrawerScreen> {
   Widget? _widget;
   List<Widget>? _actions;
 
+
+  @override
+  void initState() {
+    super.initState();
+
+    _pageChange(0);
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: CommonColor.APP_BAR_COLOR,
+        leading: Builder(
+          builder: (BuildContext context) {
+            return Padding(
+              padding: EdgeInsets.only(top: SizeConfig.screenHeight * 0.0),
+              child: IconButton(
+                icon: Image.asset(
+                  "assets/images/drawer_icon.png",
+                  height: SizeConfig.screenHeight * 16,
+                ),
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+                tooltip:
+                MaterialLocalizations.of(context).openAppDrawerTooltip,
+              ),
+            );
+          },
+        ),
+      ),
       drawer: Padding(
         padding: EdgeInsets.only(top: SizeConfig.screenHeight*0.05),
         child: ClipRRect(
@@ -47,57 +77,75 @@ class _DrawerScreen extends State<DrawerScreen> {
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                ),
-                child: Column(
-                  mainAxisAlignment:  MainAxisAlignment.start,
-                  children: [
-                    Image(
-                      image: AssetImage("assets/images/applogo.png"),
-                      height: SizeConfig.screenHeight*0.1,
-                    ),
-                  ],
-                )),
             ListTile(
-              title: const Text('Home'),
-              onTap: () {
-                _pageChange(0);
-                Navigator.pop(context);
-              },
+              title: Center(
+                child: Padding(
+                  padding: EdgeInsets.only(top: SizeConfig.screenHeight*0.03),
+                  child: Image(
+                    image: AssetImage("assets/images/applogo.png"),
+                  ),
+                ),
+              )
             ),
 
-            ListTile(
-              title: const Text('Home'),
-              onTap: () {
-                _pageChange(0);
-                Navigator.pop(context);
-              },
+            Padding(
+              padding: EdgeInsets.only(top: SizeConfig.screenHeight*0.03),
+              child: ListTile(
+                title: Text('Home',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                  fontFamily: 'Roboto_Medium'
+                ),),
+                onTap: () {
+                  _pageChange(0);
+                  Navigator.pop(context);
+                },
+              ),
             ),
             ListTile(
-              title: const Text('My Profile'),
+              title: Text('My Profile',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                    fontFamily: 'Roboto_Medium'
+                ),),
               onTap: () {
                 _pageChange(1);
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: const Text('Change Password'),
+              title: Text('Change Password',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                    fontFamily: 'Roboto_Medium'
+                ),),
               onTap: () {
                 _pageChange(2);
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: const Text('View Closed Auction'),
+              title: Text('View Closed Auction',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                    fontFamily: 'Roboto_Medium'
+                ),),
               onTap: () {
                 _pageChange(3);
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: const Text('Logout'),
+              title: Text('Logout',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                    fontFamily: 'Roboto_Medium'
+                ),),
               onTap: () {
                 _pageChange(4);
                 Navigator.pop(context);
