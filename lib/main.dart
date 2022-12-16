@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:synise_project/common_file/size_config.dart';
+import 'package:synise_project/login_registration/synise_supplier_registration.dart';
 
 import 'package:synise_project/presention/login_page.dart';
 
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
         debugShowCheckedModeBanner: false,
         routes: <String, WidgetBuilder>{
-          '/frame': (BuildContext context) => const LoginPage(),
+          '/frame': (BuildContext context) => const SupplierRegistration(),
         });
   }
 }
@@ -73,11 +74,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   }
 
-  Widget text (double parentHeight, double parentWidth){
-    return  Container(
-     child:const Text("Aayshaaa")
-    );
-  }
 
   void navigateParentPage() {
     Navigator.of(context).pushReplacementNamed('/frame');

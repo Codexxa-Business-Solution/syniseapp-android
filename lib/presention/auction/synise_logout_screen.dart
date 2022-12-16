@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:synise_project/presention/auction/synise_product_photos_screen.dart';
 
 
 
@@ -15,7 +16,11 @@ class _LogoutScreenState extends State<LogoutScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: Center(child: Text("Logout")),
+        child: Center(child: GestureDetector(
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>ProductPhotos()));
+          },
+            child: Text("Logout"))),
       ),
     );
   }

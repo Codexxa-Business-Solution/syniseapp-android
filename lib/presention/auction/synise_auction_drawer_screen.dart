@@ -19,13 +19,11 @@ class _DrawerScreen extends State<DrawerScreen> {
   Widget? _widget;
   List<Widget>? _actions;
 
-
   @override
   void initState() {
     super.initState();
 
     _pageChange(0);
-
   }
 
   @override
@@ -33,6 +31,19 @@ class _DrawerScreen extends State<DrawerScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: CommonColor.APP_BAR_COLOR,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Padding(
+              padding: EdgeInsets.only(left: SizeConfig.screenWidth * 0.05),
+              child: Text(_title.toString()),
+            ),
+            Text(
+              "data",
+              style: TextStyle(color: Colors.transparent),
+            )
+          ],
+        ),
         leading: Builder(
           builder: (BuildContext context) {
             return Padding(
@@ -45,25 +56,23 @@ class _DrawerScreen extends State<DrawerScreen> {
                 onPressed: () {
                   Scaffold.of(context).openDrawer();
                 },
-                tooltip:
-                MaterialLocalizations.of(context).openAppDrawerTooltip,
+                tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
               ),
             );
           },
         ),
       ),
       drawer: Padding(
-        padding: EdgeInsets.only(top: SizeConfig.screenHeight*0.05),
+        padding: EdgeInsets.only(top: SizeConfig.screenHeight * 0.05),
         child: ClipRRect(
           borderRadius: BorderRadius.only(
             topRight: Radius.circular(40),
           ),
           child: Container(
-              height: SizeConfig.screenHeight*0.95 ,
-            width: SizeConfig.screenWidth*0.7,
-            decoration: BoxDecoration(),
-              child: _drawer()
-          ),
+              height: SizeConfig.screenHeight * 0.95,
+              width: SizeConfig.screenWidth * 0.7,
+              decoration: BoxDecoration(),
+              child: _drawer()),
         ),
       ),
       body: _widget,
@@ -78,25 +87,24 @@ class _DrawerScreen extends State<DrawerScreen> {
           padding: EdgeInsets.zero,
           children: <Widget>[
             ListTile(
-              title: Center(
-                child: Padding(
-                  padding: EdgeInsets.only(top: SizeConfig.screenHeight*0.03),
-                  child: Image(
-                    image: AssetImage("assets/images/applogo.png"),
-                  ),
+                title: Center(
+              child: Padding(
+                padding: EdgeInsets.only(top: SizeConfig.screenHeight * 0.03),
+                child: Image(
+                  image: AssetImage("assets/images/applogo.png"),
                 ),
-              )
-            ),
-
+              ),
+            )),
             Padding(
-              padding: EdgeInsets.only(top: SizeConfig.screenHeight*0.03),
+              padding: EdgeInsets.only(top: SizeConfig.screenHeight * 0.03),
               child: ListTile(
-                title: Text('Home',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: SizeConfig.blockSizeHorizontal*4.0,
-                  fontFamily: 'Roboto_Medium'
-                ),),
+                title: Text(
+                  'Home',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: SizeConfig.blockSizeHorizontal * 4.0,
+                      fontFamily: 'Roboto_Medium'),
+                ),
                 onTap: () {
                   _pageChange(0);
                   Navigator.pop(context);
@@ -104,48 +112,52 @@ class _DrawerScreen extends State<DrawerScreen> {
               ),
             ),
             ListTile(
-              title: Text('My Profile',
+              title: Text(
+                'My Profile',
                 style: TextStyle(
                     color: Colors.black,
-                    fontSize: SizeConfig.blockSizeHorizontal*4.0,
-                    fontFamily: 'Roboto_Medium'
-                ),),
+                    fontSize: SizeConfig.blockSizeHorizontal * 4.0,
+                    fontFamily: 'Roboto_Medium'),
+              ),
               onTap: () {
                 _pageChange(1);
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text('Change Password',
+              title: Text(
+                'Change Password',
                 style: TextStyle(
                     color: Colors.black,
-                    fontSize: SizeConfig.blockSizeHorizontal*4.0,
-                    fontFamily: 'Roboto_Medium'
-                ),),
+                    fontSize: SizeConfig.blockSizeHorizontal * 4.0,
+                    fontFamily: 'Roboto_Medium'),
+              ),
               onTap: () {
                 _pageChange(2);
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text('View Closed Auction',
+              title: Text(
+                'View Closed Auction',
                 style: TextStyle(
                     color: Colors.black,
-                    fontSize: SizeConfig.blockSizeHorizontal*4.0,
-                    fontFamily: 'Roboto_Medium'
-                ),),
+                    fontSize: SizeConfig.blockSizeHorizontal * 4.0,
+                    fontFamily: 'Roboto_Medium'),
+              ),
               onTap: () {
                 _pageChange(3);
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text('Logout',
+              title: Text(
+                'Logout',
                 style: TextStyle(
                     color: Colors.black,
-                    fontSize: SizeConfig.blockSizeHorizontal*4.0,
-                    fontFamily: 'Roboto_Medium'
-                ),),
+                    fontSize: SizeConfig.blockSizeHorizontal * 4.0,
+                    fontFamily: 'Roboto_Medium'),
+              ),
               onTap: () {
                 _pageChange(4);
                 Navigator.pop(context);
@@ -160,18 +172,22 @@ class _DrawerScreen extends State<DrawerScreen> {
   _pageChange(int page) {
     switch (page) {
       case 0:
+        _title = '';
         _widget = const HomeScreen();
         _actions = [];
         break;
       case 1:
+        _title = 'My Profile';
         _widget = const MyProfileScreen();
         _actions = [];
         break;
       case 2:
+        _title = 'Change Password';
         _widget = const ChangePassword();
         _actions = [];
         break;
       case 3:
+        _title = 'Closed Auction';
         _widget = const CloseAuction();
         _actions = [];
         break;

@@ -7,5 +7,8 @@ class CommonColor{
   static const WHITE_COLOR = Color(0xFFFFFFFF);
   static const REGISTER_AS_COLOR = Color(0xFFDBEDFF);
   static const Hint_TEXT_COLOR = Color(0xFF949494);
+  static const CAPTCHA_CODE_COLOR = Color(0xFFDCEEFF);
+  static const PROFILE_COLOR = Color(0xFFC4C4C4);
+  static const EDIT_ICON_COLOR = Color(0xFF0082FA);
 
 }
