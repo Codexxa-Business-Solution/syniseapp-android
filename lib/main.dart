@@ -5,7 +5,6 @@ import 'package:flutter/services.dart';
 import 'package:synise_project/common_file/size_config.dart';
 import 'package:synise_project/login_registration/synise_supplier_registration.dart';
 
-import 'package:synise_project/presention/login_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

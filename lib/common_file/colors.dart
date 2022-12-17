@@ -10,5 +10,8 @@ class CommonColor{
   static const CAPTCHA_CODE_COLOR = Color(0xFFDCEEFF);
   static const PROFILE_COLOR = Color(0xFFC4C4C4);
   static const EDIT_ICON_COLOR = Color(0xFF0082FA);
+  static const RANK_NUMBER_COLOR = Color(0xFFD52E25);
+  static const RANK_ID_COLOR = Color(0xFF1C8DFF);
+  static const REMAINING_INDICATOR_COLOR = Color(0xFFD9D9D9);
 
 }

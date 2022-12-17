@@ -361,8 +361,14 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
                                   ? CommonColor.Hint_TEXT_COLOR
                                   : Colors.black),
                           icon: Padding(
-                            padding: EdgeInsets.only(right: parentWidth * 0.03),
-                            child: const Icon(Icons.keyboard_arrow_down),
+                            padding: EdgeInsets.only(right: SizeConfig.screenWidth * 0.05),
+                            child: Row(
+                              children: [
+                                Image(
+                                  image: AssetImage("assets/images/down_arrow.png"),
+                                ),
+                              ],
+                            ),
                           ),
                           items: items.map((String items) {
                             return DropdownMenuItem(
@@ -400,8 +406,14 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
                                   ? CommonColor.Hint_TEXT_COLOR
                                   : Colors.black),
                           icon: Padding(
-                            padding: EdgeInsets.only(right: parentWidth * 0.03),
-                            child: const Icon(Icons.keyboard_arrow_down),
+                            padding: EdgeInsets.only(right: SizeConfig.screenWidth * 0.05),
+                            child: Row(
+                              children: [
+                                Image(
+                                  image: AssetImage("assets/images/down_arrow.png"),
+                                ),
+                              ],
+                            ),
                           ),
                           items: stateItems.map((String items) {
                             return DropdownMenuItem(
@@ -469,8 +481,14 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
                                 ? CommonColor.Hint_TEXT_COLOR
                                 : Colors.black),
                         icon: Padding(
-                          padding: EdgeInsets.only(right: parentWidth * 0.03),
-                          child: const Icon(Icons.keyboard_arrow_down),
+                          padding: EdgeInsets.only(right: SizeConfig.screenWidth * 0.05),
+                          child: Row(
+                            children: [
+                              Image(
+                                image: AssetImage("assets/images/down_arrow.png"),
+                              ),
+                            ],
+                          ),
                         ),
                         items: employeeCount.map((String items) {
                           return DropdownMenuItem(
@@ -575,8 +593,14 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
                                 ? CommonColor.Hint_TEXT_COLOR
                                 : Colors.black),
                         icon: Padding(
-                          padding: EdgeInsets.only(right: parentWidth * 0.03),
-                          child: const Icon(Icons.keyboard_arrow_down),
+                          padding: EdgeInsets.only(right: SizeConfig.screenWidth * 0.05),
+                          child: Row(
+                            children: [
+                              Image(
+                                image: AssetImage("assets/images/down_arrow.png"),
+                              ),
+                            ],
+                          ),
                         ),
                         items: designationItem.map((String items) {
                           return DropdownMenuItem(
