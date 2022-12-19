@@ -13,5 +13,8 @@ class CommonColor{
   static const RANK_NUMBER_COLOR = Color(0xFFD52E25);
   static const RANK_ID_COLOR = Color(0xFF1C8DFF);
   static const REMAINING_INDICATOR_COLOR = Color(0xFFD9D9D9);
+  static const AGREE_BUTTON_COLOR = Color(0xFF5DB89F);
+  static const DISAGREE_BUTTON_COLOR = Color(0xFFE38181);
+  static const COMPLAINT_TYPE_COLOR = Color(0xFFE070707);
 
 }
