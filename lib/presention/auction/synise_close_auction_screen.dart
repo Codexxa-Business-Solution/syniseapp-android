@@ -271,7 +271,7 @@ class _CloseAuctionState extends State<CloseAuction> {
     return Column(
       children: [
         Container(
-          height: parentHeight*0.35,
+          height: parentHeight*0.37,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(13),

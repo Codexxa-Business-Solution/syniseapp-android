@@ -48,7 +48,7 @@ class _MyProfileScreen extends State<MyProfileScreen> {
                   )
                 ],
               ),
-              height: SizeConfig.screenHeight*0.67,
+              height: SizeConfig.screenHeight*0.72,
               child: getAllDetailsLayout(SizeConfig.screenHeight, SizeConfig.screenWidth),
             ),
           ),
@@ -168,7 +168,7 @@ class _MyProfileScreen extends State<MyProfileScreen> {
                   left: SizeConfig.screenWidth * 0.03,
                   right: SizeConfig.screenWidth * 0.03),
               child: Container(
-                height: SizeConfig.screenHeight*0.42,
+                height: SizeConfig.screenHeight*0.46,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   boxShadow: [
