@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:synise_project/common_file/colors.dart';
 import 'package:synise_project/common_file/size_config.dart';
-import 'package:synise_project/presention/Tender/FAQ.dart';
-import 'package:synise_project/presention/Tender/View_Submit_Tenders_screen.dart';
-import 'package:synise_project/presention/Tender/agreement.dart';
-import 'package:synise_project/presention/Tender/change_password.dart';
-import 'package:synise_project/presention/Tender/feedback.dart';
-import 'package:synise_project/presention/Tender/home_screen.dart';
-import 'package:synise_project/presention/Tender/logout.dart';
-import 'package:synise_project/presention/Tender/my_profile_screen.dart';
-import 'package:synise_project/presention/Tender/register_complaint.dart';
-import 'package:synise_project/presention/Tender/view_bid.dart';
+import 'package:synise_project/presention/Tender/synise_faq_screen.dart';
+import 'package:synise_project/presention/Tender/synise_view_submit_tenders_screen.dart';
+import 'package:synise_project/presention/Tender/synise_agreement_screen.dart';
+import 'package:synise_project/presention/Tender/synise_change_password_screen.dart';
+import 'package:synise_project/presention/Tender/synise_feedback_screen.dart';
+import 'package:synise_project/presention/Tender/synise_home_screen.dart';
+import 'package:synise_project/presention/Tender/synise_logout_screen.dart';
+import 'package:synise_project/presention/Tender/synise_my_profile_screen.dart';
+import 'package:synise_project/presention/Tender/synise_register_complain_screen.dart';
+import 'package:synise_project/presention/Tender/synise_view_bid_screen.dart';
 
 
 class TenderDrawerScreen extends StatefulWidget {

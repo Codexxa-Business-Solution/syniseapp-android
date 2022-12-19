@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:synise_project/common_file/size_config.dart';
 import 'package:synise_project/login_registration/synise_supplier_registration.dart';
+import 'package:synise_project/presention/Tender/synise_login_screen.dart';
 
 
 void main() {
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
         debugShowCheckedModeBanner: false,
         routes: <String, WidgetBuilder>{
-          '/frame': (BuildContext context) => const SupplierRegistration(),
+          '/frame': (BuildContext context) => const LoginPage(),
         });
   }
 }

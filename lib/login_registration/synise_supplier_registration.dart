@@ -886,7 +886,7 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
           child: GestureDetector(
             onDoubleTap: (){},
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>DrawerScreen()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>AuctionDrawerScreen()));
             },
             child: Container(
               decoration: BoxDecoration(

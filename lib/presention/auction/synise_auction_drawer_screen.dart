@@ -7,14 +7,14 @@ import 'package:synise_project/presention/auction/synise_home_screen.dart';
 import 'package:synise_project/presention/auction/synise_logout_screen.dart';
 import 'package:synise_project/presention/auction/synise_my_profile_screen.dart';
 
-class DrawerScreen extends StatefulWidget {
-  const DrawerScreen({Key? key}) : super(key: key);
+class AuctionDrawerScreen extends StatefulWidget {
+  const AuctionDrawerScreen({Key? key}) : super(key: key);
 
   @override
-  State<DrawerScreen> createState() => _DrawerScreen();
+  State<AuctionDrawerScreen> createState() => _DrawerScreen();
 }
 
-class _DrawerScreen extends State<DrawerScreen> {
+class _DrawerScreen extends State<AuctionDrawerScreen> {
   String? _title;
   Widget? _widget;
   List<Widget>? _actions;
