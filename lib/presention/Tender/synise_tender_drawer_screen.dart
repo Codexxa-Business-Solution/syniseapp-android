@@ -4,7 +4,7 @@ import 'package:synise_project/common_file/size_config.dart';
 import 'package:synise_project/presention/Tender/synise_faq_screen.dart';
 import 'package:synise_project/presention/Tender/synise_view_submit_tenders_screen.dart';
 import 'package:synise_project/presention/Tender/synise_agreement_screen.dart';
-import 'package:synise_project/presention/Tender/synise_change_password_screen.dart';
+import 'package:synise_project/presention/Tender/synise_tender_change_password_screen.dart';
 import 'package:synise_project/presention/Tender/synise_feedback_screen.dart';
 import 'package:synise_project/presention/Tender/synise_home_screen.dart';
 import 'package:synise_project/presention/Tender/synise_logout_screen.dart';
@@ -243,7 +243,7 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
         _actions = [];
         break;
       case 4:
-        _widget = const TenderChangePasswordScreen();
+        _widget = const TenderChangePassword();
         _actions = [];
         break;
       case 5:

@@ -6,7 +6,7 @@ import 'package:synise_project/common_file/size_config.dart';
 import 'package:synise_project/login_registration/synise_supplier_registration.dart';
 import 'package:synise_project/presention/auction/synise_auction_drawer_screen.dart';
 
-import 'synise_tender_drawer_screen.dart';
+import '../presention/Tender/synise_tender_drawer_screen.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -37,15 +37,21 @@ class _LoginPageState extends State<LoginPage> {
     SizeConfig().init(context);
     return Scaffold(
       backgroundColor: Colors.white,
-      body: ListView(
-        shrinkWrap: true,
-        padding: EdgeInsets.zero,
-        children: [
-          SyniseText(SizeConfig.screenHeight, SizeConfig.screenWidth),
-          LoginText(SizeConfig.screenHeight, SizeConfig.screenWidth),
-          TenderAuctionText(SizeConfig.screenHeight, SizeConfig.screenWidth),
-          TenderAuctionLogin(SizeConfig.screenHeight, SizeConfig.screenWidth),
-        ],
+      body: GestureDetector(
+        onDoubleTap: (){},
+        onTap: (){
+          FocusScope.of(context).requestFocus(FocusNode());
+        },
+        child: ListView(
+          shrinkWrap: true,
+          padding: EdgeInsets.zero,
+          children: [
+            SyniseText(SizeConfig.screenHeight, SizeConfig.screenWidth),
+            LoginText(SizeConfig.screenHeight, SizeConfig.screenWidth),
+            TenderAuctionText(SizeConfig.screenHeight, SizeConfig.screenWidth),
+            TenderAuctionLogin(SizeConfig.screenHeight, SizeConfig.screenWidth),
+          ],
+        ),
       ),
     );
   }

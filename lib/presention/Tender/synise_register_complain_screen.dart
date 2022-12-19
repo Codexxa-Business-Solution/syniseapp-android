@@ -13,7 +13,6 @@ class TenderRegisterComplaintScreen extends StatefulWidget {
 
 class _TenderRegisterComplaintScreenState
     extends State<TenderRegisterComplaintScreen> {
-
   TextEditingController ComplaintDetails = TextEditingController();
   final _ComplaintDetails = FocusNode();
 
@@ -25,16 +24,25 @@ class _TenderRegisterComplaintScreenState
     '50',
   ];
   String employeeValue = 'Complaint Type';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-            child: ListView(
-      children: [
-        complaintTypeText(SizeConfig.screenHeight, SizeConfig.screenWidth),
-        submitButton(SizeConfig.screenHeight, SizeConfig.screenWidth)
-      ],
-    )));
+        body: GestureDetector(
+      onDoubleTap: () {},
+      onTap: () {
+        FocusScope.of(context).requestFocus(FocusNode());
+      },
+      child: Container(
+          color: Colors.transparent,
+          child: ListView(
+            children: [
+              complaintTypeText(
+                  SizeConfig.screenHeight, SizeConfig.screenWidth),
+              submitButton(SizeConfig.screenHeight, SizeConfig.screenWidth)
+            ],
+          )),
+    ));
   }
 
   Widget complaintTypeText(double parentHeight, double parentWidth) {
@@ -114,24 +122,33 @@ class _TenderRegisterComplaintScreenState
                   borderSide: BorderSide(width: 1.0, color: Colors.black38)),
               focusedBorder: const OutlineInputBorder(
                   borderSide: BorderSide(width: 1.0, color: Colors.black38)),
-            ),maxLines: 5,
+            ),
+            maxLines: 5,
           ),
         ),
       ],
     );
   }
-  Widget submitButton(double parentHeight,double parentWidth){
+
+  Widget submitButton(double parentHeight, double parentWidth) {
     return Padding(
       padding: const EdgeInsets.all(40.0),
       child: Container(
-        height: parentHeight*0.07,
-        width: parentWidth*0.6,
-        decoration: BoxDecoration(
-          color: CommonColor.TENDER_BOX_TEXT,
+          height: parentHeight * 0.07,
+          width: parentWidth * 0.6,
+          decoration: BoxDecoration(
+            color: CommonColor.TENDER_BOX_TEXT,
             borderRadius: BorderRadius.circular(7),
-        ),
-        child: Center(child: Text("Submit",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w400,fontFamily: 'Roboto-Bold',fontSize: 15),))
-      ),
+          ),
+          child: Center(
+              child: Text(
+            "Submit",
+            style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w400,
+                fontFamily: 'Roboto-Bold',
+                fontSize: 15),
+          ))),
     );
   }
 }

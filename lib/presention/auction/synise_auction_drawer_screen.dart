@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:synise_project/common_file/colors.dart';
 import 'package:synise_project/common_file/size_config.dart';
-import 'package:synise_project/presention/auction/synise_change_password_screen.dart';
+import 'package:synise_project/presention/auction/synise_auction_change_password_screen.dart';
 import 'package:synise_project/presention/auction/synise_close_auction_screen.dart';
 import 'package:synise_project/presention/auction/synise_home_screen.dart';
 import 'package:synise_project/presention/auction/synise_logout_screen.dart';
