@@ -42,134 +42,131 @@ class _HomeScreenState extends State<HomeScreen> {
         padding: EdgeInsets.only(bottom: SizeConfig.screenHeight*0.1),
         physics: NeverScrollableScrollPhysics(),
         children: [
-          Container(
-            height: SizeConfig.screenHeight*0.1,
-            // color: Colors.red,
-            child: Padding(
-              padding: EdgeInsets.only(
-                  left: SizeConfig.screenWidth * 0.03,
-                  right: SizeConfig.screenWidth * 0.03),
-              child: Row(
-                children: [
-                  Stack(
-                    children: [
-                      Visibility(
-                        visible: !auctionInfo,
-                        child: GestureDetector(
-                          onDoubleTap: (){},
-                          onTap: (){
-                            if(mounted){
-                              setState(() {
-                                demoAuction = !demoAuction;
-                                auctionInfo = !auctionInfo;
-                                arrowVisible = !arrowVisible;
-                                auctionList = !auctionList;
-                                print("accept");
-                              });
-                            }
-                          },
-                          child: Container(
-                            height: SizeConfig.screenHeight * 0.066,
-                            width: SizeConfig.screenWidth*0.94,
-                            decoration: BoxDecoration(
-                              color: CommonColor.REGISTER_AS_COLOR,
-                              borderRadius: BorderRadius.circular(13),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(left: SizeConfig.screenWidth*0.05),
-                                  child: Text(auctionHeadng.toString(),
-                                    style: TextStyle(
-                                        fontSize: SizeConfig.blockSizeHorizontal*4.0,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w500,
-                                        fontFamily: 'Roboto_Regular'
-                                    ),),
+          Padding(
+            padding: EdgeInsets.only(
+              top: SizeConfig.screenHeight*0.03,
+                left: SizeConfig.screenWidth * 0.03,
+                right: SizeConfig.screenWidth * 0.03),
+            child: Row(
+              children: [
+                Stack(
+                  children: [
+                    Visibility(
+                      visible: !auctionInfo,
+                      child: GestureDetector(
+                        onDoubleTap: (){},
+                        onTap: (){
+                          if(mounted){
+                            setState(() {
+                              demoAuction = !demoAuction;
+                              auctionInfo = !auctionInfo;
+                              arrowVisible = !arrowVisible;
+                              auctionList = !auctionList;
+                              print("accept");
+                            });
+                          }
+                        },
+                        child: Container(
+                          height: SizeConfig.screenHeight * 0.066,
+                          width: SizeConfig.screenWidth*0.94,
+                          decoration: BoxDecoration(
+                            color: CommonColor.REGISTER_AS_COLOR,
+                            borderRadius: BorderRadius.circular(13),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(left: SizeConfig.screenWidth*0.05),
+                                child: Text(auctionHeadng.toString(),
+                                  style: TextStyle(
+                                      fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w500,
+                                      fontFamily: 'Roboto_Regular'
+                                  ),),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(right: SizeConfig.screenWidth * 0.05),
+                                child: Row(
+                                  children: [
+                                    Image(
+                                      image: AssetImage("assets/images/down_arrow.png"),
+                                    ),
+                                  ],
                                 ),
-                                Padding(
-                                  padding: EdgeInsets.only(right: SizeConfig.screenWidth * 0.05),
-                                  child: Row(
-                                    children: [
-                                      Image(
-                                        image: AssetImage("assets/images/down_arrow.png"),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
-                      Visibility(
-                        visible: demoAuction,
-                        child: GestureDetector(
-                          onDoubleTap: (){},
-                          onTap: (){
-                            if(mounted){
-                              setState(() {
-                                demoAuction = !demoAuction;
-                                auctionInfo = !auctionInfo;
-                                arrowVisible = !arrowVisible;
-                                auctionList = !auctionList;
-                              });
-                            }
-                          },
-                          child: Container(
-                            height: SizeConfig.screenHeight * 0.066,
-                            width: SizeConfig.screenWidth*0.94,
-                            decoration: BoxDecoration(
-                              color: CommonColor.REGISTER_AS_COLOR,
-                              borderRadius: BorderRadius.only(topLeft: Radius.circular(13),
-                                  topRight: Radius.circular(13)),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(left: SizeConfig.screenWidth*0.05),
-                                  child: Text(auctionHeadng,
-                                    style: TextStyle(
-                                        fontSize: SizeConfig.blockSizeHorizontal*4.0,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w500,
-                                        fontFamily: 'Roboto_Regular'
-                                    ),),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(right: SizeConfig.screenWidth * 0.05),
-                                  child: Row(
-                                    children: [
-                                      Stack(
-                                        children: [
-                                          Visibility(
-                                            visible: !arrowVisible,
-                                            child: const Image(
-                                              image: AssetImage("assets/images/down_arrow.png"),
-                                            ),
+                    ),
+                    Visibility(
+                      visible: demoAuction,
+                      child: GestureDetector(
+                        onDoubleTap: (){},
+                        onTap: (){
+                          if(mounted){
+                            setState(() {
+                              demoAuction = !demoAuction;
+                              auctionInfo = !auctionInfo;
+                              arrowVisible = !arrowVisible;
+                              auctionList = !auctionList;
+                            });
+                          }
+                        },
+                        child: Container(
+                          height: SizeConfig.screenHeight * 0.066,
+                          width: SizeConfig.screenWidth*0.94,
+                          decoration: BoxDecoration(
+                            color: CommonColor.REGISTER_AS_COLOR,
+                            borderRadius: BorderRadius.only(topLeft: Radius.circular(13),
+                                topRight: Radius.circular(13)),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(left: SizeConfig.screenWidth*0.05),
+                                child: Text(auctionHeadng,
+                                  style: TextStyle(
+                                      fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w500,
+                                      fontFamily: 'Roboto_Regular'
+                                  ),),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(right: SizeConfig.screenWidth * 0.05),
+                                child: Row(
+                                  children: [
+                                    Stack(
+                                      children: [
+                                        Visibility(
+                                          visible: !arrowVisible,
+                                          child: const Image(
+                                            image: AssetImage("assets/images/down_arrow.png"),
                                           ),
-                                          Visibility(
-                                            visible: arrowVisible,
-                                            child: const Image(
-                                              image: AssetImage("assets/images/up_arrow.png"),
-                                            ),
+                                        ),
+                                        Visibility(
+                                          visible: arrowVisible,
+                                          child: const Image(
+                                            image: AssetImage("assets/images/up_arrow.png"),
                                           ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
-                    ],
-                  ),
-                ],
-              ),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
           Stack(
