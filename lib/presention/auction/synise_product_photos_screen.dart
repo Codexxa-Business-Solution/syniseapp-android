@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:synise_project/common_file/colors.dart';
 import 'package:synise_project/common_file/custom_grid_view.dart';
 import 'package:synise_project/common_file/size_config.dart';
+import 'package:synise_project/presention/auction/synise_auction_bid_history_screen.dart';
 
 class ProductPhotos extends StatefulWidget {
   const ProductPhotos({Key? key}) : super(key: key);
@@ -58,8 +59,13 @@ class _ProductPhotosState extends State<ProductPhotos> {
                             )
                           ],
                         ),
-                        child: Image(
-                          image: AssetImage("assets/images/no_image.png"),
+                        child: GestureDetector(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>AuctionBidHistory()));
+                          },
+                          child: Image(
+                            image: AssetImage("assets/images/no_image.png"),
+                          ),
                         ),
                       ),
                     ),
