@@ -16,5 +16,10 @@ class CommonColor{
   static const AGREE_BUTTON_COLOR = Color(0xFF5DB89F);
   static const DISAGREE_BUTTON_COLOR = Color(0xFFE38181);
   static const COMPLAINT_TYPE_COLOR = Color(0xFFE070707);
+  static const PROFILE_FRAGMENT_REVIEWS_STAR_COLOR = const Color(0xFF6F6F6F);
+  static const RATING_STAR_COLOR = const Color(0xFFF2DA00);
+  static const GAME_DESTRUCTION = const Color(0xFFFF5F5F5);
+  static const DIVIDER_COLOR = const Color(0xFFFF5F5F5);
+
 
 }

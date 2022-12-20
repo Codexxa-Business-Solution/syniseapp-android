@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:synise_project/common_file/colors.dart';
 import 'package:synise_project/common_file/size_config.dart';
+import 'package:synise_project/presention/Tender/synise_submit_bid.dart';
 
 
 
@@ -136,6 +137,7 @@ class _TenderChangePassword extends State<TenderChangePassword> {
                 child: GestureDetector(
                   onDoubleTap: (){},
                   onTap: (){
+                     Navigator.push(context, MaterialPageRoute(builder: (context)=>SubmitBid()));
 
                   },
                   child: Container(
