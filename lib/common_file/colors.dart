@@ -20,6 +20,8 @@ class CommonColor{
   static const RATING_STAR_COLOR = const Color(0xFFF2DA00);
   static const GAME_DESTRUCTION = const Color(0xFFFF5F5F5);
   static const DIVIDER_COLOR = const Color(0xFFFF5F5F5);
+  static const TENDER_OPEN_TIME_COLOR = Color(0xFF717171);
+  static const CANCLE_ICON_COLOR = Color(0xFFE96464);
 
 
 }
