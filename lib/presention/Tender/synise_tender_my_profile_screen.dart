@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:synise_project/common_file/colors.dart';
 import 'package:synise_project/common_file/size_config.dart';
+import 'package:synise_project/presention/Tender/synise_my_profile_edit.dart';
 
 
 
@@ -25,7 +26,6 @@ class _TenderMyProfileScreen extends State<TenderMyProfileScreen> {
       backgroundColor: Colors.white,
       body: ListView(
         shrinkWrap: true,
-        padding: EdgeInsets.only(bottom: SizeConfig.screenHeight*0.1),
         children: [
           SizedBox(
             // color: Colors.red,
@@ -44,7 +44,7 @@ class _TenderMyProfileScreen extends State<TenderMyProfileScreen> {
                     color: Colors.grey.withOpacity(0.2),
                     spreadRadius: 5,
                     blurRadius: 6,
-                    offset: Offset(0, 2),
+                    offset: const Offset(0, 2),
                   )
                 ],
               ),
@@ -52,7 +52,7 @@ class _TenderMyProfileScreen extends State<TenderMyProfileScreen> {
               child: getAllDetailsLayout(SizeConfig.screenHeight, SizeConfig.screenWidth),
             ),
           ),
-        /*  Padding(
+            /*  Padding(
             padding: EdgeInsets.only(
                 top: SizeConfig.screenHeight * 0.02,
                 left: SizeConfig.screenWidth * 0.03,
@@ -488,7 +488,7 @@ class _TenderMyProfileScreen extends State<TenderMyProfileScreen> {
                 ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );
@@ -543,11 +543,17 @@ class _TenderMyProfileScreen extends State<TenderMyProfileScreen> {
                       fontWeight: FontWeight.w600
                   ),),
               ),
-              Padding(
-                padding: EdgeInsets.only(left: parentWidth*0.02, bottom: parentHeight*0.005),
-                child: Icon(Icons.edit,
-                  size: SizeConfig.blockSizeHorizontal*6,
-                  color: CommonColor.EDIT_ICON_COLOR,),
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>EditMyProfile()));
+
+                },
+                child: Padding(
+                  padding: EdgeInsets.only(left: parentWidth*0.02, bottom: parentHeight*0.005),
+                  child: Icon(Icons.edit,
+                    size: SizeConfig.blockSizeHorizontal*6,
+                    color: CommonColor.EDIT_ICON_COLOR,),
+                ),
               )
             ],
           ),

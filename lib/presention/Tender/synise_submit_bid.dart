@@ -113,11 +113,16 @@ class _SubmitBidState extends State<SubmitBid> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Padding(
-              padding: EdgeInsets.only(left: parentWidth * 0.05),
-              child: Icon(
-                Icons.arrow_back_ios,
-                color: CommonColor.WHITE_COLOR,
+            GestureDetector(
+              onTap: (){
+                Navigator.pop(context);
+              },
+              child: Padding(
+                padding: EdgeInsets.only(left: parentWidth * 0.05),
+                child: Icon(
+                  Icons.arrow_back_ios,
+                  color: CommonColor.WHITE_COLOR,
+                ),
               ),
             ),
           /*  Text(
