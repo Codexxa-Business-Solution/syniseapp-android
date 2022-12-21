@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:synise_project/common_file/colors.dart';
 import 'package:synise_project/common_file/size_config.dart';
 import 'package:synise_project/presention/Tender/synise_faq_screen.dart';
+import 'package:synise_project/presention/Tender/synise_tender_bid_history.dart';
 import 'package:synise_project/presention/Tender/synise_view_submit_tenders_screen.dart';
 import 'package:synise_project/presention/Tender/synise_agreement_screen.dart';
 import 'package:synise_project/presention/Tender/synise_tender_change_password_screen.dart';
@@ -39,6 +40,11 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: CommonColor.TENDER_BOX_TEXT,
+        title: Padding(
+          padding:  EdgeInsets.only(left: SizeConfig.screenHeight*0.04),
+          child: Text(_title.toString()),
+
+        ),
         leading: Builder(
           builder: (BuildContext context) {
             return Padding(
@@ -55,6 +61,7 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
                 MaterialLocalizations.of(context).openAppDrawerTooltip,
               ),
             );
+
           },
         ),
       ),
@@ -134,7 +141,7 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
               },
             ),
             ListTile(
-              title: Text('View Bid',
+              title: Text('Bid History',
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: SizeConfig.blockSizeHorizontal*4.0,
@@ -239,7 +246,7 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
         _actions = [];
         break;
       case 3:
-        _widget = const TenderViewBidScreen();
+        _widget = const TenderBidHistoryScreen();
         _actions = [];
         break;
       case 4:
@@ -247,8 +254,19 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
         _actions = [];
         break;
       case 5:
+        _title = 'Complaint Register';
         _widget = const TenderRegisterComplaintScreen();
-        _actions = [];
+        _actions = [
+          IconButton(
+            icon: const Icon(
+              Icons.settings,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              // do something
+            },
+          )
+        ];
         break;
       case 6:
         _widget = const TenderFeedbackScreen();

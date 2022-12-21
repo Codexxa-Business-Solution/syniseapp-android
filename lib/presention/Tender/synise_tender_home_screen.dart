@@ -40,7 +40,7 @@ class _TenderHomeScreenState extends State<TenderHomeScreen> {
         left: parentWidth*0.03,
         right: parentWidth*0.03,),
       child: Container(
-        height: parentHeight*0.18,
+        height: parentHeight*0.2,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(13),
