@@ -6,9 +6,9 @@ import 'package:synise_project/presention/Tender/synise_view_submit_tenders_scre
 import 'package:synise_project/presention/Tender/synise_agreement_screen.dart';
 import 'package:synise_project/presention/Tender/synise_tender_change_password_screen.dart';
 import 'package:synise_project/presention/Tender/synise_feedback_screen.dart';
-import 'package:synise_project/presention/Tender/synise_home_screen.dart';
-import 'package:synise_project/presention/Tender/synise_logout_screen.dart';
-import 'package:synise_project/presention/Tender/synise_my_profile_screen.dart';
+import 'package:synise_project/presention/Tender/synise_tender_home_screen.dart';
+import 'package:synise_project/presention/Tender/synise_tender_logout_screen.dart';
+import 'package:synise_project/presention/Tender/synise_tender_my_profile_screen.dart';
 import 'package:synise_project/presention/Tender/synise_register_complain_screen.dart';
 import 'package:synise_project/presention/Tender/synise_view_bid_screen.dart';
 

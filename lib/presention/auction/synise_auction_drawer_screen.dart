@@ -3,9 +3,9 @@ import 'package:synise_project/common_file/colors.dart';
 import 'package:synise_project/common_file/size_config.dart';
 import 'package:synise_project/presention/auction/synise_auction_change_password_screen.dart';
 import 'package:synise_project/presention/auction/synise_close_auction_screen.dart';
-import 'package:synise_project/presention/auction/synise_home_screen.dart';
-import 'package:synise_project/presention/auction/synise_logout_screen.dart';
-import 'package:synise_project/presention/auction/synise_my_profile_screen.dart';
+import 'package:synise_project/presention/auction/synise_auction_home_screen.dart';
+import 'package:synise_project/presention/auction/synise_auction_logout_screen.dart';
+import 'package:synise_project/presention/auction/synise_auction_my_profile_screen.dart';
 
 class AuctionDrawerScreen extends StatefulWidget {
   const AuctionDrawerScreen({Key? key}) : super(key: key);
@@ -173,7 +173,7 @@ class _DrawerScreen extends State<AuctionDrawerScreen> {
     switch (page) {
       case 0:
         _title = '';
-        _widget = const HomeScreen();
+        _widget = const AuctionHomeScreen();
         _actions = [];
         break;
       case 1:

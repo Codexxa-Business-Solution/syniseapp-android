@@ -3,14 +3,14 @@ import 'package:synise_project/common_file/colors.dart';
 import 'package:synise_project/common_file/size_config.dart';
 
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class AuctionHomeScreen extends StatefulWidget {
+  const AuctionHomeScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<AuctionHomeScreen> createState() => _AuctionHomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
 
   bool demoAuction = false;
   bool auctionInfo = false;
