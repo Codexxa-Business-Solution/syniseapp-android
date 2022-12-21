@@ -357,7 +357,7 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
           ),
         ),
         Container(
-          height: parentHeight*0.27,
+          height: parentHeight*0.28,
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(bottomLeft: Radius.circular(13),

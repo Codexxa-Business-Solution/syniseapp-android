@@ -23,7 +23,9 @@ class _DemoAuctionParentScreenState extends State<DemoAuctionParentScreen>
       child: Scaffold(
           appBar: PreferredSize(
             preferredSize: Size.fromHeight(SizeConfig.screenHeight * 0.13),
-            child: Column(
+            child: ListView(
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
               children: [
                 SizedBox(
                   height: SizeConfig.screenHeight*0.16,

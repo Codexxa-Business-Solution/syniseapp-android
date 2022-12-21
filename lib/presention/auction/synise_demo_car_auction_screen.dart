@@ -760,7 +760,7 @@ class _DemoCarAuctionState extends State<DemoCarAuction> {
                 child: Visibility(
                   visible: showDetails,
                   child: Container(
-                    height: SizeConfig.screenHeight*0.2,
+                    height: SizeConfig.screenHeight*0.22,
                     color: CommonColor.REGISTER_AS_COLOR,
                     child: Column(
                      children: [
