@@ -85,30 +85,36 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Scaffold(
-      body: ListView(
-        shrinkWrap: true,
-        padding: EdgeInsets.zero,
-        children: [
-          Container(
-            height: SizeConfig.screenHeight * 0.1,
-            child:
-                getHeadingName(SizeConfig.screenHeight, SizeConfig.screenWidth),
-          ),
-          Container(
-            height: SizeConfig.screenHeight * 0.9,
-            child: ListView(
-              shrinkWrap: true,
-              padding: EdgeInsets.only(bottom: SizeConfig.screenHeight * 0.1),
-              children: [
-                registerAsLayout(
-                    SizeConfig.screenHeight, SizeConfig.screenWidth),
-                getAddAllRegisterField(
-                    SizeConfig.screenHeight, SizeConfig.screenWidth),
-              ],
+    return GestureDetector(
+      onDoubleTap: (){},
+      onTap: (){
+        FocusScope.of(context).requestFocus(FocusNode());
+      },
+      child: Scaffold(
+        body: ListView(
+          shrinkWrap: true,
+          padding: EdgeInsets.zero,
+          children: [
+            Container(
+              height: SizeConfig.screenHeight * 0.1,
+              child:
+                  getHeadingName(SizeConfig.screenHeight, SizeConfig.screenWidth),
             ),
-          ),
-        ],
+            Container(
+              height: SizeConfig.screenHeight * 0.9,
+              child: ListView(
+                shrinkWrap: true,
+                padding: EdgeInsets.only(bottom: SizeConfig.screenHeight * 0.1),
+                children: [
+                  registerAsLayout(
+                      SizeConfig.screenHeight, SizeConfig.screenWidth),
+                  getAddAllRegisterField(
+                      SizeConfig.screenHeight, SizeConfig.screenWidth),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

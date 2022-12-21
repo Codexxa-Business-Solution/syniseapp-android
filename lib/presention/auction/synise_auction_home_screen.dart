@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:synise_project/common_file/colors.dart';
 import 'package:synise_project/common_file/size_config.dart';
+import 'package:synise_project/presention/auction/synise_demo_auction_parent_screen.dart';
 
 
 class AuctionHomeScreen extends StatefulWidget {
@@ -282,9 +283,9 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
     return Column(
       children: [
         Container(
-          height: parentHeight*0.09,
-          decoration: BoxDecoration(
-            color: Colors.blue,
+          height: parentHeight*0.075,
+          decoration: const BoxDecoration(
+            color: CommonColor.CONTAINER_TIMMITING_COLOR,
               borderRadius: BorderRadius.only(topLeft: Radius.circular(13),
                   topRight: Radius.circular(13))
           ),
@@ -356,7 +357,7 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
           ),
         ),
         Container(
-          height: parentHeight*0.3,
+          height: parentHeight*0.27,
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(bottomLeft: Radius.circular(13),
@@ -371,7 +372,7 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
             ],
           ),
           child: Padding(
-            padding: EdgeInsets.only(top: parentHeight*0.02, left: parentWidth *0.07, right: parentWidth*0.07),
+            padding: EdgeInsets.only(top: parentHeight*0.015, left: parentWidth *0.07, right: parentWidth*0.07),
             child: Column(
               children: [
                 Column(
@@ -421,7 +422,7 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
                       ],
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: parentHeight*0.02),
+                      padding: EdgeInsets.only(top: parentHeight*0.017),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -492,7 +493,7 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: parentHeight*0.03),
+                      padding: EdgeInsets.only(top: parentHeight*0.025),
                       child: Row(
                         children: [
                           Container(
@@ -540,11 +541,11 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
                     ),
                     Padding(
                       padding: EdgeInsets.only(
-                          top: SizeConfig.screenHeight * 0.03),
+                          top: SizeConfig.screenHeight * 0.02),
                       child: GestureDetector(
                         onDoubleTap: (){},
                         onTap: (){
-
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> DemoAuctionParentScreen()));
                         },
                         child: Row(
                           mainAxisAlignment:  MainAxisAlignment.end,

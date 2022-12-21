@@ -22,6 +22,9 @@ class CommonColor{
   static const DIVIDER_COLOR = const Color(0xFFFF5F5F5);
   static const TENDER_OPEN_TIME_COLOR = Color(0xFF717171);
   static const CANCLE_ICON_COLOR = Color(0xFFE96464);
+  static const CONTAINER_TIMMITING_COLOR = Color(0xFF0082FA);
+  static const UNSELECTED_TAB_COLOR = Color(0xFFBCBCBC);
+  static const SUBMIT_BUTTON_COLOR = Color(0xFF737373);
 
 
 }
