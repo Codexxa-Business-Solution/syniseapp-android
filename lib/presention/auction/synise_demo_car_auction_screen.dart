@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:synise_project/common_file/colors.dart';
 import 'package:synise_project/common_file/size_config.dart';
+import 'package:synise_project/presention/auction/synise_auction_bid_history_screen.dart';
 import 'package:synise_project/presention/auction/synise_product_photos_screen.dart';
 
 class DemoCarAuction extends StatefulWidget {
@@ -743,13 +744,22 @@ class _DemoCarAuctionState extends State<DemoCarAuction> {
                         ),
                       ),
                     ),
-                    Text(
-                      "Bid History",
-                      style: TextStyle(
-                          color: CommonColor.RANK_ID_COLOR,
-                          fontSize: SizeConfig.blockSizeHorizontal * 3.5,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'Roboto_Regular'),
+                    GestureDetector(
+                      onDoubleTap: (){},
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>AuctionBidHistory()));
+                      },
+                      child: Container(
+                        color: Colors.transparent,
+                        child: Text(
+                          "Bid History",
+                          style: TextStyle(
+                              color: CommonColor.RANK_ID_COLOR,
+                              fontSize: SizeConfig.blockSizeHorizontal * 3.5,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: 'Roboto_Regular'),
+                        ),
+                      ),
                     ),
                   ],
                 ),
