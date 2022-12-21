@@ -226,7 +226,15 @@ class _TenderHomeScreenState extends State<TenderHomeScreen> {
                                     height: SizeConfig.screenHeight*0.8,
                                     decoration: BoxDecoration(
                                         color: Colors.white,
-                                        borderRadius: BorderRadius.circular(15)
+                                        borderRadius: BorderRadius.circular(15),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey.withOpacity(0.6),
+                                          spreadRadius: 5,
+                                          blurRadius: 6,
+                                          offset: Offset(0, 2),
+                                        )
+                                      ],
                                     ),
                                     child: getAllDialogueInfo(SizeConfig.screenHeight, SizeConfig.screenWidth),
                                   ),
@@ -319,33 +327,36 @@ class _TenderHomeScreenState extends State<TenderHomeScreen> {
             children: [
 
               Padding(
-                padding: EdgeInsets.only(left: parentWidth*0.03),
-                child: Text("Guaranted Specs",
+                  padding: EdgeInsets.only(left: parentWidth*0.03),
+                  child: Text("Guaranted Specs",
+                    style: TextStyle(
+                        color: CommonColor.BLACK_COLOR,
+                        fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: 'Roboto_Regular',
+                        decoration: TextDecoration.none
+                    ),
+                  )
+              ),
+              Padding(
+                padding: EdgeInsets.only(right: parentWidth*0.1),
+                child: Text("Lumps",
                   style: TextStyle(
-                      color: CommonColor.RANK_ID_COLOR,
+                      color: CommonColor.BLACK_COLOR,
                       fontSize: SizeConfig.blockSizeHorizontal*4.0,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w400,
                       fontFamily: 'Roboto_Regular',
                       decoration: TextDecoration.none
-                  ),
-                )
-              ),
-              Text("Lumps",
-                style: TextStyle(
-                    color: CommonColor.RANK_ID_COLOR,
-                    fontSize: SizeConfig.blockSizeHorizontal*4.0,
-                    fontWeight: FontWeight.w500,
-                    fontFamily: 'Roboto_Regular',
-                    decoration: TextDecoration.none
 
-                ),),
+                  ),),
+              ),
               Padding(
                   padding: EdgeInsets.only(right: parentWidth*0.07),
                   child: Text("Offgrades",
                     style: TextStyle(
-                        color: CommonColor.RANK_ID_COLOR,
+                        color: CommonColor.BLACK_COLOR,
                         fontSize: SizeConfig.blockSizeHorizontal*4.0,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w400,
                         fontFamily: 'Roboto_Regular',
                         decoration: TextDecoration.none
                     ),
@@ -359,13 +370,719 @@ class _TenderHomeScreenState extends State<TenderHomeScreen> {
         Padding(
           padding: EdgeInsets.only(top: parentHeight*0.02),
           child: Container(
-            color: CommonColor.PROFILE_COLOR,
+            color: CommonColor.DIVIDER_COLOR,
             height: parentHeight*0.001,
           ),
-        )
+        ),
+
+        Padding(
+          padding: EdgeInsets.only(top: parentHeight*0.01, left: parentWidth*0.03),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Lumps",
+                style: TextStyle(
+                    color: Colors.transparent,
+                    fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Roboto_Regular',
+                    decoration: TextDecoration.none
+
+                ),),
+
+              Padding(
+                padding: EdgeInsets.only(left: parentWidth*0.15),
+                child: Text("10-150/\nOther Size",
+                  style: TextStyle(
+                      color: CommonColor.BLACK_COLOR,
+                      fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'Roboto_Regular',
+                      decoration: TextDecoration.none
+
+                  ),),
+              ),
+
+              Padding(
+                padding: EdgeInsets.only(right: parentWidth*0.03),
+                child: Container(
+                  // color: Colors.blue,
+                  width: parentWidth*0.25,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text("0-10",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+                      Container(
+                        color: CommonColor.DIVIDER_COLOR,
+                        height: parentHeight*0.035,
+                        width: parentWidth*0.002,
+                      ),
+                      Text("0-10",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+
+        Padding(
+          padding: EdgeInsets.only(top: parentHeight*0.01),
+          child: Container(
+            color: CommonColor.DIVIDER_COLOR,
+            height: parentHeight*0.001,
+          ),
+        ),
+
+        Padding(
+          padding: EdgeInsets.only(top: parentHeight*0.02, left: parentWidth*0.03),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Cr",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Roboto_Regular',
+                    decoration: TextDecoration.none
+
+                ),),
+
+              Padding(
+                padding: EdgeInsets.only(left: parentWidth*0.15, right: parentWidth*0.05),
+                child: Container(
+                  width: parentWidth*0.49,
+                  color: Colors.transparent,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("57.5 min",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+                      Text("53.0 min",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+                      Text("53.0 min",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+
+                    ],
+                  ),
+                ),
+              ),
+
+            ],
+          ),
+        ),
+
+        Padding(
+          padding: EdgeInsets.only(top: parentHeight*0.02),
+          child: Container(
+            color: CommonColor.DIVIDER_COLOR,
+            height: parentHeight*0.001,
+          ),
+        ),
+
+        Padding(
+          padding: EdgeInsets.only(top: parentHeight*0.02, left: parentWidth*0.03),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("C",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Roboto_Regular',
+                    decoration: TextDecoration.none
+
+                ),),
+
+              Padding(
+                padding: EdgeInsets.only(left: parentWidth*0.15, right: parentWidth*0.05),
+                child: Container(
+                  width: parentWidth*0.49,
+                  color: Colors.transparent,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("8.2 max",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+                      Text("8.2 max",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+                      Text("8.2 max",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+
+                    ],
+                  ),
+                ),
+              ),
+
+            ],
+          ),
+        ),
+
+        Padding(
+          padding: EdgeInsets.only(top: parentHeight*0.02),
+          child: Container(
+            color: CommonColor.DIVIDER_COLOR,
+            height: parentHeight*0.001,
+          ),
+        ),
+
+        Padding(
+          padding: EdgeInsets.only(top: parentHeight*0.02, left: parentWidth*0.03),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Si",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Roboto_Regular',
+                    decoration: TextDecoration.none
+
+                ),),
+
+              Padding(
+                padding: EdgeInsets.only(left: parentWidth*0.15, right: parentWidth*0.05),
+                child: Container(
+                  width: parentWidth*0.49,
+                  color: Colors.transparent,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("4.25 max",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+                      Text("4.25 max",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+                      Text("4.25 max",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+
+                    ],
+                  ),
+                ),
+              ),
+
+            ],
+          ),
+        ),
+
+        Padding(
+          padding: EdgeInsets.only(top: parentHeight*0.02),
+          child: Container(
+            color: CommonColor.DIVIDER_COLOR,
+            height: parentHeight*0.001,
+          ),
+        ),
+
+        Padding(
+          padding: EdgeInsets.only(top: parentHeight*0.02, left: parentWidth*0.03),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("P",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Roboto_Regular',
+                    decoration: TextDecoration.none
+
+                ),),
+
+              Padding(
+                padding: EdgeInsets.only(left: parentWidth*0.15, right: parentWidth*0.05),
+                child: Container(
+                  width: parentWidth*0.49,
+                  color: Colors.transparent,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("0.04 max",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+                      Text("0.04 max",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+                      Text("0.04 max",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+
+                    ],
+                  ),
+                ),
+              ),
+
+            ],
+          ),
+        ),
+
+        Padding(
+          padding: EdgeInsets.only(top: parentHeight*0.02),
+          child: Container(
+            color: CommonColor.DIVIDER_COLOR,
+            height: parentHeight*0.001,
+          ),
+        ),
+
+        Padding(
+          padding: EdgeInsets.only(top: parentHeight*0.02, left: parentWidth*0.03),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("S",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Roboto_Regular',
+                    decoration: TextDecoration.none
+
+                ),),
+
+              Padding(
+                padding: EdgeInsets.only(left: parentWidth*0.15, right: parentWidth*0.05),
+                child: Container(
+                  width: parentWidth*0.49,
+                  color: Colors.transparent,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("0.05 max",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+                      Text("0.05 max",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+                      Text("0.05 max",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+
+                    ],
+                  ),
+                ),
+              ),
+
+            ],
+          ),
+        ),
+
+        Padding(
+          padding: EdgeInsets.only(top: parentHeight*0.02),
+          child: Container(
+            color: CommonColor.DIVIDER_COLOR,
+            height: parentHeight*0.001,
+          ),
+        ),
+
+        Padding(
+          padding: EdgeInsets.only(top: parentHeight*0.02, left: parentWidth*0.03),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("HCFC Size\nCompliance",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: SizeConfig.blockSizeHorizontal*3.0,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Roboto_Regular',
+                    decoration: TextDecoration.none
+
+                ),),
+
+              Padding(
+                padding: EdgeInsets.only(left: parentWidth*0.15, right: parentWidth*0.05),
+                child: Container(
+                  width: parentWidth*0.49,
+                  color: Colors.transparent,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("90% min",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+                      Text("90% min",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+                      Text("90% min",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+
+                    ],
+                  ),
+                ),
+              ),
+
+            ],
+          ),
+        ),
+
+        Padding(
+          padding: EdgeInsets.only(top: parentHeight*0.02),
+          child: Container(
+            color: CommonColor.DIVIDER_COLOR,
+            height: parentHeight*0.001,
+          ),
+        ),
+
+        Padding(
+          padding: EdgeInsets.only(top: parentHeight*0.02, left: parentWidth*0.03),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Oversize",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: SizeConfig.blockSizeHorizontal*3.0,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Roboto_Regular',
+                    decoration: TextDecoration.none
+
+                ),),
+
+              Padding(
+                padding: EdgeInsets.only(left: parentWidth*0.15, right: parentWidth*0.05),
+                child: Container(
+                  width: parentWidth*0.49,
+                  color: Colors.transparent,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("10% max",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+                      Text("10% max",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+                      Text("10% max",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+
+                    ],
+                  ),
+                ),
+              ),
+
+            ],
+          ),
+        ),
+
+        Padding(
+          padding: EdgeInsets.only(top: parentHeight*0.02),
+          child: Container(
+            color: CommonColor.DIVIDER_COLOR,
+            height: parentHeight*0.001,
+          ),
+        ),
+
+
+        Padding(
+          padding: EdgeInsets.only(top: parentHeight*0.02, left: parentWidth*0.03),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Undersize",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: SizeConfig.blockSizeHorizontal*3.0,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Roboto_Regular',
+                    decoration: TextDecoration.none
+
+                ),),
+
+              Padding(
+                padding: EdgeInsets.only(left: parentWidth*0.15, right: parentWidth*0.05),
+                child: Container(
+                  width: parentWidth*0.49,
+                  color: Colors.transparent,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("10% max",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+                      Text("NA",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+                      Text("10% max",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+
+                    ],
+                  ),
+                ),
+              ),
+
+            ],
+          ),
+        ),
+
+        Padding(
+          padding: EdgeInsets.only(top: parentHeight*0.02),
+          child: Container(
+            color: CommonColor.DIVIDER_COLOR,
+            height: parentHeight*0.001,
+          ),
+        ),
+
+        Padding(
+          padding: EdgeInsets.only(top: parentHeight*0.02, left: parentWidth*0.03),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Moisture",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: SizeConfig.blockSizeHorizontal*3.0,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Roboto_Regular',
+                    decoration: TextDecoration.none
+
+                ),),
+
+              Padding(
+                padding: EdgeInsets.only(left: parentWidth*0.15, right: parentWidth*0.05),
+                child: Container(
+                  width: parentWidth*0.49,
+                  color: Colors.transparent,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("0.5% max",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+                      Text("0.5% max",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+                      Text("0.5% max",
+                        style: TextStyle(
+                            color: CommonColor.BLACK_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular',
+                            decoration: TextDecoration.none
+
+                        ),),
+
+                    ],
+                  ),
+                ),
+              ),
+
+            ],
+          ),
+        ),
+
+        Padding(
+          padding: EdgeInsets.only(top: parentHeight*0.03),
+          child: Container(
+            height: parentHeight*0.04,
+            width: parentWidth*0.3,
+            decoration: BoxDecoration(
+                color: CommonColor.APP_BAR_COLOR,
+                borderRadius: BorderRadius.circular(7)
+            ),
+            child: Center(
+              child: Text("Next",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                    fontWeight: FontWeight.w600,
+                    fontFamily: 'Roboto_Regular',
+                    decoration: TextDecoration.none
+                ),),
+            ),
+          ),
+        ),
 
       ],
     );
   }
+
+
+
+
 
 }

@@ -15,23 +15,29 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
   bool faqList = false;
 
   int currentIndex = 0;
+
   Widget build(BuildContext context) {
-    return   Scaffold(
-      body: ListView(
-        shrinkWrap: true,
-        children: [
-demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
-          viewBidAllParts(SizeConfig.screenHeight, SizeConfig.screenWidth)
-        ],
-      )
-    );
+    return Scaffold(
+        body: ListView(
+      shrinkWrap: true,
+      padding: EdgeInsets.zero,
+      physics: NeverScrollableScrollPhysics(),
+      children: [
+        demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
+        viewBidAllParts(SizeConfig.screenHeight, SizeConfig.screenWidth)
+      ],
+    ));
   }
-  Widget demoTender (double parentHeight,double parentWidth){
+
+  Widget demoTender(double parentHeight, double parentWidth) {
     return Padding(
-      padding:  EdgeInsets.only(top: parentHeight*0.03,left: parentWidth*0.03,right: parentWidth*0.03),
+      padding: EdgeInsets.only(
+          top: parentHeight * 0.03,
+          left: parentWidth * 0.03,
+          right: parentWidth * 0.03),
       child: Container(
         height: SizeConfig.screenHeight * 0.08,
-        width: SizeConfig.screenWidth*0.94,
+        width: SizeConfig.screenWidth * 0.94,
         decoration: BoxDecoration(
           color: CommonColor.REGISTER_AS_COLOR,
           borderRadius: BorderRadius.circular(13),
@@ -40,47 +46,59 @@ demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-             children:  [
-               Padding(
-                 padding: EdgeInsets.only(top: parentHeight*0.01,left: parentWidth*0.03),
-                 child: Text("Demo Tender",style: TextStyle( color: Colors.black,
-                     fontSize: SizeConfig.blockSizeHorizontal*4.0,
-                     fontWeight: FontWeight.w500,
-                     fontFamily: 'Roboto_Regular'),),
-               ),
-               Padding(
-                 padding:  EdgeInsets.only(right: parentHeight*0.02,top: parentHeight*0.01),
-                 child: Row(
-                   children: [
-
-                     Text("Tender Id :",style: TextStyle( color: Colors.black,
-                         fontSize: SizeConfig.blockSizeHorizontal*3.5,
-                         fontWeight: FontWeight.w500,
-                         fontFamily: 'Roboto_Regular'),),
-                     Text(" DEMO10220002")
-                   ],
-                 ),
-               ),
-
-             ],
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(
+                      top: parentHeight * 0.01, left: parentWidth * 0.03),
+                  child: Text(
+                    "Demo Tender",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: SizeConfig.blockSizeHorizontal * 4.0,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: 'Roboto_Regular'),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+                      right: parentHeight * 0.02, top: parentHeight * 0.01),
+                  child: Row(
+                    children: [
+                      Text(
+                        "Tender Id :",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: SizeConfig.blockSizeHorizontal * 3.5,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'Roboto_Regular'),
+                      ),
+                      Text(" DEMO10220002")
+                    ],
+                  ),
+                ),
+              ],
             ),
             Padding(
-              padding:  EdgeInsets.only(right: parentWidth*0.7,top: parentHeight*0.01),
-              child: Text("Description",style: TextStyle( color: Colors.black,
-                  fontSize: SizeConfig.blockSizeHorizontal*3.5,
-                  fontWeight: FontWeight.w400,
-                  fontFamily: 'Roboto_Regular'),),
+              padding: EdgeInsets.only(
+                  right: parentWidth * 0.7, top: parentHeight * 0.01),
+              child: Text(
+                "Description",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: SizeConfig.blockSizeHorizontal * 3.5,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'Roboto_Regular'),
+              ),
             )
           ],
         ),
-
-
       ),
     );
   }
-  Widget viewBidAllParts(double parentHeight,double parentWidth){
-    return  SizedBox(
-      height: parentHeight*0.9,
+
+  Widget viewBidAllParts(double parentHeight, double parentWidth) {
+    return SizedBox(
+      height: parentHeight * 0.9,
       child: ListView.builder(
           itemCount: 4,
           padding: EdgeInsets.only(bottom: SizeConfig.screenHeight * 0.07),
@@ -124,8 +142,8 @@ demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
                                     "Part 1",
                                     style: TextStyle(
                                         fontSize:
-                                        SizeConfig.blockSizeHorizontal *
-                                            4.0,
+                                            SizeConfig.blockSizeHorizontal *
+                                                4.0,
                                         color: Colors.black,
                                         fontWeight: FontWeight.w500,
                                         fontFamily: 'Roboto_Regular'),
@@ -135,8 +153,7 @@ demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
                                   "Lots Required - 8",
                                   style: TextStyle(
                                       fontSize:
-                                      SizeConfig.blockSizeHorizontal *
-                                          4.0,
+                                          SizeConfig.blockSizeHorizontal * 4.0,
                                       color: Colors.black,
                                       fontWeight: FontWeight.w500,
                                       fontFamily: 'Roboto_Regular'),
@@ -188,8 +205,8 @@ demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
                                     "Part 1",
                                     style: TextStyle(
                                         fontSize:
-                                        SizeConfig.blockSizeHorizontal *
-                                            4.0,
+                                            SizeConfig.blockSizeHorizontal *
+                                                4.0,
                                         color: Colors.black,
                                         fontWeight: FontWeight.w500,
                                         fontFamily: 'Roboto_Regular'),
@@ -199,8 +216,7 @@ demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
                                   "Lots Required - 8",
                                   style: TextStyle(
                                       fontSize:
-                                      SizeConfig.blockSizeHorizontal *
-                                          4.0,
+                                          SizeConfig.blockSizeHorizontal * 4.0,
                                       color: Colors.black,
                                       fontWeight: FontWeight.w500,
                                       fontFamily: 'Roboto_Regular'),
@@ -244,43 +260,46 @@ demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
                         ),
                         child: Column(
                           children: [
-
                             Padding(
-                              padding: EdgeInsets.only(top: parentHeight*0.02, right: parentWidth*0.07,
-                                  left: parentWidth*0.08,bottom: parentHeight*0.01),
-
+                              padding: EdgeInsets.only(
+                                  top: parentHeight * 0.02,
+                                  right: parentWidth * 0.07,
+                                  left: parentWidth * 0.08,
+                                  bottom: parentHeight * 0.01),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-
-                                  Text("Party Name :",
+                                  Text(
+                                    "Party Name :",
                                     style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                                        fontSize:
+                                            SizeConfig.blockSizeHorizontal *
+                                                3.8,
                                         fontWeight: FontWeight.w500,
-                                        fontFamily: 'Roboto_Regular'
-                                    ),
+                                        fontFamily: 'Roboto_Regular'),
                                   ),
-
                                   Container(
-                                    width: parentWidth*0.4,
+                                    width: parentWidth * 0.4,
                                     // color: Colors.red,
                                     child: Row(
                                       children: [
                                         Expanded(
-                                          child: Text("Bidder 1",
+                                          child: Text(
+                                            "Bidder 1",
                                             style: TextStyle(
                                                 color: Colors.black,
-                                                fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                                                fontSize: SizeConfig
+                                                        .blockSizeHorizontal *
+                                                    3.5,
                                                 fontWeight: FontWeight.w400,
-                                                fontFamily: 'Roboto_Regular'
-                                            ),
+                                                fontFamily: 'Roboto_Regular'),
                                           ),
                                         ),
                                       ],
                                     ),
                                   )
-
                                 ],
                               ),
                             ),
@@ -289,40 +308,45 @@ demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
                               color: CommonColor.DIVIDER_COLOR,
                             ),
                             Padding(
-                              padding: EdgeInsets.only(top: parentHeight*0.01, right: parentWidth*0.07,
-                                  left: parentWidth*0.08,bottom: parentHeight*0.01),
+                              padding: EdgeInsets.only(
+                                  top: parentHeight * 0.01,
+                                  right: parentWidth * 0.07,
+                                  left: parentWidth * 0.08,
+                                  bottom: parentHeight * 0.01),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-
-                                  Text("Material Type :",
+                                  Text(
+                                    "Material Type :",
                                     style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                                        fontSize:
+                                            SizeConfig.blockSizeHorizontal *
+                                                3.8,
                                         fontWeight: FontWeight.w500,
-                                        fontFamily: 'Roboto_Regular'
-                                    ),
+                                        fontFamily: 'Roboto_Regular'),
                                   ),
-
                                   Container(
-                                    width: parentWidth*0.4,
+                                    width: parentWidth * 0.4,
                                     // color: Colors.red,
                                     child: Row(
                                       children: [
                                         Expanded(
-                                          child: Text("Lumps",
+                                          child: Text(
+                                            "Lumps",
                                             style: TextStyle(
                                                 color: Colors.black,
-                                                fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                                                fontSize: SizeConfig
+                                                        .blockSizeHorizontal *
+                                                    3.8,
                                                 fontWeight: FontWeight.w400,
-                                                fontFamily: 'Roboto_Regular'
-                                            ),
+                                                fontFamily: 'Roboto_Regular'),
                                           ),
                                         ),
                                       ],
                                     ),
                                   )
-
                                 ],
                               ),
                             ),
@@ -331,40 +355,45 @@ demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
                               color: CommonColor.DIVIDER_COLOR,
                             ),
                             Padding(
-                              padding: EdgeInsets.only(top: parentHeight*0.01, right: parentWidth*0.07,
-                                  left: parentWidth*0.08,bottom: parentHeight*0.01),
+                              padding: EdgeInsets.only(
+                                  top: parentHeight * 0.01,
+                                  right: parentWidth * 0.07,
+                                  left: parentWidth * 0.08,
+                                  bottom: parentHeight * 0.01),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-
-                                  Text("Product :",
+                                  Text(
+                                    "Product :",
                                     style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                                        fontSize:
+                                            SizeConfig.blockSizeHorizontal *
+                                                3.8,
                                         fontWeight: FontWeight.w500,
-                                        fontFamily: 'Roboto_Regular'
-                                    ),
+                                        fontFamily: 'Roboto_Regular'),
                                   ),
-
                                   Container(
-                                    width: parentWidth*0.4,
+                                    width: parentWidth * 0.4,
                                     // color: Colors.red,
                                     child: Row(
                                       children: [
                                         Expanded(
-                                          child: Text("10-150",
+                                          child: Text(
+                                            "10-150",
                                             style: TextStyle(
                                                 color: Colors.black,
-                                                fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                                                fontSize: SizeConfig
+                                                        .blockSizeHorizontal *
+                                                    3.8,
                                                 fontWeight: FontWeight.w400,
-                                                fontFamily: 'Roboto_Regular'
-                                            ),
+                                                fontFamily: 'Roboto_Regular'),
                                           ),
                                         ),
                                       ],
                                     ),
                                   )
-
                                 ],
                               ),
                             ),
@@ -373,40 +402,45 @@ demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
                               color: CommonColor.DIVIDER_COLOR,
                             ),
                             Padding(
-                              padding: EdgeInsets.only(top: parentHeight*0.01, right: parentWidth*0.07,
-                                  left: parentWidth*0.08,bottom: parentHeight*0.01),
+                              padding: EdgeInsets.only(
+                                  top: parentHeight * 0.01,
+                                  right: parentWidth * 0.07,
+                                  left: parentWidth * 0.08,
+                                  bottom: parentHeight * 0.01),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-
-                                  Text("Bid Qty :",
+                                  Text(
+                                    "Bid Qty :",
                                     style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                                        fontSize:
+                                            SizeConfig.blockSizeHorizontal *
+                                                3.8,
                                         fontWeight: FontWeight.w500,
-                                        fontFamily: 'Roboto_Regular'
-                                    ),
+                                        fontFamily: 'Roboto_Regular'),
                                   ),
-
                                   Container(
-                                    width: parentWidth*0.4,
+                                    width: parentWidth * 0.4,
                                     // color: Colors.red,
                                     child: Row(
                                       children: [
                                         Expanded(
-                                          child: Text("800T+/-5%",
+                                          child: Text(
+                                            "800T+/-5%",
                                             style: TextStyle(
                                                 color: Colors.black,
-                                                fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                                                fontSize: SizeConfig
+                                                        .blockSizeHorizontal *
+                                                    3.8,
                                                 fontWeight: FontWeight.w400,
-                                                fontFamily: 'Roboto_Regular'
-                                            ),
+                                                fontFamily: 'Roboto_Regular'),
                                           ),
                                         ),
                                       ],
                                     ),
                                   )
-
                                 ],
                               ),
                             ),
@@ -415,40 +449,45 @@ demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
                               color: CommonColor.DIVIDER_COLOR,
                             ),
                             Padding(
-                              padding: EdgeInsets.only(top: parentHeight*0.01, right: parentWidth*0.07,
-                                  left: parentWidth*0.08,bottom: parentHeight*0.01),
+                              padding: EdgeInsets.only(
+                                  top: parentHeight * 0.01,
+                                  right: parentWidth * 0.07,
+                                  left: parentWidth * 0.08,
+                                  bottom: parentHeight * 0.01),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-
-                                  Text("Terms :",
+                                  Text(
+                                    "Terms :",
                                     style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                                        fontSize:
+                                            SizeConfig.blockSizeHorizontal *
+                                                3.8,
                                         fontWeight: FontWeight.w500,
-                                        fontFamily: 'Roboto_Regular'
-                                    ),
+                                        fontFamily: 'Roboto_Regular'),
                                   ),
-
                                   Container(
-                                    width: parentWidth*0.4,
+                                    width: parentWidth * 0.4,
                                     // color: Colors.red,
                                     child: Row(
                                       children: [
                                         Expanded(
-                                          child: Text("FOB Vishakapatnam",
+                                          child: Text(
+                                            "FOB Vishakapatnam",
                                             style: TextStyle(
                                                 color: Colors.black,
-                                                fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                                                fontSize: SizeConfig
+                                                        .blockSizeHorizontal *
+                                                    3.8,
                                                 fontWeight: FontWeight.w400,
-                                                fontFamily: 'Roboto_Regular'
-                                            ),
+                                                fontFamily: 'Roboto_Regular'),
                                           ),
                                         ),
                                       ],
                                     ),
                                   )
-
                                 ],
                               ),
                             ),
@@ -457,40 +496,45 @@ demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
                               color: CommonColor.DIVIDER_COLOR,
                             ),
                             Padding(
-                              padding: EdgeInsets.only(top: parentHeight*0.01, right: parentWidth*0.07,
-                                  left: parentWidth*0.08,bottom: parentHeight*0.01),
+                              padding: EdgeInsets.only(
+                                  top: parentHeight * 0.01,
+                                  right: parentWidth * 0.07,
+                                  left: parentWidth * 0.08,
+                                  bottom: parentHeight * 0.01),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-
-                                  Text("Port :",
+                                  Text(
+                                    "Port :",
                                     style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                                        fontSize:
+                                            SizeConfig.blockSizeHorizontal *
+                                                3.8,
                                         fontWeight: FontWeight.w500,
-                                        fontFamily: 'Roboto_Regular'
-                                    ),
+                                        fontFamily: 'Roboto_Regular'),
                                   ),
-
                                   Container(
-                                    width: parentWidth*0.4,
+                                    width: parentWidth * 0.4,
                                     // color: Colors.red,
                                     child: Row(
                                       children: [
                                         Expanded(
-                                          child: Text("Vishakapatnam",
+                                          child: Text(
+                                            "Vishakapatnam",
                                             style: TextStyle(
                                                 color: Colors.black,
-                                                fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                                                fontSize: SizeConfig
+                                                        .blockSizeHorizontal *
+                                                    3.8,
                                                 fontWeight: FontWeight.w400,
-                                                fontFamily: 'Roboto_Regular'
-                                            ),
+                                                fontFamily: 'Roboto_Regular'),
                                           ),
                                         ),
                                       ],
                                     ),
                                   )
-
                                 ],
                               ),
                             ),
@@ -499,40 +543,45 @@ demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
                               color: CommonColor.DIVIDER_COLOR,
                             ),
                             Padding(
-                              padding: EdgeInsets.only(top: parentHeight*0.01, right: parentWidth*0.07,
-                                  left: parentWidth*0.08,bottom: parentHeight*0.01),
+                              padding: EdgeInsets.only(
+                                  top: parentHeight * 0.01,
+                                  right: parentWidth * 0.07,
+                                  left: parentWidth * 0.08,
+                                  bottom: parentHeight * 0.01),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-
-                                  Text("Expection Details :",
+                                  Text(
+                                    "Expection Details :",
                                     style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                                        fontSize:
+                                            SizeConfig.blockSizeHorizontal *
+                                                3.8,
                                         fontWeight: FontWeight.w500,
-                                        fontFamily: 'Roboto_Regular'
-                                    ),
+                                        fontFamily: 'Roboto_Regular'),
                                   ),
-
                                   Container(
-                                    width: parentWidth*0.4,
+                                    width: parentWidth * 0.4,
                                     // color: Colors.red,
                                     child: Row(
                                       children: [
                                         Expanded(
-                                          child: Text("-",
+                                          child: Text(
+                                            "-",
                                             style: TextStyle(
                                                 color: Colors.black,
-                                                fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                                                fontSize: SizeConfig
+                                                        .blockSizeHorizontal *
+                                                    3.8,
                                                 fontWeight: FontWeight.w400,
-                                                fontFamily: 'Roboto_Regular'
-                                            ),
+                                                fontFamily: 'Roboto_Regular'),
                                           ),
                                         ),
                                       ],
                                     ),
                                   )
-
                                 ],
                               ),
                             ),
@@ -541,40 +590,45 @@ demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
                               color: CommonColor.DIVIDER_COLOR,
                             ),
                             Padding(
-                              padding: EdgeInsets.only(top: parentHeight*0.01, right: parentWidth*0.07,
-                                  left: parentWidth*0.08,bottom: parentHeight*0.01),
+                              padding: EdgeInsets.only(
+                                  top: parentHeight * 0.01,
+                                  right: parentWidth * 0.07,
+                                  left: parentWidth * 0.08,
+                                  bottom: parentHeight * 0.01),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-
-                                  Text("Pricing IN :",
+                                  Text(
+                                    "Pricing IN :",
                                     style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                                        fontSize:
+                                            SizeConfig.blockSizeHorizontal *
+                                                3.8,
                                         fontWeight: FontWeight.w500,
-                                        fontFamily: 'Roboto_Regular'
-                                    ),
+                                        fontFamily: 'Roboto_Regular'),
                                   ),
-
                                   Container(
-                                    width: parentWidth*0.4,
+                                    width: parentWidth * 0.4,
                                     // color: Colors.red,
                                     child: Row(
                                       children: [
                                         Expanded(
-                                          child: Text("USC/Ib",
+                                          child: Text(
+                                            "USC/Ib",
                                             style: TextStyle(
                                                 color: Colors.black,
-                                                fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                                                fontSize: SizeConfig
+                                                        .blockSizeHorizontal *
+                                                    3.8,
                                                 fontWeight: FontWeight.w400,
-                                                fontFamily: 'Roboto_Regular'
-                                            ),
+                                                fontFamily: 'Roboto_Regular'),
                                           ),
                                         ),
                                       ],
                                     ),
                                   )
-
                                 ],
                               ),
                             ),
@@ -583,40 +637,45 @@ demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
                               color: CommonColor.DIVIDER_COLOR,
                             ),
                             Padding(
-                              padding: EdgeInsets.only(top: parentHeight*0.01, right: parentWidth*0.07,
-                                  left: parentWidth*0.08,bottom: parentHeight*0.01),
+                              padding: EdgeInsets.only(
+                                  top: parentHeight * 0.01,
+                                  right: parentWidth * 0.07,
+                                  left: parentWidth * 0.08,
+                                  bottom: parentHeight * 0.01),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-
-                                  Text("Payment Term :",
+                                  Text(
+                                    "Payment Term :",
                                     style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                                        fontSize:
+                                            SizeConfig.blockSizeHorizontal *
+                                                3.8,
                                         fontWeight: FontWeight.w500,
-                                        fontFamily: 'Roboto_Regular'
-                                    ),
+                                        fontFamily: 'Roboto_Regular'),
                                   ),
-
                                   Container(
-                                    width: parentWidth*0.4,
+                                    width: parentWidth * 0.4,
                                     // color: Colors.red,
                                     child: Row(
                                       children: [
                                         Expanded(
-                                          child: Text("100% advance",
+                                          child: Text(
+                                            "100% advance",
                                             style: TextStyle(
                                                 color: Colors.black,
-                                                fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                                                fontSize: SizeConfig
+                                                        .blockSizeHorizontal *
+                                                    3.8,
                                                 fontWeight: FontWeight.w400,
-                                                fontFamily: 'Roboto_Regular'
-                                            ),
+                                                fontFamily: 'Roboto_Regular'),
                                           ),
                                         ),
                                       ],
                                     ),
                                   )
-
                                 ],
                               ),
                             ),
@@ -625,40 +684,45 @@ demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
                               color: CommonColor.DIVIDER_COLOR,
                             ),
                             Padding(
-                              padding: EdgeInsets.only(top: parentHeight*0.01, right: parentWidth*0.07,
-                                  left: parentWidth*0.08,bottom: parentHeight*0.01),
+                              padding: EdgeInsets.only(
+                                  top: parentHeight * 0.01,
+                                  right: parentWidth * 0.07,
+                                  left: parentWidth * 0.08,
+                                  bottom: parentHeight * 0.01),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-
-                                  Text("Other Product :",
+                                  Text(
+                                    "Other Product :",
                                     style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                                        fontSize:
+                                            SizeConfig.blockSizeHorizontal *
+                                                3.8,
                                         fontWeight: FontWeight.w500,
-                                        fontFamily: 'Roboto_Regular'
-                                    ),
+                                        fontFamily: 'Roboto_Regular'),
                                   ),
-
                                   Container(
-                                    width: parentWidth*0.4,
+                                    width: parentWidth * 0.4,
                                     // color: Colors.red,
                                     child: Row(
                                       children: [
                                         Expanded(
-                                          child: Text("-",
+                                          child: Text(
+                                            "-",
                                             style: TextStyle(
                                                 color: Colors.black,
-                                                fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                                                fontSize: SizeConfig
+                                                        .blockSizeHorizontal *
+                                                    3.8,
                                                 fontWeight: FontWeight.w400,
-                                                fontFamily: 'Roboto_Regular'
-                                            ),
+                                                fontFamily: 'Roboto_Regular'),
                                           ),
                                         ),
                                       ],
                                     ),
                                   )
-
                                 ],
                               ),
                             ),
@@ -667,40 +731,45 @@ demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
                               color: CommonColor.DIVIDER_COLOR,
                             ),
                             Padding(
-                              padding: EdgeInsets.only(top: parentHeight*0.01, right: parentWidth*0.07,
-                                  left: parentWidth*0.08,bottom: parentHeight*0.01),
+                              padding: EdgeInsets.only(
+                                  top: parentHeight * 0.01,
+                                  right: parentWidth * 0.07,
+                                  left: parentWidth * 0.08,
+                                  bottom: parentHeight * 0.01),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-
-                                  Text("Other Payment :",
+                                  Text(
+                                    "Other Payment :",
                                     style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                                        fontSize:
+                                            SizeConfig.blockSizeHorizontal *
+                                                3.8,
                                         fontWeight: FontWeight.w500,
-                                        fontFamily: 'Roboto_Regular'
-                                    ),
+                                        fontFamily: 'Roboto_Regular'),
                                   ),
-
                                   Container(
-                                    width: parentWidth*0.4,
+                                    width: parentWidth * 0.4,
                                     // color: Colors.red,
                                     child: Row(
                                       children: [
                                         Expanded(
-                                          child: Text("-",
+                                          child: Text(
+                                            "-",
                                             style: TextStyle(
                                                 color: Colors.black,
-                                                fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                                                fontSize: SizeConfig
+                                                        .blockSizeHorizontal *
+                                                    3.8,
                                                 fontWeight: FontWeight.w400,
-                                                fontFamily: 'Roboto_Regular'
-                                            ),
+                                                fontFamily: 'Roboto_Regular'),
                                           ),
                                         ),
                                       ],
                                     ),
                                   )
-
                                 ],
                               ),
                             ),
@@ -709,40 +778,45 @@ demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
                               color: CommonColor.DIVIDER_COLOR,
                             ),
                             Padding(
-                              padding: EdgeInsets.only(top: parentHeight*0.01, right: parentWidth*0.07,
-                                  left: parentWidth*0.08,bottom: parentHeight*0.01),
+                              padding: EdgeInsets.only(
+                                  top: parentHeight * 0.01,
+                                  right: parentWidth * 0.07,
+                                  left: parentWidth * 0.08,
+                                  bottom: parentHeight * 0.01),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-
-                                  Text("1st Bid Price :",
+                                  Text(
+                                    "1st Bid Price :",
                                     style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                                        fontSize:
+                                            SizeConfig.blockSizeHorizontal *
+                                                3.8,
                                         fontWeight: FontWeight.w500,
-                                        fontFamily: 'Roboto_Regular'
-                                    ),
+                                        fontFamily: 'Roboto_Regular'),
                                   ),
-
                                   Container(
-                                    width: parentWidth*0.4,
+                                    width: parentWidth * 0.4,
                                     // color: Colors.red,
                                     child: Row(
                                       children: [
                                         Expanded(
-                                          child: Text("USC 9000/Ib",
+                                          child: Text(
+                                            "USC 9000/Ib",
                                             style: TextStyle(
                                                 color: Colors.black,
-                                                fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                                                fontSize: SizeConfig
+                                                        .blockSizeHorizontal *
+                                                    3.8,
                                                 fontWeight: FontWeight.w400,
-                                                fontFamily: 'Roboto_Regular'
-                                            ),
+                                                fontFamily: 'Roboto_Regular'),
                                           ),
                                         ),
                                       ],
                                     ),
                                   )
-
                                 ],
                               ),
                             ),
@@ -751,40 +825,45 @@ demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
                               color: CommonColor.DIVIDER_COLOR,
                             ),
                             Padding(
-                              padding: EdgeInsets.only(top: parentHeight*0.01, right: parentWidth*0.07,
-                                  left: parentWidth*0.08,bottom: parentHeight*0.01),
+                              padding: EdgeInsets.only(
+                                  top: parentHeight * 0.01,
+                                  right: parentWidth * 0.07,
+                                  left: parentWidth * 0.08,
+                                  bottom: parentHeight * 0.01),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-
-                                  Text("Counter Mark :",
+                                  Text(
+                                    "Counter Mark :",
                                     style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                                        fontSize:
+                                            SizeConfig.blockSizeHorizontal *
+                                                3.8,
                                         fontWeight: FontWeight.w500,
-                                        fontFamily: 'Roboto_Regular'
-                                    ),
+                                        fontFamily: 'Roboto_Regular'),
                                   ),
-
                                   Container(
-                                    width: parentWidth*0.4,
+                                    width: parentWidth * 0.4,
                                     // color: Colors.red,
                                     child: Row(
                                       children: [
                                         Expanded(
-                                          child: Text("-",
+                                          child: Text(
+                                            "-",
                                             style: TextStyle(
                                                 color: Colors.black,
-                                                fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                                                fontSize: SizeConfig
+                                                        .blockSizeHorizontal *
+                                                    3.8,
                                                 fontWeight: FontWeight.w400,
-                                                fontFamily: 'Roboto_Regular'
-                                            ),
+                                                fontFamily: 'Roboto_Regular'),
                                           ),
                                         ),
                                       ],
                                     ),
                                   )
-
                                 ],
                               ),
                             ),
@@ -793,40 +872,45 @@ demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
                               color: CommonColor.DIVIDER_COLOR,
                             ),
                             Padding(
-                              padding: EdgeInsets.only(top: parentHeight*0.01, right: parentWidth*0.07,
-                                  left: parentWidth*0.08,bottom: parentHeight*0.01),
+                              padding: EdgeInsets.only(
+                                  top: parentHeight * 0.01,
+                                  right: parentWidth * 0.07,
+                                  left: parentWidth * 0.08,
+                                  bottom: parentHeight * 0.01),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-
-                                  Text("Counter Offer :",
+                                  Text(
+                                    "Counter Offer :",
                                     style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                                        fontSize:
+                                            SizeConfig.blockSizeHorizontal *
+                                                3.8,
                                         fontWeight: FontWeight.w500,
-                                        fontFamily: 'Roboto_Regular'
-                                    ),
+                                        fontFamily: 'Roboto_Regular'),
                                   ),
-
                                   Container(
-                                    width: parentWidth*0.4,
+                                    width: parentWidth * 0.4,
                                     // color: Colors.red,
                                     child: Row(
                                       children: [
                                         Expanded(
-                                          child: Text("-",
+                                          child: Text(
+                                            "-",
                                             style: TextStyle(
                                                 color: Colors.black,
-                                                fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                                                fontSize: SizeConfig
+                                                        .blockSizeHorizontal *
+                                                    3.8,
                                                 fontWeight: FontWeight.w400,
-                                                fontFamily: 'Roboto_Regular'
-                                            ),
+                                                fontFamily: 'Roboto_Regular'),
                                           ),
                                         ),
                                       ],
                                     ),
                                   )
-
                                 ],
                               ),
                             ),
@@ -834,7 +918,6 @@ demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
                               height: parentHeight * 0.02,
                               color: CommonColor.DIVIDER_COLOR,
                             ),
-
                           ],
                         ),
                       ),

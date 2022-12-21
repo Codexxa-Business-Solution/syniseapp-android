@@ -134,9 +134,9 @@ class _TenderRegisterComplaintScreenState
                       Padding(
                         padding:  EdgeInsets.only(left: parentWidth*0.17),
                         child: Container(
-                          width: SizeConfig.screenHeight*0.07,
+                          width: SizeConfig.screenHeight*0.06,
                           height: SizeConfig.screenWidth*0.1,
-
+                          color: Colors.transparent,
                           child: Padding(
                             padding: EdgeInsets.only(top: parentHeight*0.015),
                             child: Text("Status :",
@@ -150,21 +150,18 @@ class _TenderRegisterComplaintScreenState
                           ),
                         ),
                       ),
-                      Padding(
-                        padding:  EdgeInsets.only(left: parentWidth*0.0),
-                        child: Container(
-                          width: SizeConfig.screenHeight*0.07,
-                          height: SizeConfig.screenWidth*0.1,
+                      Container(
+                        width: SizeConfig.screenHeight*0.07,
+                        height: SizeConfig.screenWidth*0.1,
 
-                          child: Padding(
-                            padding: EdgeInsets.only(top: parentHeight*0.015),
-                            child: Text("Closed",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: SizeConfig.blockSizeHorizontal*3.5,
-                                  fontWeight: FontWeight.w400,
-                                  fontFamily: 'Roboto_Regular'
-                              ),
+                        child: Padding(
+                          padding: EdgeInsets.only(top: parentHeight*0.015),
+                          child: Text("Closed",
+                            style: TextStyle(
+                                color: CommonColor.DISAGREE_BUTTON_COLOR,
+                                fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                                fontWeight: FontWeight.w600,
+                                fontFamily: 'Roboto_Regular'
                             ),
                           ),
                         ),

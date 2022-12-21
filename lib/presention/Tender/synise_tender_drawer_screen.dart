@@ -234,22 +234,27 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
   _pageChange(int page) {
     switch (page) {
       case 0:
+        _title = '';
         _widget = const TenderHomeScreen();
         _actions = [];
         break;
       case 1:
+        _title = 'My Profile';
         _widget = const TenderMyProfileScreen();
         _actions = [];
         break;
       case 2:
+        _title = '';
         _widget = const ViewSubmitTenderHomeScreen();
         _actions = [];
         break;
       case 3:
+        _title = 'Bid History';
         _widget = const TenderBidHistoryScreen();
         _actions = [];
         break;
       case 4:
+        _title = 'Change Password';
         _widget = const TenderChangePassword();
         _actions = [];
         break;
@@ -269,14 +274,17 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
         ];
         break;
       case 6:
+        _title = 'Feedback of Tender';
         _widget = const TenderFeedbackScreen();
         _actions = [];
         break;
       case 7:
+        _title = 'Agreement';
         _widget = const TenderAgreementScreen();
         _actions = [];
         break;
       case 8:
+        _title = 'FAQ';
         _widget = const TenderFAQScreen();
         _actions = [];
         break;
