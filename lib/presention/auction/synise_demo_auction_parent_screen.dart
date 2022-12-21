@@ -34,9 +34,15 @@ class _DemoAuctionParentScreenState extends State<DemoAuctionParentScreen>
                       padding: EdgeInsets.only(
                           left: SizeConfig.screenWidth * 0.03,
                           top: SizeConfig.screenHeight * 0.01),
-                      child: Container(
-                          color: Colors.transparent,
-                          child: const Icon(Icons.arrow_back_ios)),
+                      child: GestureDetector(
+                        onDoubleTap: (){},
+                        onTap: (){
+                          Navigator.pop(context);
+                        },
+                        child: Container(
+                            color: Colors.transparent,
+                            child: const Icon(Icons.arrow_back_ios)),
+                      ),
                     ),
                     title: Padding(
                       padding: EdgeInsets.only(top: SizeConfig.screenHeight * 0.01),
