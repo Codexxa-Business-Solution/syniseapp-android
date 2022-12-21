@@ -10,34 +10,26 @@ class SubmitBid extends StatefulWidget {
 
 class _SubmitBidState extends State<SubmitBid> {
   TextEditingController CommodityController = TextEditingController();
-  TextEditingController MaterialTypeController = TextEditingController();
   TextEditingController addressOneController = TextEditingController();
-  TextEditingController addressTwoController = TextEditingController();
-  TextEditingController cityController = TextEditingController();
-  TextEditingController zipCodeController = TextEditingController();
-  TextEditingController phoneController = TextEditingController();
-  TextEditingController profileController = TextEditingController();
-  TextEditingController nameController = TextEditingController();
-  TextEditingController gstController = TextEditingController();
-  TextEditingController cstController = TextEditingController();
-  TextEditingController vatController = TextEditingController();
-  TextEditingController panController = TextEditingController();
-  TextEditingController codeController = TextEditingController();
+  TextEditingController UomController = TextEditingController();
+  TextEditingController LotRequiredController = TextEditingController();
+  TextEditingController bidQuailtyController = TextEditingController();
+  TextEditingController podController = TextEditingController();
+  TextEditingController pricingController = TextEditingController();
+  TextEditingController previousBidController = TextEditingController();
+  TextEditingController priceController = TextEditingController();
+  TextEditingController expectationController = TextEditingController();
+
 
   final _companyFocus = FocusNode();
-  final _emailFocus = FocusNode();
-  final _addressOneFocus = FocusNode();
-  final _addressTwoFocus = FocusNode();
-  final _cityFocus = FocusNode();
-  final _zipCodeFocus = FocusNode();
-  final _phoneFocus = FocusNode();
-  final _profileFocus = FocusNode();
-  final _nameFocus = FocusNode();
-  final _gstFocus = FocusNode();
-  final _cstFocus = FocusNode();
-  final _vatFocus = FocusNode();
-  final _panFocus = FocusNode();
-  final _codeFocus = FocusNode();
+  final _uomFocus = FocusNode();
+  final _LotRequiredFocus = FocusNode();
+  final _bidQuailtyFocus = FocusNode();
+  final _podFocus = FocusNode();
+  final _pricingFocus = FocusNode();
+  final _previousBidFocus = FocusNode();
+  final _priceFocus = FocusNode();
+  final _expectationFocus = FocusNode();
 
   bool isChecked = false;
 
@@ -336,8 +328,8 @@ class _SubmitBidState extends State<SubmitBid> {
               left: parentWidth * 0.05,
               right: parentWidth * 0.05),
           child: TextFormField(
-            controller: addressTwoController,
-            focusNode: _addressTwoFocus,
+            controller: UomController,
+            focusNode: _uomFocus,
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
               hintText: "UOM",
@@ -358,8 +350,8 @@ class _SubmitBidState extends State<SubmitBid> {
               left: parentWidth * 0.05,
               right: parentWidth * 0.05),
           child: TextFormField(
-            controller: addressTwoController,
-            focusNode: _addressTwoFocus,
+            controller: LotRequiredController,
+            focusNode: _LotRequiredFocus,
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
               hintText: "Lot Required",
@@ -380,8 +372,8 @@ class _SubmitBidState extends State<SubmitBid> {
               left: parentWidth * 0.05,
               right: parentWidth * 0.05),
           child: TextFormField(
-            controller: addressTwoController,
-            focusNode: _addressTwoFocus,
+            controller: bidQuailtyController,
+            focusNode: _bidQuailtyFocus,
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
               hintText: "Bid Quality",
@@ -506,8 +498,8 @@ class _SubmitBidState extends State<SubmitBid> {
               left: parentWidth * 0.05,
               right: parentWidth * 0.05),
           child: TextFormField(
-            controller: addressOneController,
-            focusNode: _addressOneFocus,
+            controller: podController,
+            focusNode: _podFocus,
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
               hintText: "POD ( Port on Delivery )",
@@ -528,8 +520,8 @@ class _SubmitBidState extends State<SubmitBid> {
               left: parentWidth * 0.05,
               right: parentWidth * 0.05),
           child: TextFormField(
-            controller: addressOneController,
-            focusNode: _addressOneFocus,
+            controller: pricingController,
+            focusNode: _pricingFocus,
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
               hintText: "Pricing in",
@@ -550,8 +542,8 @@ class _SubmitBidState extends State<SubmitBid> {
               left: parentWidth * 0.05,
               right: parentWidth * 0.05),
           child: TextFormField(
-            controller: addressOneController,
-            focusNode: _addressOneFocus,
+            controller: previousBidController,
+            focusNode: _previousBidFocus,
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
               hintText: "Previous Bid Price",
@@ -572,8 +564,8 @@ class _SubmitBidState extends State<SubmitBid> {
               left: parentWidth * 0.05,
               right: parentWidth * 0.05),
           child: TextFormField(
-            controller: addressOneController,
-            focusNode: _addressOneFocus,
+            controller: priceController,
+            focusNode: _priceFocus,
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
               hintText: "Price",
@@ -594,8 +586,8 @@ class _SubmitBidState extends State<SubmitBid> {
               left: parentWidth * 0.05,
               right: parentWidth * 0.05),
           child: TextFormField(
-            controller: addressOneController,
-            focusNode: _addressOneFocus,
+            controller: expectationController,
+            focusNode: _expectationFocus,
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
               hintText: "Expectation in Quality/ Delivery/ Payment",
