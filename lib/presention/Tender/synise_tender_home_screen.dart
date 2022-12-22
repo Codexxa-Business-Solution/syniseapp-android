@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:synise_project/common_file/colors.dart';
 import 'package:synise_project/common_file/size_config.dart';
+import 'package:synise_project/presention/Tender/synise_submit_bid.dart';
 
 class TenderHomeScreen extends StatefulWidget {
   const TenderHomeScreen({Key? key}) : super(key: key);
@@ -17,7 +18,6 @@ class _TenderHomeScreenState extends State<TenderHomeScreen> {
       body: ListView(
         shrinkWrap: true,
         children: [
-
           Container(
             height: SizeConfig.screenHeight*0.9,
             child: ListView.builder(
@@ -27,7 +27,6 @@ class _TenderHomeScreenState extends State<TenderHomeScreen> {
                   return getTenderLayout(SizeConfig.screenHeight, SizeConfig.screenWidth);
                 }),
           )
-
         ],
       )
     );
@@ -40,7 +39,7 @@ class _TenderHomeScreenState extends State<TenderHomeScreen> {
         left: parentWidth*0.03,
         right: parentWidth*0.03,),
       child: Container(
-        height: parentHeight*0.2,
+        height: parentHeight*0.24,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(13),
@@ -59,16 +58,18 @@ class _TenderHomeScreenState extends State<TenderHomeScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                
-                Padding(
-                  padding:  EdgeInsets.only(left: parentWidth*0.03),
-                  child: Text("Demo Tender",
-                    style: TextStyle(
-                    color: Colors.black,
-                      fontSize: SizeConfig.blockSizeHorizontal*4.5,
-                      fontWeight: FontWeight.w500,
-                      fontFamily: 'Roboto_Regular'
-                  ),
+
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.only(left: parentWidth*0.03,top: parentHeight*0.02),
+                    child: Text("Ferro Alloys Corporation Limited.",
+                      style: TextStyle(
+                      color: Colors.black,
+                        fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: 'Roboto_Regular'
+                    ),maxLines: 2,
+                    ),
                   ),
                 ),
 
@@ -89,7 +90,7 @@ class _TenderHomeScreenState extends State<TenderHomeScreen> {
                     ),),
                   ),
                 )
-                
+
               ],
             ),
 
@@ -97,8 +98,8 @@ class _TenderHomeScreenState extends State<TenderHomeScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: parentWidth*0.03),
-                  child: Text("Description",
+                  padding: EdgeInsets.only(left: parentWidth*0.03,top: parentHeight*0.01),
+                  child: Text("Pig Iron - ESL D",
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: SizeConfig.blockSizeHorizontal*3.5,
@@ -223,7 +224,7 @@ class _TenderHomeScreenState extends State<TenderHomeScreen> {
                                       right: SizeConfig.screenWidth*0.03,
                                       top: SizeConfig.screenHeight*0.02),
                                   child: Container(
-                                    height: SizeConfig.screenHeight*0.8,
+                                    height: SizeConfig.screenHeight*0.85,
                                     decoration: BoxDecoration(
                                         color: Colors.white,
                                         borderRadius: BorderRadius.circular(15),
@@ -1055,24 +1056,30 @@ class _TenderHomeScreenState extends State<TenderHomeScreen> {
           ),
         ),
 
-        Padding(
-          padding: EdgeInsets.only(top: parentHeight*0.03),
-          child: Container(
-            height: parentHeight*0.04,
-            width: parentWidth*0.3,
-            decoration: BoxDecoration(
-                color: CommonColor.APP_BAR_COLOR,
-                borderRadius: BorderRadius.circular(7)
-            ),
-            child: Center(
-              child: Text("Next",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: SizeConfig.blockSizeHorizontal*4.0,
-                    fontWeight: FontWeight.w600,
-                    fontFamily: 'Roboto_Regular',
-                    decoration: TextDecoration.none
-                ),),
+        GestureDetector(
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>SubmitBid()));
+
+          },
+          child: Padding(
+            padding: EdgeInsets.only(top: parentHeight*0.03),
+            child: Container(
+              height: parentHeight*0.04,
+              width: parentWidth*0.3,
+              decoration: BoxDecoration(
+                  color: CommonColor.APP_BAR_COLOR,
+                  borderRadius: BorderRadius.circular(7)
+              ),
+              child: Center(
+                child: Text("Next",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                      fontWeight: FontWeight.w600,
+                      fontFamily: 'Roboto_Regular',
+                      decoration: TextDecoration.none
+                  ),),
+              ),
             ),
           ),
         ),

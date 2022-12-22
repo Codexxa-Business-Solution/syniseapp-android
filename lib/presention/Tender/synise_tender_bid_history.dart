@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:synise_project/common_file/colors.dart';
 import 'package:synise_project/common_file/size_config.dart';
+import 'package:synise_project/presention/Tender/synise_view_bid_screen.dart';
 
 class TenderBidHistoryScreen extends StatefulWidget {
   const TenderBidHistoryScreen({Key? key}) : super(key: key);
@@ -40,7 +41,7 @@ class _TenderBidHistoryScreenState extends State<TenderBidHistoryScreen> {
         left: parentWidth*0.03,
         right: parentWidth*0.03,),
       child: Container(
-        height: parentHeight*0.2,
+        height: parentHeight*0.24,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(13),
@@ -60,14 +61,16 @@ class _TenderBidHistoryScreenState extends State<TenderBidHistoryScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
 
-                Padding(
-                  padding:  EdgeInsets.only(left: parentWidth*0.03),
-                  child: Text("Demo Tender",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: SizeConfig.blockSizeHorizontal*4.5,
-                        fontWeight: FontWeight.w500,
-                        fontFamily: 'Roboto_Regular'
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.only(left: parentWidth*0.03,top: parentHeight*0.02),
+                    child: Text("Ferro Alloys Corporation Limited.",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                          fontWeight: FontWeight.w500,
+                          fontFamily: 'Roboto_Regular'
+                      ),maxLines: 2,
                     ),
                   ),
                 ),
@@ -97,8 +100,8 @@ class _TenderBidHistoryScreenState extends State<TenderBidHistoryScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: parentWidth*0.03),
-                  child: Text("Description",
+                  padding: EdgeInsets.only(left: parentWidth*0.03,top: parentHeight*0.01),
+                  child: Text("Pig Iron - ESL D",
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: SizeConfig.blockSizeHorizontal*3.5,
@@ -203,8 +206,9 @@ class _TenderBidHistoryScreenState extends State<TenderBidHistoryScreen> {
                     onDoubleTap: (){},
                     onTap: (){
 
+                       Navigator.push(context, MaterialPageRoute(builder: (context)=>TenderViewBidScreen()));
 
-                      showGeneralDialog(
+         /*             showGeneralDialog(
                           barrierLabel: "Label",
                           barrierDismissible: true,
                           barrierColor: Colors.black.withOpacity(0.05),
@@ -223,17 +227,25 @@ class _TenderBidHistoryScreenState extends State<TenderBidHistoryScreen> {
                                       right: SizeConfig.screenWidth*0.03,
                                       top: SizeConfig.screenHeight*0.02),
                                   child: Container(
-                                    height: SizeConfig.screenHeight*0.8,
+                                    height: SizeConfig.screenHeight*0.85,
                                     decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius: BorderRadius.circular(15)
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(15),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey.withOpacity(0.6),
+                                          spreadRadius: 5,
+                                          blurRadius: 6,
+                                          offset: Offset(0, 2),
+                                        )
+                                      ],
                                     ),
                                     child: getAllDialogueInfo(SizeConfig.screenHeight, SizeConfig.screenWidth),
                                   ),
                                 ),
                               ),);
 
-                          });
+                          });*/
 
 
                     },

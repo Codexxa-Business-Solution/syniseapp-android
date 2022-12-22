@@ -23,21 +23,72 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
       padding: EdgeInsets.zero,
       physics: NeverScrollableScrollPhysics(),
       children: [
-        demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
+        SizedBox(
+          height: SizeConfig.screenHeight * 0.1,
+          child: MainHeading(SizeConfig.screenHeight, SizeConfig.screenWidth),
+        ),
+        Container(
+          height: SizeConfig.screenHeight * 0.9,
+          child: ListView(
+            shrinkWrap: true,
+            padding: EdgeInsets.only(bottom: SizeConfig.screenHeight * 0.1),
+            children: [
+              demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
         viewBidAllParts(SizeConfig.screenHeight, SizeConfig.screenWidth)
+            ],
+          ),)
+           /* child:
+        demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth)),
+        viewBidAllParts(SizeConfig.screenHeight, SizeConfig.screenWidth)*/
       ],
     ));
   }
+  Widget MainHeading(double parentHeight, double parentWidth) {
+    return Container(
+        height: parentHeight * 0.1,
+        color: CommonColor.APP_BAR_COLOR,
+        child: Padding(
+          padding: EdgeInsets.only(top: parentHeight * 0.03),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Padding(
+                  padding: EdgeInsets.only(left: parentWidth * 0.05),
+                  child: const Icon(
+                    Icons.arrow_back_ios,
+                    color: CommonColor.WHITE_COLOR,
+                  ),
+                ),
+              ),
+              Text(
+                "View Bids",
+                style: TextStyle(
+                    color: CommonColor.WHITE_COLOR,
+                    fontSize: SizeConfig.blockSizeHorizontal * 5.0,
+                    fontFamily: 'Roboto_Medium'),
+              ),
+              Padding(
+                padding: EdgeInsets.only(right: parentWidth * 0.05),
+                child: Icon(
+                  Icons.arrow_back_ios,
+                  color: Colors.transparent,
+                ),
+              ),
+            ],
+          ),
+        ));
+  }
 
-  Widget demoTender(double parentHeight, double parentWidth) {
+  Widget demoTender (double parentHeight,double parentWidth){
     return Padding(
-      padding: EdgeInsets.only(
-          top: parentHeight * 0.03,
-          left: parentWidth * 0.03,
-          right: parentWidth * 0.03),
+      padding:  EdgeInsets.only(top: parentHeight*0.03,left: parentWidth*0.03,right: parentWidth*0.03),
       child: Container(
-        height: SizeConfig.screenHeight * 0.08,
-        width: SizeConfig.screenWidth * 0.94,
+        height: SizeConfig.screenHeight * 0.094,
+        width: SizeConfig.screenWidth*0.94,
         decoration: BoxDecoration(
           color: CommonColor.REGISTER_AS_COLOR,
           borderRadius: BorderRadius.circular(13),
@@ -46,52 +97,43 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(
-                      top: parentHeight * 0.01, left: parentWidth * 0.03),
-                  child: Text(
-                    "Demo Tender",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: SizeConfig.blockSizeHorizontal * 4.0,
+              children:  [
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.only(top: parentHeight*0.01,left: parentWidth*0.03),
+                    child: Text("Ferro Alloys Corporation Limited.",style: TextStyle( color: Colors.black,
+                        fontSize: SizeConfig.blockSizeHorizontal*3.5,
                         fontWeight: FontWeight.w500,
-                        fontFamily: 'Roboto_Regular'),
+                        fontFamily: 'Roboto_Regular'),maxLines: 2,),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(
-                      right: parentHeight * 0.02, top: parentHeight * 0.01),
+                  padding:  EdgeInsets.only(right: parentHeight*0.01,bottom: parentHeight*0.01),
                   child: Row(
                     children: [
-                      Text(
-                        "Tender Id :",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: SizeConfig.blockSizeHorizontal * 3.5,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'Roboto_Regular'),
-                      ),
+
+                      Text("Tender Id :",style: TextStyle( color: Colors.black,
+                          fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                          fontWeight: FontWeight.w500,
+                          fontFamily: 'Roboto_Regular'),),
                       Text(" DEMO10220002")
                     ],
                   ),
                 ),
+
               ],
             ),
             Padding(
-              padding: EdgeInsets.only(
-                  right: parentWidth * 0.7, top: parentHeight * 0.01),
-              child: Text(
-                "Description",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: SizeConfig.blockSizeHorizontal * 3.5,
-                    fontWeight: FontWeight.w400,
-                    fontFamily: 'Roboto_Regular'),
-              ),
+              padding:  EdgeInsets.only(right: parentWidth*0.63,top: parentHeight*0.01),
+              child: Text("Pig Iron - ESL D",style: TextStyle( color: Colors.black,
+                  fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                  fontWeight: FontWeight.w400,
+                  fontFamily: 'Roboto_Regular'),),
             )
           ],
         ),
+
+
       ),
     );
   }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:synise_project/common_file/colors.dart';
 import 'package:synise_project/common_file/size_config.dart';
+import 'package:synise_project/presention/Tender/synise_tender_drawer_screen.dart';
+import 'package:synise_project/presention/Tender/synise_tender_home_screen.dart';
 class SubmitBid extends StatefulWidget {
   const SubmitBid({Key? key}) : super(key: key);
 
@@ -149,7 +151,7 @@ class _SubmitBidState extends State<SubmitBid> {
     return Padding(
       padding:  EdgeInsets.only(top: parentHeight*0.03,left: parentWidth*0.03,right: parentWidth*0.03),
       child: Container(
-        height: SizeConfig.screenHeight * 0.08,
+        height: SizeConfig.screenHeight * 0.094,
         width: SizeConfig.screenWidth*0.94,
         decoration: BoxDecoration(
           color: CommonColor.REGISTER_AS_COLOR,
@@ -160,15 +162,17 @@ class _SubmitBidState extends State<SubmitBid> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children:  [
-                Padding(
-                  padding: EdgeInsets.only(top: parentHeight*0.01,left: parentWidth*0.03),
-                  child: Text("Demo Tender",style: TextStyle( color: Colors.black,
-                      fontSize: SizeConfig.blockSizeHorizontal*4.0,
-                      fontWeight: FontWeight.w500,
-                      fontFamily: 'Roboto_Regular'),),
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.only(top: parentHeight*0.01,left: parentWidth*0.03),
+                    child: Text("Ferro Alloys Corporation Limited.",style: TextStyle( color: Colors.black,
+                        fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: 'Roboto_Regular'),maxLines: 2,),
+                  ),
                 ),
                 Padding(
-                  padding:  EdgeInsets.only(right: parentHeight*0.02,top: parentHeight*0.01),
+                  padding:  EdgeInsets.only(right: parentHeight*0.01,bottom: parentHeight*0.01),
                   child: Row(
                     children: [
 
@@ -184,8 +188,8 @@ class _SubmitBidState extends State<SubmitBid> {
               ],
             ),
             Padding(
-              padding:  EdgeInsets.only(right: parentWidth*0.7,top: parentHeight*0.01),
-              child: Text("Description",style: TextStyle( color: Colors.black,
+              padding:  EdgeInsets.only(right: parentWidth*0.63,top: parentHeight*0.01),
+              child: Text("Pig Iron - ESL D",style: TextStyle( color: Colors.black,
                   fontSize: SizeConfig.blockSizeHorizontal*3.5,
                   fontWeight: FontWeight.w400,
                   fontFamily: 'Roboto_Regular'),),
@@ -212,6 +216,8 @@ class _SubmitBidState extends State<SubmitBid> {
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
               hintText: "Commodity",
+              contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
+
               hintStyle: TextStyle(
                   color: CommonColor.Hint_TEXT_COLOR,
                   fontSize: SizeConfig.blockSizeHorizontal * 3.5,
@@ -338,6 +344,8 @@ class _SubmitBidState extends State<SubmitBid> {
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
               hintText: "UOM",
+              contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
+
               hintStyle: TextStyle(
                   color: CommonColor.Hint_TEXT_COLOR,
                   fontSize: SizeConfig.blockSizeHorizontal * 3.5,
@@ -360,6 +368,8 @@ class _SubmitBidState extends State<SubmitBid> {
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
               hintText: "Lot Required",
+              contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
+
               hintStyle: TextStyle(
                   color: CommonColor.Hint_TEXT_COLOR,
                   fontSize: SizeConfig.blockSizeHorizontal * 3.5,
@@ -382,6 +392,8 @@ class _SubmitBidState extends State<SubmitBid> {
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
               hintText: "Bid Quality",
+              contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
+
               hintStyle: TextStyle(
                   color: CommonColor.Hint_TEXT_COLOR,
                   fontSize: SizeConfig.blockSizeHorizontal * 3.5,
@@ -508,6 +520,8 @@ class _SubmitBidState extends State<SubmitBid> {
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
               hintText: "POD ( Port on Delivery )",
+              contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
+
               hintStyle: TextStyle(
                   color: CommonColor.Hint_TEXT_COLOR,
                   fontSize: SizeConfig.blockSizeHorizontal * 3.5,
@@ -530,6 +544,8 @@ class _SubmitBidState extends State<SubmitBid> {
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
               hintText: "Pricing in",
+              contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
+
               hintStyle: TextStyle(
                   color: CommonColor.Hint_TEXT_COLOR,
                   fontSize: SizeConfig.blockSizeHorizontal * 3.5,
@@ -552,6 +568,8 @@ class _SubmitBidState extends State<SubmitBid> {
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
               hintText: "Previous Bid Price",
+              contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
+
               hintStyle: TextStyle(
                   color: CommonColor.Hint_TEXT_COLOR,
                   fontSize: SizeConfig.blockSizeHorizontal * 3.5,
@@ -574,6 +592,8 @@ class _SubmitBidState extends State<SubmitBid> {
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
               hintText: "Price",
+              contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
+
               hintStyle: TextStyle(
                   color: CommonColor.Hint_TEXT_COLOR,
                   fontSize: SizeConfig.blockSizeHorizontal * 3.5,
@@ -596,6 +616,8 @@ class _SubmitBidState extends State<SubmitBid> {
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
               hintText: "Expectation in Quality/ Delivery/ Payment",
+              contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
+
               hintStyle: TextStyle(
                   color: CommonColor.Hint_TEXT_COLOR,
                   fontSize: SizeConfig.blockSizeHorizontal * 3.5,
@@ -617,7 +639,7 @@ class _SubmitBidState extends State<SubmitBid> {
           child: GestureDetector(
             onDoubleTap: (){},
             onTap: (){
-             // Navigator.push(context, MaterialPageRoute(builder: (context)=>AuctionDrawerScreen()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>TenderDrawerScreen()));
             },
             child: Container(
               decoration: BoxDecoration(

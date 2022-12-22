@@ -47,7 +47,7 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
               padding: EdgeInsets.only(left: SizeConfig.screenWidth * 0.05),
               child: Text(_title.toString()),
             ),
-            Text(
+            const Text(
               "data",
               style: TextStyle(color: Colors.transparent),
             )
