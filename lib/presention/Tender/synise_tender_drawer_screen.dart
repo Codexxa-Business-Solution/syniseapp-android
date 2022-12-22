@@ -40,10 +40,18 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: CommonColor.TENDER_BOX_TEXT,
-        title: Padding(
-          padding:  EdgeInsets.only(left: SizeConfig.screenHeight*0.04),
-          child: Text(_title.toString()),
-
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Padding(
+              padding: EdgeInsets.only(left: SizeConfig.screenWidth * 0.05),
+              child: Text(_title.toString()),
+            ),
+            Text(
+              "data",
+              style: TextStyle(color: Colors.transparent),
+            )
+          ],
         ),
         leading: Builder(
           builder: (BuildContext context) {
