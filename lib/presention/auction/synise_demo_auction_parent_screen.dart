@@ -50,7 +50,7 @@ class _DemoAuctionParentScreenState extends State<DemoAuctionParentScreen>
                     title: Padding(
                       padding: EdgeInsets.only(top: SizeConfig.screenHeight * 0.01),
                       child: Text(
-                        'Demo Auction 1',
+                        'Ferro Alloys Corporation Limited',
                         style: TextStyle(
                             fontSize: SizeConfig.blockSizeHorizontal * 5.0,
                             color: Colors.white,
@@ -65,7 +65,7 @@ class _DemoAuctionParentScreenState extends State<DemoAuctionParentScreen>
                         tabs: [
                           Tab(
                             child: Text(
-                              'Demo 165/Car',
+                              'Lot 173/FACOR',
                               style: TextStyle(
                                   fontSize: SizeConfig.blockSizeHorizontal * 3.5,
                                   fontWeight: FontWeight.w400,
@@ -74,7 +74,7 @@ class _DemoAuctionParentScreenState extends State<DemoAuctionParentScreen>
                           ),
                           Tab(
                             child: Text(
-                              'Demo 165/Truck',
+                              'Lot 174/FACOR',
                               style: TextStyle(
                                   fontSize: SizeConfig.blockSizeHorizontal * 3.5,
                                   fontWeight: FontWeight.w400,
@@ -83,7 +83,7 @@ class _DemoAuctionParentScreenState extends State<DemoAuctionParentScreen>
                           ),
                           Tab(
                             child: Text(
-                              'Demo 165/Cycle',
+                              'Lot 175/FACOR',
                               style: TextStyle(
                                   fontSize: SizeConfig.blockSizeHorizontal * 3.5,
                                   fontWeight: FontWeight.w400,
@@ -92,7 +92,7 @@ class _DemoAuctionParentScreenState extends State<DemoAuctionParentScreen>
                           ),
                           Tab(
                             child: Text(
-                              'Demo 165/Bus',
+                              'Lot 175/FACOR',
                               style: TextStyle(
                                   fontSize: SizeConfig.blockSizeHorizontal * 3.5,
                                   fontWeight: FontWeight.w400,
@@ -101,7 +101,7 @@ class _DemoAuctionParentScreenState extends State<DemoAuctionParentScreen>
                           ),
                           Tab(
                             child: Text(
-                              'Demo 165/Taxi',
+                              'Lot 175/FACOR',
                               style: TextStyle(
                                   fontSize: SizeConfig.blockSizeHorizontal * 3.5,
                                   fontWeight: FontWeight.w400,
@@ -110,7 +110,7 @@ class _DemoAuctionParentScreenState extends State<DemoAuctionParentScreen>
                           ),
                           Tab(
                             child: Text(
-                              'Demo 165/Auto',
+                              'Lot 175/FACOR',
                               style: TextStyle(
                                   fontSize: SizeConfig.blockSizeHorizontal * 3.5,
                                   fontWeight: FontWeight.w400,

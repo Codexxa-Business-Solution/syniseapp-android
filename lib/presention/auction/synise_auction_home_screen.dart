@@ -18,7 +18,7 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
   bool arrowVisible = false;
   bool auctionList = false;
 
-  String auctionHeadng = "Demo Auction";
+  String auctionHeadng = "Ferro Alloys Corporation Limited";
 
 
   var auctionListData = [
@@ -213,7 +213,7 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
                         itemCount: auctionListData.length,
                         itemBuilder: (context, index) {
                           return Padding(
-                            padding: EdgeInsets.only(top: SizeConfig.screenHeight*0.013),
+                            padding: EdgeInsets.only(top: SizeConfig.screenHeight*0.018),
                             child: Column(
                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -242,13 +242,16 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
                                         child: Container(
                                           width: SizeConfig.screenWidth*0.9,
                                           color: Colors.transparent,
-                                          child: Text(auctionListData[index],
-                                          style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: SizeConfig.blockSizeHorizontal*3.0,
-                                            fontWeight: FontWeight.w400,
-                                            fontFamily: 'Robot_Regular'
-                                          ),),
+                                          child: Padding(
+                                            padding: EdgeInsets.only(top: SizeConfig.screenHeight*0.002 ),
+                                            child: Text(auctionListData[index],
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: SizeConfig.blockSizeHorizontal*3.2,
+                                              fontWeight: FontWeight.w400,
+                                              fontFamily: 'Robot_Regular'
+                                            ),),
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -256,7 +259,7 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
                                 ),
 
                                 Padding(
-                                  padding: EdgeInsets.only(top: SizeConfig.screenHeight*0.009),
+                                  padding: EdgeInsets.only(top: SizeConfig.screenHeight*0.02),
                                   child: Container(
                                     height: SizeConfig.screenHeight*0.001,
                                     color: CommonColor.PROFILE_COLOR,

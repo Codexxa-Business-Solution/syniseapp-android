@@ -137,7 +137,7 @@ class _TenderChangePassword extends State<TenderChangePassword> {
                 child: GestureDetector(
                   onDoubleTap: (){},
                   onTap: (){
-                     Navigator.push(context, MaterialPageRoute(builder: (context)=>SubmitBid()));
+                    // Navigator.push(context, MaterialPageRoute(builder: (context)=>SubmitBid()));
 
                   },
                   child: Container(

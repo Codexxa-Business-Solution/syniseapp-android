@@ -139,7 +139,7 @@ class _DrawerScreen extends State<AuctionDrawerScreen> {
             ),
             ListTile(
               title: Text(
-                'View Closed Auction',
+                'Bid For Auction Multibid',
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: SizeConfig.blockSizeHorizontal * 4.0,
@@ -152,7 +152,7 @@ class _DrawerScreen extends State<AuctionDrawerScreen> {
             ),
             ListTile(
               title: Text(
-                'Logout',
+                'View Closed Auction',
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: SizeConfig.blockSizeHorizontal * 4.0,
@@ -160,6 +160,19 @@ class _DrawerScreen extends State<AuctionDrawerScreen> {
               ),
               onTap: () {
                 _pageChange(4);
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text(
+                'Logout',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: SizeConfig.blockSizeHorizontal * 4.0,
+                    fontFamily: 'Roboto_Medium'),
+              ),
+              onTap: () {
+                _pageChange(5);
                 Navigator.pop(context);
               },
             ),
@@ -187,11 +200,16 @@ class _DrawerScreen extends State<AuctionDrawerScreen> {
         _actions = [];
         break;
       case 3:
+        _title = '';
+        _widget = const AuctionHomeScreen();
+        _actions = [];
+        break;
+      case 4:
         _title = 'Closed Auction';
         _widget = const CloseAuction();
         _actions = [];
         break;
-      case 4:
+      case 5:
         _widget = const LogoutScreen();
         _actions = [];
         break;

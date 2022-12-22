@@ -188,6 +188,8 @@ class _LoginPageState extends State<LoginPage> {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 hintText: 'User Name',
+                contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
+
                 fillColor: Colors.white,
                 hintStyle: TextStyle(
                     fontSize: SizeConfig.blockSizeHorizontal * 4.0,
@@ -207,7 +209,7 @@ class _LoginPageState extends State<LoginPage> {
         ),
         Padding(
           padding: EdgeInsets.only(
-              top: parentHeight * 0.04,
+              top: parentHeight * 0.03,
               left: parentWidth * 0.04,
               right: parentWidth * 0.04),
           child: TextFormField(
@@ -221,6 +223,8 @@ class _LoginPageState extends State<LoginPage> {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 hintText: 'Password',
+                contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
+
                 fillColor: Colors.white,
                 hintStyle: TextStyle(
                     fontSize: SizeConfig.blockSizeHorizontal * 4.0,

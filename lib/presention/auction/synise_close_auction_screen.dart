@@ -19,7 +19,7 @@ class _CloseAuctionState extends State<CloseAuction> {
   bool arrowVisible = false;
   bool auctionList = false;
 
-  String auctionHeadng = "Demo Auction";
+  String auctionHeadng = "Ferro Alloys Corporation Limited";
 
 
   var auctionListData = [
@@ -46,7 +46,7 @@ class _CloseAuctionState extends State<CloseAuction> {
         children: [
           Padding(
             padding: EdgeInsets.only(
-                top: SizeConfig.screenHeight * 0.02,
+                top: SizeConfig.screenHeight*0.03,
                 left: SizeConfig.screenWidth * 0.03,
                 right: SizeConfig.screenWidth * 0.03),
             child: Row(
@@ -64,6 +64,7 @@ class _CloseAuctionState extends State<CloseAuction> {
                               auctionInfo = !auctionInfo;
                               arrowVisible = !arrowVisible;
                               auctionList = !auctionList;
+                              print("accept");
                             });
                           }
                         },
@@ -90,7 +91,7 @@ class _CloseAuctionState extends State<CloseAuction> {
                               Padding(
                                 padding: EdgeInsets.only(right: SizeConfig.screenWidth * 0.05),
                                 child: Row(
-                                  children: const [
+                                  children: [
                                     Image(
                                       image: AssetImage("assets/images/down_arrow.png"),
                                     ),
@@ -119,7 +120,7 @@ class _CloseAuctionState extends State<CloseAuction> {
                         child: Container(
                           height: SizeConfig.screenHeight * 0.066,
                           width: SizeConfig.screenWidth*0.94,
-                          decoration: const BoxDecoration(
+                          decoration: BoxDecoration(
                             color: CommonColor.REGISTER_AS_COLOR,
                             borderRadius: BorderRadius.only(topLeft: Radius.circular(13),
                                 topRight: Radius.circular(13)),
@@ -204,7 +205,7 @@ class _CloseAuctionState extends State<CloseAuction> {
                           itemCount: auctionListData.length,
                           itemBuilder: (context, index) {
                             return Padding(
-                              padding: EdgeInsets.only(top: SizeConfig.screenHeight*0.013),
+                              padding: EdgeInsets.only(top: SizeConfig.screenHeight*0.018),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -245,7 +246,7 @@ class _CloseAuctionState extends State<CloseAuction> {
                                   ),
 
                                   Padding(
-                                    padding: EdgeInsets.only(top: SizeConfig.screenHeight*0.009),
+                                    padding: EdgeInsets.only(top: SizeConfig.screenHeight*0.02),
                                     child: Container(
                                       height: SizeConfig.screenHeight*0.001,
                                       color: CommonColor.PROFILE_COLOR,
