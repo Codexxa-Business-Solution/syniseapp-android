@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:blinking_text/blinking_text.dart';
 import 'package:flutter/material.dart';
 import 'package:synise_project/common_file/colors.dart';
 import 'package:synise_project/common_file/size_config.dart';
@@ -20,6 +23,22 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
 
   String auctionHeadng = "Ferro Alloys Corporation Limited";
 
+
+  bool _show = true;
+  Timer? _timer;
+
+
+  @override
+  void initState() {
+    super.initState();
+    _timer = Timer(Duration(milliseconds: 500), () {
+      if(mounted){
+        setState(() {
+          _show = ! _show;
+        });
+      }
+    });
+  }
 
   var auctionListData = [
     'Demo Auction 1',
@@ -383,9 +402,9 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Rank : 2",
+                        BlinkText("Rank : 2",
                           style: TextStyle(
-                              color: CommonColor.RANK_NUMBER_COLOR,
+                              color: _show ? CommonColor.RANK_NUMBER_COLOR : Colors.transparent,
                               fontSize: SizeConfig.blockSizeHorizontal*4.0,
                               fontFamily: 'Roboto_normal',
                               fontWeight: FontWeight.w500
