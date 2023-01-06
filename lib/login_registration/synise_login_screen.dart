@@ -118,7 +118,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 child: Center(
                   child: Text(
-                    "Tender",
+                    "E-Tender",
                     style: TextStyle(
                       color: index == 1
                           ? CommonColor.WHITE_COLOR
@@ -152,7 +152,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 child: Center(
-                  child: Text("Auction",
+                  child: Text("E-Auction",
                       style: TextStyle(
                         color: index == 2
                             ? CommonColor.WHITE_COLOR

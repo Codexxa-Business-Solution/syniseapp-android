@@ -1038,7 +1038,7 @@ class _DemoCycleAuctionState extends State<DemoCycleAuction> {
                         height: parentHeight * 0.047,
                         width: parentWidth * 0.27,
                         decoration: BoxDecoration(
-                          color: CommonColor.PROFILE_COLOR,
+                          color: CommonColor.CONTAINER_TIMMITING_COLOR,
                           borderRadius: BorderRadius.circular(7),
                         ),
                         child: Center(

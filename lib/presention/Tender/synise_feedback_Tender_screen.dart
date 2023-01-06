@@ -3,30 +3,30 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:synise_project/common_file/colors.dart';
 import 'package:synise_project/common_file/size_config.dart';
 
-class SyniseFeedbackScreen extends StatefulWidget {
-  const SyniseFeedbackScreen({Key? key}) : super(key: key);
+class TenderFeedbackScreen extends StatefulWidget {
+  const TenderFeedbackScreen({Key? key}) : super(key: key);
 
   @override
-  State<SyniseFeedbackScreen> createState() => _SyniseFeedbackScreenState();
+  State<TenderFeedbackScreen> createState() => _TenderFeedbackScreenState();
 }
+
 bool _isVertical = false;
 IconData? _selectedIcon;
 double _rating = 0.5;
 TextEditingController ComplaintDetails = TextEditingController();
 final _ComplaintDetails = FocusNode();
-class _SyniseFeedbackScreenState extends State<SyniseFeedbackScreen> {
 
+class _TenderFeedbackScreenState extends State<TenderFeedbackScreen> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-
     return Scaffold(
       body: ListView(
         shrinkWrap: true,
         children: [
           Container(
               child:
-              allReview(SizeConfig.screenHeight, SizeConfig.screenWidth)),
+                  allReview(SizeConfig.screenHeight, SizeConfig.screenWidth)),
           addFeedback(SizeConfig.screenHeight, SizeConfig.screenWidth)
         ],
       ),
@@ -69,14 +69,14 @@ class _SyniseFeedbackScreenState extends State<SyniseFeedbackScreen> {
                               initialRating: 3,
                               minRating: 0.5,
                               direction:
-                              _isVertical ? Axis.vertical : Axis.horizontal,
+                                  _isVertical ? Axis.vertical : Axis.horizontal,
                               allowHalfRating: true,
                               unratedColor: CommonColor
                                   .PROFILE_FRAGMENT_REVIEWS_STAR_COLOR,
                               itemCount: 5,
                               itemSize: 25.0,
                               itemPadding:
-                              const EdgeInsets.symmetric(horizontal: 5.0),
+                                  const EdgeInsets.symmetric(horizontal: 5.0),
                               itemBuilder: (context, _) => Icon(
                                 _selectedIcon ?? Icons.star_rate,
                                 color: CommonColor.RATING_STAR_COLOR,
@@ -149,13 +149,13 @@ class _SyniseFeedbackScreenState extends State<SyniseFeedbackScreen> {
               ),
               child: const Center(
                   child: Text(
-                    "Submit",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w400,
-                        fontFamily: 'Roboto-Bold',
-                        fontSize: 15),
-                  ))),
+                "Submit",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'Roboto-Bold',
+                    fontSize: 15),
+              ))),
         )
       ],
     );

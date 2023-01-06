@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:synise_project/common_file/colors.dart';
 import 'package:synise_project/common_file/size_config.dart';
 import 'package:synise_project/presention/Tender/synise_faq_screen.dart';
+import 'package:synise_project/presention/Tender/synise_feedback_screen.dart';
 import 'package:synise_project/presention/Tender/synise_tender_bid_history.dart';
 import 'package:synise_project/presention/Tender/synise_view_submit_tenders_screen.dart';
 import 'package:synise_project/presention/Tender/synise_agreement_screen.dart';
 import 'package:synise_project/presention/Tender/synise_tender_change_password_screen.dart';
-import 'package:synise_project/presention/Tender/synise_feedback_screen.dart';
+import 'package:synise_project/presention/Tender/synise_feedback_Tender_screen.dart';
 import 'package:synise_project/presention/Tender/synise_tender_home_screen.dart';
 import 'package:synise_project/presention/Tender/synise_tender_logout_screen.dart';
 import 'package:synise_project/presention/Tender/synise_tender_my_profile_screen.dart';
 import 'package:synise_project/presention/Tender/synise_register_complain_screen.dart';
-import 'package:synise_project/presention/Tender/synise_view_bid_screen.dart';
 
 
 class TenderDrawerScreen extends StatefulWidget {
@@ -76,13 +76,13 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
       drawer: Padding(
         padding: EdgeInsets.only(top: SizeConfig.screenHeight*0.05),
         child: ClipRRect(
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             topRight: Radius.circular(40),
           ),
           child: Container(
               height: SizeConfig.screenHeight*0.98 ,
               width: SizeConfig.screenWidth*0.7,
-              decoration: BoxDecoration(),
+              decoration: const BoxDecoration(),
               child: _drawer()
           ),
         ),
@@ -185,7 +185,19 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
               },
             ),
             ListTile(
-              title: Text('Feedback',
+              title: Text('Feedback of Tender',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                    fontFamily: 'Roboto_Medium'
+                ),),
+              onTap: () {
+                _pageChange(6);
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text('Feedback of Synise',
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: SizeConfig.blockSizeHorizontal*4.0,
@@ -287,16 +299,21 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
         _actions = [];
         break;
       case 7:
+        _title = 'Feedback of Synise';
+        _widget = const SyniseFeedbackScreen();
+        _actions = [];
+        break;
+      case 8:
         _title = 'Agreement';
         _widget = const TenderAgreementScreen();
         _actions = [];
         break;
-      case 8:
-        _title = 'FAQ';
+      case 9:
+     _title = 'FAQ';
         _widget = const TenderFAQScreen();
         _actions = [];
         break;
-      case 9:
+      case 10:
         _widget = const TenderLogoutScreen();
         _actions = [];
         break;

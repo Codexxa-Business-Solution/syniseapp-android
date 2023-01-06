@@ -45,7 +45,7 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
         children: [
           Padding(
             padding: EdgeInsets.only(
-              top: SizeConfig.screenHeight*0.03,
+              top: SizeConfig.screenHeight*0.02,
                 left: SizeConfig.screenWidth * 0.03,
                 right: SizeConfig.screenWidth * 0.03),
             child: Row(
@@ -68,11 +68,11 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
                           }
                         },
                         child: Container(
-                          height: SizeConfig.screenHeight * 0.066,
+                          height: SizeConfig.screenHeight * 0.045,
                           width: SizeConfig.screenWidth*0.94,
                           decoration: BoxDecoration(
                             color: CommonColor.REGISTER_AS_COLOR,
-                            borderRadius: BorderRadius.circular(13),
+                            borderRadius: BorderRadius.circular(5),
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -81,7 +81,7 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
                                 padding: EdgeInsets.only(left: SizeConfig.screenWidth*0.05),
                                 child: Text(auctionHeadng.toString(),
                                   style: TextStyle(
-                                      fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                                      fontSize: SizeConfig.blockSizeHorizontal*3.8,
                                       color: Colors.black,
                                       fontWeight: FontWeight.w500,
                                       fontFamily: 'Roboto_Regular'
@@ -117,7 +117,7 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
                           }
                         },
                         child: Container(
-                          height: SizeConfig.screenHeight * 0.066,
+                          height: SizeConfig.screenHeight * 0.045,
                           width: SizeConfig.screenWidth*0.94,
                           decoration: BoxDecoration(
                             color: CommonColor.REGISTER_AS_COLOR,
@@ -131,7 +131,7 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
                                 padding: EdgeInsets.only(left: SizeConfig.screenWidth*0.05),
                                 child: Text(auctionHeadng,
                                   style: TextStyle(
-                                      fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                                      fontSize: SizeConfig.blockSizeHorizontal*3.8,
                                       color: Colors.black,
                                       fontWeight: FontWeight.w500,
                                       fontFamily: 'Roboto_Regular'
@@ -181,7 +181,7 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
                     itemBuilder: (context, index) {
                       return Padding(
                         padding: EdgeInsets.only(
-                            top: SizeConfig.screenHeight * 0.03,
+                            top: SizeConfig.screenHeight * 0.02,
                             left: SizeConfig.screenWidth * 0.03,
                             right: SizeConfig.screenWidth * 0.03),
                         child: getAuctionInfo(SizeConfig.screenHeight, SizeConfig.screenWidth),

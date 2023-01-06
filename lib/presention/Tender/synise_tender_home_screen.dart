@@ -76,7 +76,7 @@ class _TenderHomeScreenState extends State<TenderHomeScreen> {
                 Container(
                   height: parentHeight*0.05,
                   width: parentWidth*0.5,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: CommonColor.EDIT_ICON_COLOR,
                     borderRadius: BorderRadius.only(topRight: Radius.circular(13)),
                   ),
@@ -287,7 +287,7 @@ class _TenderHomeScreenState extends State<TenderHomeScreen> {
 
               Padding(
                 padding: EdgeInsets.only(left: parentWidth*0.03),
-                child: Icon(Icons.clear,
+                child: const Icon(Icons.clear,
                   color: Colors.transparent,
                 ),
               ),
@@ -329,7 +329,7 @@ class _TenderHomeScreenState extends State<TenderHomeScreen> {
 
               Padding(
                   padding: EdgeInsets.only(left: parentWidth*0.03),
-                  child: Text("Guaranted Specs",
+                  child: Text("Guaranteed Specs",
                     style: TextStyle(
                         color: CommonColor.BLACK_COLOR,
                         fontSize: SizeConfig.blockSizeHorizontal*4.0,
