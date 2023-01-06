@@ -23,23 +23,6 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
 
   String auctionHeadng = "Ferro Alloys Corporation Limited";
 
-
-  bool _show = true;
-  Timer? _timer;
-
-
-  @override
-  void initState() {
-    super.initState();
-    _timer = Timer(Duration(milliseconds: 500), () {
-      if(mounted){
-        setState(() {
-          _show = ! _show;
-        });
-      }
-    });
-  }
-
   var auctionListData = [
     'Demo Auction 1',
     'Demo Auction 2',
@@ -404,7 +387,7 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
                       children: [
                         BlinkText("Rank : 2",
                           style: TextStyle(
-                              color: _show ? CommonColor.RANK_NUMBER_COLOR : Colors.transparent,
+                              color: CommonColor.RANK_NUMBER_COLOR ,
                               fontSize: SizeConfig.blockSizeHorizontal*4.0,
                               fontFamily: 'Roboto_normal',
                               fontWeight: FontWeight.w500
