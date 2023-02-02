@@ -65,11 +65,11 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
                 ),
               ),
               Text(
-                "View Bids",
+                "Bid History",
                 style: TextStyle(
                     color: CommonColor.WHITE_COLOR,
                     fontSize: SizeConfig.blockSizeHorizontal * 5.0,
-                    fontFamily: 'Roboto_Medium'),
+                    fontFamily: 'Roboto_Medium',fontWeight: FontWeight.w500),
               ),
               Padding(
                 padding: EdgeInsets.only(right: parentWidth * 0.05),
@@ -87,49 +87,72 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
     return Padding(
       padding:  EdgeInsets.only(top: parentHeight*0.03,left: parentWidth*0.03,right: parentWidth*0.03),
       child: Container(
-        height: SizeConfig.screenHeight * 0.094,
+        height: SizeConfig.screenHeight * 0.12,
         width: SizeConfig.screenWidth*0.94,
         decoration: BoxDecoration(
-          color: CommonColor.REGISTER_AS_COLOR,
+          color: CommonColor.SUBMIT_BID,
           borderRadius: BorderRadius.circular(13),
         ),
-        child: Column(
+        child:  Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Container(
+              height: parentHeight*0.04,
+
+              // decoration: const BoxDecoration(
+              //   color: CommonColor.EDIT_ICON_COLOR,
+              //   borderRadius: BorderRadius.only(topRight: Radius.circular(13)),
+              // ),
+              child: Padding(
+                padding:  EdgeInsets.only(top: parentHeight*0.01,left: parentWidth*0.45),
+                child: Text("Tender Id : DEMO10220002 ",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'Roboto_Regular'
+                  ),),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: parentWidth*0.03,),
+              child: Text("Ferro Alloys Corporation Limited.",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: SizeConfig.blockSizeHorizontal*4.2,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Roboto_Regular'
+                ),maxLines: 1,
+              ),
+            ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children:  [
-                Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.only(top: parentHeight*0.01,left: parentWidth*0.03),
-                    child: Text("Ferro Alloys Corporation Limited.",style: TextStyle( color: Colors.black,
-                        fontSize: SizeConfig.blockSizeHorizontal*3.5,
-                        fontWeight: FontWeight.w500,
-                        fontFamily: 'Roboto_Regular'),maxLines: 2,),
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: parentWidth*0.03,top: parentHeight*0.01),
+                  child: Text("Material -",
+                    style: TextStyle(
+                        color: CommonColor.APP_BAR_COLOR,
+                        fontSize: SizeConfig.blockSizeHorizontal*3.7,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: 'Roboto_Regular'
+                    ),
                   ),
                 ),
                 Padding(
-                  padding:  EdgeInsets.only(right: parentHeight*0.01,bottom: parentHeight*0.01),
-                  child: Row(
-                    children: [
-
-                      Text("Tender Id :",style: TextStyle( color: Colors.black,
-                          fontSize: SizeConfig.blockSizeHorizontal*3.5,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'Roboto_Regular'),),
-                      Text(" DEMO10220002")
-                    ],
+                  padding: EdgeInsets.only(left: parentWidth*0.02,top: parentHeight*0.01),
+                  child: Text("HC Fe-Cr/ Charge Chrome (Lumps )",
+                    style: TextStyle(
+                        color: CommonColor.TENDER_BOX_TEXT,
+                        fontSize: SizeConfig.blockSizeHorizontal*3.7,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: 'Roboto_Regular'
+                    ),
                   ),
                 ),
-
               ],
             ),
-            Padding(
-              padding:  EdgeInsets.only(right: parentWidth*0.63,top: parentHeight*0.01),
-              child: Text("Pig Iron - ESL D",style: TextStyle( color: Colors.black,
-                  fontSize: SizeConfig.blockSizeHorizontal*3.5,
-                  fontWeight: FontWeight.w400,
-                  fontFamily: 'Roboto_Regular'),),
-            )
+
+
           ],
         ),
 
@@ -169,7 +192,7 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
                             height: SizeConfig.screenHeight * 0.066,
                             width: SizeConfig.screenWidth * 0.94,
                             decoration: const BoxDecoration(
-                              color: CommonColor.REGISTER_AS_COLOR,
+                              color: CommonColor.SUBMIT_BID,
                               borderRadius: BorderRadius.only(
                                   topLeft: Radius.circular(13),
                                   topRight: Radius.circular(13)),
@@ -181,7 +204,7 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
                                   padding: EdgeInsets.only(
                                       left: SizeConfig.screenWidth * 0.05),
                                   child: Text(
-                                    "Part 1",
+                                    "Lumps",
                                     style: TextStyle(
                                         fontSize:
                                             SizeConfig.blockSizeHorizontal *
@@ -234,7 +257,7 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
                             height: SizeConfig.screenHeight * 0.066,
                             width: SizeConfig.screenWidth * 0.94,
                             decoration: BoxDecoration(
-                              color: CommonColor.REGISTER_AS_COLOR,
+                              color: CommonColor.SUBMIT_BID,
                               borderRadius: BorderRadius.circular(13),
                             ),
                             child: Row(
@@ -244,7 +267,7 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
                                   padding: EdgeInsets.only(
                                       left: SizeConfig.screenWidth * 0.05),
                                   child: Text(
-                                    "Part 1",
+                                    "Lumps",
                                     style: TextStyle(
                                         fontSize:
                                             SizeConfig.blockSizeHorizontal *
@@ -255,7 +278,7 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
                                   ),
                                 ),
                                 Text(
-                                  "Lots Required - 8",
+                                  "10-150",
                                   style: TextStyle(
                                       fontSize:
                                           SizeConfig.blockSizeHorizontal * 4.0,
@@ -290,7 +313,7 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
                       visible: faqList,
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: CommonColor.GAME_DESTRUCTION,
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.2),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:synise_project/common_file/colors.dart';
 import 'package:synise_project/common_file/size_config.dart';
-import 'package:synise_project/presention/Tender/synise_submit_bid.dart';
 
 
 
@@ -142,7 +141,7 @@ class _TenderChangePassword extends State<TenderChangePassword> {
                   },
                   child: Container(
                     decoration: BoxDecoration(
-                        color: CommonColor.APP_BAR_COLOR,
+                        color: CommonColor.TENDER_BOX_TEXT,
                         borderRadius: BorderRadius.circular(7)),
                     height: SizeConfig.screenHeight * 0.06,
                     width: SizeConfig.screenWidth * 0.8,

@@ -164,7 +164,7 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
       child: Container(
         height: parentHeight * 0.07,
         decoration: BoxDecoration(
-            color: CommonColor.REGISTER_AS_COLOR,
+            color: CommonColor.SUBMIT_BID,
             borderRadius: BorderRadius.circular(7),
             boxShadow: [
               BoxShadow(
@@ -739,25 +739,27 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
             ],
           ),
         ),
-        Padding(
-          padding: EdgeInsets.only(
-              top: parentHeight * 0.02,
-              left: parentWidth * 0.05,
-              right: parentWidth * 0.05),
-          child: TextFormField(
-            controller: codeController,
-            focusNode: _codeFocus,
-            textInputAction: TextInputAction.done,
-            decoration: InputDecoration(
-              hintText: "Enter Below Code",
-              hintStyle: TextStyle(
-                  color: CommonColor.Hint_TEXT_COLOR,
-                  fontSize: SizeConfig.blockSizeHorizontal * 3.5,
-                  fontFamily: 'Roboto_Regular'),
-              border: const OutlineInputBorder(
-                  borderSide: BorderSide(width: 1.0, color: Colors.black)),
-              focusedBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(width: 1.0, color: Colors.black)),
+        Center(
+          child: Padding(
+            padding: EdgeInsets.only(
+                top: parentHeight * 0.02,
+                left: parentWidth * 0.05,
+                right: parentWidth * 0.05),
+            child: TextFormField(
+              controller: codeController,
+              focusNode: _codeFocus,
+              textInputAction: TextInputAction.done,
+              decoration: InputDecoration(
+                hintText: "Enter Below Code",
+                hintStyle: TextStyle(
+                    color: CommonColor.Hint_TEXT_COLOR,
+                    fontSize: SizeConfig.blockSizeHorizontal * 3.5,
+                    fontFamily: 'Roboto_Regular'),
+                border: const OutlineInputBorder(
+                    borderSide: BorderSide(width: 1.0, color: Colors.black)),
+                focusedBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(width: 1.0, color: Colors.black)),
+              ),
             ),
           ),
         ),
@@ -766,26 +768,28 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
               top: parentHeight * 0.02,
               left: parentWidth * 0.05,
               right: parentWidth * 0.05),
-          child: Row(
-            children: [
-              Container(
-                height: parentHeight * 0.06,
-                width: parentWidth * 0.35,
-                decoration: BoxDecoration(
-                    color: CommonColor.CAPTCHA_CODE_COLOR,
-                    borderRadius: BorderRadius.circular(7)),
-                child: Center(
-                  child: Text(
-                    "d4847",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: SizeConfig.blockSizeHorizontal * 5.5,
-                        fontWeight: FontWeight.w400,
-                        fontFamily: 'Roboto_Medium'),
+          child: Center(
+            child: Row(
+              children: [
+                Container(
+                  height: parentHeight * 0.06,
+                  width: parentWidth * 0.35,
+                  decoration: BoxDecoration(
+                      color: CommonColor.CAPTCHA_CODE_COLOR,
+                      borderRadius: BorderRadius.circular(7)),
+                  child: Center(
+                    child: Text(
+                      "d4847",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: SizeConfig.blockSizeHorizontal * 5.5,
+                          fontWeight: FontWeight.w400,
+                          fontFamily: 'Roboto_Medium'),
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
         Padding(
@@ -896,7 +900,7 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
             },
             child: Container(
               decoration: BoxDecoration(
-                  color: CommonColor.APP_BAR_COLOR,
+                  color: CommonColor.TENDER_BOX_TEXT,
                   borderRadius: BorderRadius.circular(10)),
               height: parentHeight * 0.06,
               width: parentWidth * 0.8,

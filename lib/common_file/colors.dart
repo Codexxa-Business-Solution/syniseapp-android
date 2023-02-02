@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 class CommonColor{
   static const BLACK_COLOR = const Color(0xFF000000);
-  static const TENDER_BOX_TEXT = const Color(0xFF29919C);
+  static const TENDER_BOX_TEXT = const Color(0xFF1C8DFF);
   static const TENDER_TEXT = const Color(0xFFFFFFFF);
-  static const APP_BAR_COLOR = Color(0xFF29919C);
+  static const APP_BAR_COLOR = Color(0xFF800000);
+  static const PROFILE = Color(0xFFfceceb);
   static const WHITE_COLOR = Color(0xFFFFFFFF);
   static const REGISTER_AS_COLOR = Color(0xFFDBEDFF);
   static const Hint_TEXT_COLOR = Color(0xFF949494);
@@ -15,6 +16,8 @@ class CommonColor{
   static const REMAINING_INDICATOR_COLOR = Color(0xFFD9D9D9);
   static const AGREE_BUTTON_COLOR = Color(0xFF5DB89F);
   static const DISAGREE_BUTTON_COLOR = Color(0xFFE38181);
+  static const SUBMIT_BID = Color(0xFFFFE1E1);
+
   static const COMPLAINT_TYPE_COLOR = Color(0xFFE070707);
   static const PROFILE_FRAGMENT_REVIEWS_STAR_COLOR = const Color(0xFF6F6F6F);
   static const RATING_STAR_COLOR = const Color(0xFFF2DA00);
@@ -25,6 +28,8 @@ class CommonColor{
   static const CONTAINER_TIMMITING_COLOR = Color(0xFF0082FA);
   static const UNSELECTED_TAB_COLOR = Color(0xFFBCBCBC);
   static const SUBMIT_BUTTON_COLOR = Color(0xFF737373);
+  static const VIEW_DETAILS_COLOR = Color(0xFF0B2ACF);
+
 
 
 }

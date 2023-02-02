@@ -110,7 +110,7 @@ class _LoginPageState extends State<LoginPage> {
                 width: parentWidth * 0.4,
                 decoration: BoxDecoration(
                   color: index == 1
-                      ? CommonColor.TENDER_BOX_TEXT
+                      ? CommonColor.APP_BAR_COLOR
                       : CommonColor.REMAINING_INDICATOR_COLOR,
                   borderRadius: const BorderRadius.all(
                     Radius.circular(10),
