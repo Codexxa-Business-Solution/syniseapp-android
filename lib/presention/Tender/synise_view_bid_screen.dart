@@ -34,15 +34,17 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
             padding: EdgeInsets.only(bottom: SizeConfig.screenHeight * 0.1),
             children: [
               demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
-        viewBidAllParts(SizeConfig.screenHeight, SizeConfig.screenWidth)
+              viewBidAllParts(SizeConfig.screenHeight, SizeConfig.screenWidth)
             ],
-          ),)
-           /* child:
+          ),
+        )
+        /* child:
         demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth)),
         viewBidAllParts(SizeConfig.screenHeight, SizeConfig.screenWidth)*/
       ],
     ));
   }
+
   Widget MainHeading(double parentHeight, double parentWidth) {
     return Container(
         height: parentHeight * 0.1,
@@ -69,7 +71,8 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
                 style: TextStyle(
                     color: CommonColor.WHITE_COLOR,
                     fontSize: SizeConfig.blockSizeHorizontal * 5.0,
-                    fontFamily: 'Roboto_Medium',fontWeight: FontWeight.w500),
+                    fontFamily: 'Roboto_Medium',
+                    fontWeight: FontWeight.w500),
               ),
               Padding(
                 padding: EdgeInsets.only(right: parentWidth * 0.05),
@@ -83,80 +86,86 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
         ));
   }
 
-  Widget demoTender (double parentHeight,double parentWidth){
+  Widget demoTender(double parentHeight, double parentWidth) {
     return Padding(
-      padding:  EdgeInsets.only(top: parentHeight*0.03,left: parentWidth*0.03,right: parentWidth*0.03),
+      padding: EdgeInsets.only(
+          top: parentHeight * 0.03,
+          left: parentWidth * 0.03,
+          right: parentWidth * 0.03),
       child: Container(
         height: SizeConfig.screenHeight * 0.12,
-        width: SizeConfig.screenWidth*0.94,
+        width: SizeConfig.screenWidth * 0.94,
         decoration: BoxDecoration(
           color: CommonColor.SUBMIT_BID,
           borderRadius: BorderRadius.circular(13),
         ),
-        child:  Column(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: parentHeight*0.04,
+              height: parentHeight * 0.04,
 
               // decoration: const BoxDecoration(
               //   color: CommonColor.EDIT_ICON_COLOR,
               //   borderRadius: BorderRadius.only(topRight: Radius.circular(13)),
               // ),
               child: Padding(
-                padding:  EdgeInsets.only(top: parentHeight*0.01,left: parentWidth*0.45),
-                child: Text("Tender Id : DEMO10220002 ",
+                padding: EdgeInsets.only(
+                    top: parentHeight * 0.01, left: parentWidth * 0.45),
+                child: Text(
+                  "Tender Id : DEMO10220002 ",
                   style: TextStyle(
                       color: Colors.black,
-                      fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                      fontSize: SizeConfig.blockSizeHorizontal * 3.5,
                       fontWeight: FontWeight.w400,
-                      fontFamily: 'Roboto_Regular'
-                  ),),
+                      fontFamily: 'Roboto_Regular'),
+                ),
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: parentWidth*0.03,),
-              child: Text("Ferro Alloys Corporation Limited.",
+              padding: EdgeInsets.only(
+                left: parentWidth * 0.03,
+              ),
+              child: Text(
+                "Ferro Alloys Corporation Limited.",
                 style: TextStyle(
                     color: Colors.black,
-                    fontSize: SizeConfig.blockSizeHorizontal*4.2,
+                    fontSize: SizeConfig.blockSizeHorizontal * 4.2,
                     fontWeight: FontWeight.w500,
-                    fontFamily: 'Roboto_Regular'
-                ),maxLines: 1,
+                    fontFamily: 'Roboto_Regular'),
+                maxLines: 1,
               ),
             ),
             Row(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: parentWidth*0.03,top: parentHeight*0.01),
-                  child: Text("Material -",
+                  padding: EdgeInsets.only(
+                      left: parentWidth * 0.03, top: parentHeight * 0.01),
+                  child: Text(
+                    "Material -",
                     style: TextStyle(
                         color: CommonColor.APP_BAR_COLOR,
-                        fontSize: SizeConfig.blockSizeHorizontal*3.7,
+                        fontSize: SizeConfig.blockSizeHorizontal * 3.7,
                         fontWeight: FontWeight.w600,
-                        fontFamily: 'Roboto_Regular'
-                    ),
+                        fontFamily: 'Roboto_Regular'),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: parentWidth*0.02,top: parentHeight*0.01),
-                  child: Text("HC Fe-Cr/ Charge Chrome (Lumps )",
+                  padding: EdgeInsets.only(
+                      left: parentWidth * 0.02, top: parentHeight * 0.01),
+                  child: Text(
+                    "HC Fe-Cr/ Charge Chrome (Lumps )",
                     style: TextStyle(
                         color: CommonColor.TENDER_BOX_TEXT,
-                        fontSize: SizeConfig.blockSizeHorizontal*3.7,
+                        fontSize: SizeConfig.blockSizeHorizontal * 3.7,
                         fontWeight: FontWeight.w700,
-                        fontFamily: 'Roboto_Regular'
-                    ),
+                        fontFamily: 'Roboto_Regular'),
                   ),
                 ),
               ],
             ),
-
-
           ],
         ),
-
-
       ),
     );
   }

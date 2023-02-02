@@ -30,6 +30,11 @@ class CommonColor{
   static const SUBMIT_BUTTON_COLOR = Color(0xFF737373);
   static const VIEW_DETAILS_COLOR = Color(0xFF0B2ACF);
 
+  static const BID_SLIDDING_TEXT = Color(0xFFBEDEFF);
+  static const PROGRESS_LINE_COLOR = Color(0xFFFF0000);
+  static const RANKS_ID_COLOR = Color(0xFFD8A800);
+
+
 
 
 }

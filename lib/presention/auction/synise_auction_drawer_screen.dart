@@ -185,7 +185,7 @@ class _DrawerScreen extends State<AuctionDrawerScreen> {
   _pageChange(int page) {
     switch (page) {
       case 0:
-        _title = '';
+        _title = 'Bidding Screen';
         _widget = const AuctionHomeScreen();
         _actions = [];
         break;
