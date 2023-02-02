@@ -52,7 +52,7 @@ class _TenderFAQScreenState extends State<TenderFAQScreen> {
                             height: SizeConfig.screenHeight * 0.066,
                             width: SizeConfig.screenWidth * 0.94,
                             decoration: const BoxDecoration(
-                              color: CommonColor.REGISTER_AS_COLOR,
+                              color: CommonColor.SUBMIT_BID,
                               borderRadius: BorderRadius.only(
                                   topLeft: Radius.circular(13),
                                   topRight: Radius.circular(13)),
@@ -108,7 +108,7 @@ class _TenderFAQScreenState extends State<TenderFAQScreen> {
                             height: SizeConfig.screenHeight * 0.066,
                             width: SizeConfig.screenWidth * 0.94,
                             decoration: BoxDecoration(
-                              color: CommonColor.REGISTER_AS_COLOR,
+                              color: CommonColor.SUBMIT_BID,
                               borderRadius: BorderRadius.circular(13),
                             ),
                             child: Row(

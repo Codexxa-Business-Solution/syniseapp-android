@@ -39,7 +39,7 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: CommonColor.TENDER_BOX_TEXT,
+        backgroundColor: CommonColor.APP_BAR_COLOR,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -137,18 +137,6 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
               },
             ),
             ListTile(
-              title: Text('View & Submit Tenders',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: SizeConfig.blockSizeHorizontal*4.0,
-                    fontFamily: 'Roboto_Medium'
-                ),),
-              onTap: () {
-                _pageChange(2);
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
               title: Text('Bid History',
                 style: TextStyle(
                     color: Colors.black,
@@ -173,19 +161,19 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
               },
             ),
             ListTile(
-              title: Text('Register Complaint',
+              title: Text('Voice of Customer',
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: SizeConfig.blockSizeHorizontal*4.0,
                     fontFamily: 'Roboto_Medium'
                 ),),
               onTap: () {
-                _pageChange(5);
+                _pageChange(3);
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text('Feedback of Tender',
+              title: Text('Feedback/Grievance for Seller',
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: SizeConfig.blockSizeHorizontal*4.0,
@@ -197,7 +185,7 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
               },
             ),
             ListTile(
-              title: Text('Feedback of Synise',
+              title: Text('Feedback/Grievance for Synise',
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: SizeConfig.blockSizeHorizontal*4.0,
@@ -216,7 +204,7 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
                     fontFamily: 'Roboto_Medium'
                 ),),
               onTap: () {
-                _pageChange(7);
+                _pageChange(8);
                 Navigator.pop(context);
               },
             ),
@@ -228,7 +216,7 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
                     fontFamily: 'Roboto_Medium'
                 ),),
               onTap: () {
-                _pageChange(8);
+                _pageChange(9);
                 Navigator.pop(context);
               },
             ),
@@ -240,10 +228,34 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
                     fontFamily: 'Roboto_Medium'
                 ),),
               onTap: () {
-                _pageChange(9);
+                _pageChange(10);
                 Navigator.pop(context);
               },
             ),
+            // ListTile(
+            //   title: Text('FAQ',
+            //     style: TextStyle(
+            //         color: Colors.black,
+            //         fontSize: SizeConfig.blockSizeHorizontal*4.0,
+            //         fontFamily: 'Roboto_Medium'
+            //     ),),
+            //   onTap: () {
+            //     _pageChange(8);
+            //     Navigator.pop(context);
+            //   },
+            // ),
+            // ListTile(
+            //   title: Text('Logout',
+            //     style: TextStyle(
+            //         color: Colors.black,
+            //         fontSize: SizeConfig.blockSizeHorizontal*4.0,
+            //         fontFamily: 'Roboto_Medium'
+            //     ),),
+            //   onTap: () {
+            //     _pageChange(9);
+            //     Navigator.pop(context);
+            //   },
+            // ),
 
           ],
         ),
@@ -254,7 +266,7 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
   _pageChange(int page) {
     switch (page) {
       case 0:
-        _title = '';
+        _title = 'Material Description';
         _widget = const TenderHomeScreen();
         _actions = [];
         break;

@@ -138,9 +138,10 @@ class _EditMyProfileState extends State<EditMyProfile> {
                 ),
               ),
               Text(
-                "My Profile",
+                "Edit Profile",
                 style: TextStyle(
                     color: CommonColor.WHITE_COLOR,
+                    fontWeight: FontWeight.w500,
                     fontSize: SizeConfig.blockSizeHorizontal * 5.0,
                     fontFamily: 'Roboto_Medium'),
               ),
@@ -164,7 +165,7 @@ class _EditMyProfileState extends State<EditMyProfile> {
                 left: parentWidth * 0.02, right: parentWidth * 0.02),
             child: Padding(
                 padding: EdgeInsets.only(
-                    top: parentHeight * 0.01,
+                    top: parentHeight * 0.03,
                     left: parentWidth * 0.03,
                     right: parentWidth * 0.03),
                 child: TextFormField(
@@ -1154,7 +1155,7 @@ class _EditMyProfileState extends State<EditMyProfile> {
     },
       child: Container(
         decoration: BoxDecoration(
-            color: CommonColor.APP_BAR_COLOR,
+            color: CommonColor.TENDER_BOX_TEXT,
             borderRadius: BorderRadius.circular(7)),
         height: SizeConfig.screenHeight * 0.06,
         width: SizeConfig.screenWidth * 0.8,

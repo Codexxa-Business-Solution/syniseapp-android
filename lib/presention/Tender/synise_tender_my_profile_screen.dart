@@ -37,11 +37,11 @@ class _TenderMyProfileScreen extends State<TenderMyProfileScreen> {
                 left: SizeConfig.screenWidth*0.03, right: SizeConfig.screenWidth*0.03),
             child: Container(
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: CommonColor.PROFILE,
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.2),
+                    color: Colors.grey.withOpacity(0.3),
                     spreadRadius: 5,
                     blurRadius: 6,
                     offset: const Offset(0, 2),

@@ -41,7 +41,7 @@ class _TenderBidHistoryScreenState extends State<TenderBidHistoryScreen> {
         left: parentWidth*0.03,
         right: parentWidth*0.03,),
       child: Container(
-        height: parentHeight*0.24,
+        height: parentHeight*0.26,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(13),
@@ -54,71 +54,96 @@ class _TenderBidHistoryScreenState extends State<TenderBidHistoryScreen> {
             )
           ],
         ),
-        child: Column(
+        child:  Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Container(
+              height: parentHeight*0.05,
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-
-                Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.only(left: parentWidth*0.03,top: parentHeight*0.02),
-                    child: Text("Ferro Alloys Corporation Limited.",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: SizeConfig.blockSizeHorizontal*4.0,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'Roboto_Regular'
-                      ),maxLines: 2,
-                    ),
-                  ),
-                ),
-
-                Container(
-                  height: parentHeight*0.05,
-                  width: parentWidth*0.5,
-                  decoration: BoxDecoration(
-                    color: CommonColor.EDIT_ICON_COLOR,
-                    borderRadius: BorderRadius.only(topRight: Radius.circular(13)),
-                  ),
-                  child: Center(
-                    child: Text("Tender Id : DEMO10220002 ",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: SizeConfig.blockSizeHorizontal*3.5,
-                          fontWeight: FontWeight.w400,
-                          fontFamily: 'Roboto_Regular'
-                      ),),
-                  ),
-                )
-
-              ],
+              // decoration: const BoxDecoration(
+              //   color: CommonColor.EDIT_ICON_COLOR,
+              //   borderRadius: BorderRadius.only(topRight: Radius.circular(13)),
+              // ),
+              child: Padding(
+                padding:  EdgeInsets.only(top: parentHeight*0.02,left: parentWidth*0.45),
+                child: Text("Tender Id : DEMO10220002 ",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'Roboto_Regular'
+                  ),),
+              ),
             ),
-
+            Padding(
+              padding: EdgeInsets.only(left: parentWidth*0.03,),
+              child: Text("Ferro Alloys Corporation Limited.",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: SizeConfig.blockSizeHorizontal*4.2,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Roboto_Regular'
+                ),maxLines: 1,
+              ),
+            ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(
                   padding: EdgeInsets.only(left: parentWidth*0.03,top: parentHeight*0.01),
-                  child: Text("Pig Iron - ESL D",
+                  child: Text("Material -",
                     style: TextStyle(
-                        color: Colors.black,
-                        fontSize: SizeConfig.blockSizeHorizontal*3.5,
-                        fontWeight: FontWeight.w400,
+                        color: CommonColor.APP_BAR_COLOR,
+                        fontSize: SizeConfig.blockSizeHorizontal*3.7,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: 'Roboto_Regular'
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: parentWidth*0.02,top: parentHeight*0.01),
+                  child: Text("HC Fe-Cr/ Charge Chrome (Lumps )",
+                    style: TextStyle(
+                        color: CommonColor.TENDER_BOX_TEXT,
+                        fontSize: SizeConfig.blockSizeHorizontal*3.7,
+                        fontWeight: FontWeight.w700,
                         fontFamily: 'Roboto_Regular'
                     ),
                   ),
                 ),
               ],
             ),
-
+            Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: parentWidth*0.03,top: parentHeight*0.01),
+                  child: Text("Location -",
+                    style: TextStyle(
+                        color: CommonColor.APP_BAR_COLOR,
+                        fontSize: SizeConfig.blockSizeHorizontal*3.7,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: 'Roboto_Regular'
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: parentWidth*0.02,top: parentHeight*0.01),
+                  child: Text("Pune",
+                    style: TextStyle(
+                        color: CommonColor.TENDER_BOX_TEXT,
+                        fontSize: SizeConfig.blockSizeHorizontal*3.7,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: 'Roboto_Regular'
+                    ),
+                  ),
+                ),
+              ],
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
                   padding: EdgeInsets.only(left: parentWidth*0.03,
-                      top: parentHeight*0.02),
+                      top: parentHeight*0.01),
                   child: Column(
                     children: [
 
@@ -148,8 +173,8 @@ class _TenderBidHistoryScreenState extends State<TenderBidHistoryScreen> {
                         child: Text("01:17:00 AM",
                           style: TextStyle(
                               color: CommonColor.TENDER_OPEN_TIME_COLOR,
-                              fontSize: SizeConfig.blockSizeHorizontal*3.5,
-                              fontWeight: FontWeight.w400,
+                              fontSize: SizeConfig.blockSizeHorizontal*3.3,
+                              fontWeight: FontWeight.w700,
                               fontFamily: 'Roboto_Regular'
                           ),
                         ),
@@ -160,7 +185,7 @@ class _TenderBidHistoryScreenState extends State<TenderBidHistoryScreen> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: parentWidth*0.03,
-                      top: parentHeight*0.02),
+                      top: parentHeight*0.01),
                   child: Column(
                     children: [
 
@@ -190,8 +215,8 @@ class _TenderBidHistoryScreenState extends State<TenderBidHistoryScreen> {
                         child: Text("01:17:00 AM",
                           style: TextStyle(
                               color: CommonColor.TENDER_OPEN_TIME_COLOR,
-                              fontSize: SizeConfig.blockSizeHorizontal*3.5,
-                              fontWeight: FontWeight.w400,
+                              fontSize: SizeConfig.blockSizeHorizontal*3.3,
+                              fontWeight: FontWeight.w700,
                               fontFamily: 'Roboto_Regular'
                           ),
                         ),
@@ -200,74 +225,38 @@ class _TenderBidHistoryScreenState extends State<TenderBidHistoryScreen> {
                     ],
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.only(right: parentWidth*0.03, top: parentHeight*0.05),
-                  child: GestureDetector(
-                    onDoubleTap: (){},
-                    onTap: (){
-
-                       Navigator.push(context, MaterialPageRoute(builder: (context)=>TenderViewBidScreen()));
-
-         /*             showGeneralDialog(
-                          barrierLabel: "Label",
-                          barrierDismissible: true,
-                          barrierColor: Colors.black.withOpacity(0.05),
-                          transitionDuration: Duration(milliseconds: 200),
-                          context: context,
-                          pageBuilder: (dialogContext, anim1, anim2){
-                            return Container();
-                          },
-                          transitionBuilder: (dialogContext, anim1, anim2, child) {
-                            return Transform.scale(
-                              scale: anim1.value,
-                              child: Align(
-                                alignment: Alignment.center,
-                                child: Padding(
-                                  padding: EdgeInsets.only(left: SizeConfig.screenWidth*0.03,
-                                      right: SizeConfig.screenWidth*0.03,
-                                      top: SizeConfig.screenHeight*0.02),
-                                  child: Container(
-                                    height: SizeConfig.screenHeight*0.85,
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(15),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.grey.withOpacity(0.6),
-                                          spreadRadius: 5,
-                                          blurRadius: 6,
-                                          offset: Offset(0, 2),
-                                        )
-                                      ],
-                                    ),
-                                    child: getAllDialogueInfo(SizeConfig.screenHeight, SizeConfig.screenWidth),
-                                  ),
-                                ),
-                              ),);
-
-                          });*/
 
 
-                    },
-                    child: Container(
-                      height: parentHeight*0.045,
-                      width: parentWidth*0.25,
-                      decoration: BoxDecoration(
-                          color: CommonColor.APP_BAR_COLOR,
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Center(
-                        child: Text("View Details",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: SizeConfig.blockSizeHorizontal*3.5,
-                              fontWeight: FontWeight.w600,
-                              fontFamily: 'Roboto_Regular'
-                          ),),
-                      ),
-                    ),
-                  ),
-                )
+
+      GestureDetector(
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>TenderViewBidScreen()));
+
+        },onDoubleTap: (){},
+        child: Padding(
+          padding: EdgeInsets.only(
+              top: parentHeight * 0.06, right: parentWidth * 0.04),
+          child: Column(
+            children: [
+
+              Text("View Details",
+                style: TextStyle(
+                  color: CommonColor.VIEW_DETAILS_COLOR,
+                  fontSize: SizeConfig.blockSizeHorizontal * 4.1,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Roboto_Regular',
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+
+
+            ],
+          ),
+        ),
+      ),
+
+
+
               ],
             )
 

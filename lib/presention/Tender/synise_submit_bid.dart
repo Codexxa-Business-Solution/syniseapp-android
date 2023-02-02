@@ -151,13 +151,13 @@ class _SubmitBidState extends State<SubmitBid> {
     return Padding(
       padding:  EdgeInsets.only(top: parentHeight*0.03,left: parentWidth*0.03,right: parentWidth*0.03),
       child: Container(
-        height: SizeConfig.screenHeight * 0.094,
+        height: SizeConfig.screenHeight * 0.15,
         width: SizeConfig.screenWidth*0.94,
         decoration: BoxDecoration(
-          color: CommonColor.REGISTER_AS_COLOR,
+          color: CommonColor.SUBMIT_BID,
           borderRadius: BorderRadius.circular(13),
         ),
-        child: Column(
+        child:/* Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -194,6 +194,94 @@ class _SubmitBidState extends State<SubmitBid> {
                   fontWeight: FontWeight.w400,
                   fontFamily: 'Roboto_Regular'),),
             )
+          ],
+        ),*/
+
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              height: parentHeight*0.04,
+
+              // decoration: const BoxDecoration(
+              //   color: CommonColor.EDIT_ICON_COLOR,
+              //   borderRadius: BorderRadius.only(topRight: Radius.circular(13)),
+              // ),
+              child: Padding(
+                padding:  EdgeInsets.only(top: parentHeight*0.01,left: parentWidth*0.45),
+                child: Text("Tender Id : DEMO10220002 ",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'Roboto_Regular'
+                  ),),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: parentWidth*0.03,),
+              child: Text("Ferro Alloys Corporation Limited.",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: SizeConfig.blockSizeHorizontal*4.2,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Roboto_Regular'
+                ),maxLines: 1,
+              ),
+            ),
+            Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: parentWidth*0.03,top: parentHeight*0.01),
+                  child: Text("Material -",
+                    style: TextStyle(
+                        color: CommonColor.APP_BAR_COLOR,
+                        fontSize: SizeConfig.blockSizeHorizontal*3.7,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: 'Roboto_Regular'
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: parentWidth*0.02,top: parentHeight*0.01),
+                  child: Text("HC Fe-Cr/ Charge Chrome (Lumps )",
+                    style: TextStyle(
+                        color: CommonColor.TENDER_BOX_TEXT,
+                        fontSize: SizeConfig.blockSizeHorizontal*3.7,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: 'Roboto_Regular'
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: parentWidth*0.03,top: parentHeight*0.01),
+                  child: Text("Location -",
+                    style: TextStyle(
+                        color: CommonColor.APP_BAR_COLOR,
+                        fontSize: SizeConfig.blockSizeHorizontal*3.7,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: 'Roboto_Regular'
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: parentWidth*0.02,top: parentHeight*0.01),
+                  child: Text("Pune",
+                    style: TextStyle(
+                        color: CommonColor.TENDER_BOX_TEXT,
+                        fontSize: SizeConfig.blockSizeHorizontal*3.7,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: 'Roboto_Regular'
+                    ),
+                  ),
+                ),
+              ],
+            ),
+
           ],
         ),
 
@@ -643,7 +731,7 @@ class _SubmitBidState extends State<SubmitBid> {
             },
             child: Container(
               decoration: BoxDecoration(
-                  color: CommonColor.APP_BAR_COLOR,
+                  color: CommonColor.TENDER_BOX_TEXT,
                   borderRadius: BorderRadius.circular(10)),
               height: parentHeight * 0.06,
               width: parentWidth * 0.8,
