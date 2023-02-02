@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:synise_project/common_file/colors.dart';
 import 'package:synise_project/common_file/size_config.dart';
 import 'package:synise_project/presention/Tender/synise_faq_screen.dart';
+import 'package:synise_project/presention/Tender/synise_feedback_Tab.dart';
 import 'package:synise_project/presention/Tender/synise_feedback_screen.dart';
 import 'package:synise_project/presention/Tender/synise_tender_bid_history.dart';
 import 'package:synise_project/presention/Tender/synise_view_submit_tenders_screen.dart';
 import 'package:synise_project/presention/Tender/synise_agreement_screen.dart';
 import 'package:synise_project/presention/Tender/synise_tender_change_password_screen.dart';
-import 'package:synise_project/presention/Tender/synise_feedback_Tender_screen.dart';
+import 'package:synise_project/presention/Tender/seller_feedback_Tab_screen.dart';
 import 'package:synise_project/presention/Tender/synise_tender_home_screen.dart';
 import 'package:synise_project/presention/Tender/synise_tender_logout_screen.dart';
 import 'package:synise_project/presention/Tender/synise_tender_my_profile_screen.dart';
@@ -25,6 +26,7 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
   String? _title;
   Widget? _widget;
   List<Widget>? _actions;
+  late TabController _tabController;
 
 
   @override
@@ -87,9 +89,11 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
           ),
         ),
       ),
-      body: _widget,
+      body:_widget,
+
     );
   }
+
 
   Drawer _drawer() {
     return Drawer(
@@ -192,7 +196,7 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
                     fontFamily: 'Roboto_Medium'
                 ),),
               onTap: () {
-                _pageChange(6);
+                _pageChange(7);
                 Navigator.pop(context);
               },
             ),
@@ -232,30 +236,7 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
                 Navigator.pop(context);
               },
             ),
-            // ListTile(
-            //   title: Text('FAQ',
-            //     style: TextStyle(
-            //         color: Colors.black,
-            //         fontSize: SizeConfig.blockSizeHorizontal*4.0,
-            //         fontFamily: 'Roboto_Medium'
-            //     ),),
-            //   onTap: () {
-            //     _pageChange(8);
-            //     Navigator.pop(context);
-            //   },
-            // ),
-            // ListTile(
-            //   title: Text('Logout',
-            //     style: TextStyle(
-            //         color: Colors.black,
-            //         fontSize: SizeConfig.blockSizeHorizontal*4.0,
-            //         fontFamily: 'Roboto_Medium'
-            //     ),),
-            //   onTap: () {
-            //     _pageChange(9);
-            //     Navigator.pop(context);
-            //   },
-            // ),
+
 
           ],
         ),
@@ -306,13 +287,13 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
         ];
         break;
       case 6:
-        _title = 'Feedback of Tender';
+        _title = 'Feedback of Seller';
         _widget = const TenderFeedbackScreen();
         _actions = [];
         break;
       case 7:
         _title = 'Feedback of Synise';
-        _widget = const SyniseFeedbackScreen();
+        _widget = const TenderFeedbackSyniseScreen();
         _actions = [];
         break;
       case 8:

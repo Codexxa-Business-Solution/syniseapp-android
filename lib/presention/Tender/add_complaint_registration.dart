@@ -23,7 +23,36 @@ class _AddComplaintRegistrationState extends State<AddComplaintRegistration> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: GestureDetector(
+        body:
+
+        ListView(
+          shrinkWrap: true,
+          padding: EdgeInsets.zero,
+          physics: NeverScrollableScrollPhysics(),
+          children: [
+            SizedBox(
+              height: SizeConfig.screenHeight * 0.1,
+              child: MainHeading(SizeConfig.screenHeight, SizeConfig.screenWidth),
+            ),
+            Container(
+              height: SizeConfig.screenHeight * 0.9,
+              child: ListView(
+                shrinkWrap: true,
+                padding: EdgeInsets.only(bottom: SizeConfig.screenHeight * 0.1),
+                children: [
+                  complaintTypeText(
+                      SizeConfig.screenHeight, SizeConfig.screenWidth),
+                  submitButton(SizeConfig.screenHeight, SizeConfig.screenWidth)
+                ],
+              ),)
+            /* child:
+        demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth)),
+        viewBidAllParts(SizeConfig.screenHeight, SizeConfig.screenWidth)*/
+          ],
+        ));
+  }
+
+        /* GestureDetector(
           onDoubleTap: () {},
           onTap: () {
             FocusScope.of(context).requestFocus(FocusNode());
@@ -38,8 +67,46 @@ class _AddComplaintRegistrationState extends State<AddComplaintRegistration> {
                 ],
               )),
         ));
+  }*/
+  Widget MainHeading(double parentHeight, double parentWidth) {
+    return Container(
+        height: parentHeight * 0.1,
+        color: CommonColor.APP_BAR_COLOR,
+        child: Padding(
+          padding: EdgeInsets.only(top: parentHeight * 0.03),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Padding(
+                  padding: EdgeInsets.only(left: parentWidth * 0.05),
+                  child: const Icon(
+                    Icons.arrow_back_ios,
+                    color: CommonColor.WHITE_COLOR,
+                  ),
+                ),
+              ),
+              Text(
+                "Complaint Register",
+                style: TextStyle(
+                    color: CommonColor.WHITE_COLOR,
+                    fontSize: SizeConfig.blockSizeHorizontal * 5.0,
+                    fontFamily: 'Roboto_Medium',fontWeight: FontWeight.w500),
+              ),
+              Padding(
+                padding: EdgeInsets.only(right: parentWidth * 0.05),
+                child: Icon(
+                  Icons.arrow_back_ios,
+                  color: Colors.transparent,
+                ),
+              ),
+            ],
+          ),
+        ));
   }
-
   Widget complaintTypeText(double parentHeight, double parentWidth) {
     return Column(
       children: [
@@ -74,7 +141,7 @@ class _AddComplaintRegistrationState extends State<AddComplaintRegistration> {
                               Image(
                                 image:
                                 AssetImage("assets/images/down_arrow.png"),
-                                color: CommonColor.APP_BAR_COLOR,
+                                color: CommonColor.BLACK_COLOR,
                               ),
                             ],
                           ),

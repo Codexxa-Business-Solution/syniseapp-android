@@ -263,65 +263,82 @@ class _LoginPageState extends State<LoginPage> {
               left: parentWidth * 0.04, top: parentHeight * 0.02),
           child: Row(
             children: [
-              Padding(
-                padding: EdgeInsets.only(bottom: parentHeight * 0.017),
-                child: Stack(
-                  children: [
-                    Visibility(
-                      visible: !isChecked,
-                      child: GestureDetector(
-                        onTap: () {
-                          if (mounted) {
-                            setState(() {
-                              isChecked = !isChecked;
-                            });
-                          }
-                        },
-                        child: Container(
-                          height: parentHeight * 0.027,
-                          width: parentWidth * 0.059,
-                          decoration: BoxDecoration(
-                              // color: Colors.red,
-                              borderRadius: BorderRadius.circular(3),
-                              border:
-                                  Border.all(color: Colors.black, width: 1)),
-                          child: const Text(
-                            "Hiii",
-                            style: TextStyle(color: Colors.transparent),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Visibility(
-                      visible: isChecked,
-                      child: GestureDetector(
-                        onTap: () {
-                          if (mounted) {
-                            setState(() {
-                              isChecked = !isChecked;
-                            });
-                          }
-                        },
-                        child: Container(
-                          height: parentHeight * 0.027,
-                          width: parentWidth * 0.059,
-                          decoration: BoxDecoration(
-                              // color: Colors.red,
-                              borderRadius: BorderRadius.circular(5),
-                              border:
-                                  Border.all(color: Colors.black, width: 1)),
-                          child: Center(
-                              child: Icon(
-                            Icons.check,
-                            size: parentHeight * 0.02,
-                            color: CommonColor.APP_BAR_COLOR,
-                          )),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
+              // Padding(
+              //   padding: EdgeInsets.only(bottom: parentHeight * 0.017),
+              //   child: Stack(
+              //     children: [
+              //       Visibility(
+              //         visible: !isChecked,
+              //         child: GestureDetector(
+              //           onTap: () {
+              //             if (mounted) {
+              //               setState(() {
+              //                 isChecked = !isChecked;
+              //               });
+              //             }
+              //           },
+              //           child: Container(
+              //             height: parentHeight * 0.027,
+              //             width: parentWidth * 0.059,
+              //             decoration: BoxDecoration(
+              //                 // color: Colors.red,
+              //                 borderRadius: BorderRadius.circular(3),
+              //                 border:
+              //                     Border.all(color: Colors.black, width: 1)),
+              //             child: const Text(
+              //               "Hiii",
+              //               style: TextStyle(color: Colors.transparent),
+              //             ),
+              //           ),
+              //         ),
+              //       ),
+              //       Visibility(
+              //         visible: isChecked,
+              //         child: GestureDetector(
+              //           onTap: () {
+              //             if (mounted) {
+              //               setState(() {
+              //                 isChecked = !isChecked;
+              //               });
+              //             }
+              //           },
+              //           child: Container(
+              //             height: parentHeight * 0.027,
+              //             width: parentWidth * 0.059,
+              //             decoration: BoxDecoration(
+              //                 // color: Colors.red,
+              //                 borderRadius: BorderRadius.circular(5),
+              //                 border:
+              //                     Border.all(color: Colors.black, width: 1)),
+              //             child: Center(
+              //                 child: Icon(
+              //               Icons.check,
+              //               size: parentHeight * 0.02,
+              //               color: CommonColor.APP_BAR_COLOR,
+              //             )),
+              //           ),
+              //         ),
+              //       )
+              //     ],
+              //   ),
+              // ),
+    Container(
+      height: parentHeight * 0.07,
+               width: parentWidth * 0.069,
+      child: Column(
+      children: <Widget>[
+      const SizedBox(height: 0,),
+      Checkbox(
+      checkColor: Colors.white,
+      value: isChecked,
+      onChanged: (bool? value) {
+      setState(() {
+      isChecked = value!;
+      });
+      },
+      ),
+      ],),
+    ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -379,26 +396,29 @@ class _LoginPageState extends State<LoginPage> {
                     builder: (context) => const AuctionDrawerScreen()));
           },
           onDoubleTap: () {},
-          child: Container(
-              width: parentWidth * 0.77,
-              height: parentHeight * 0.065,
-              decoration: BoxDecoration(
-                color: CommonColor.TENDER_BOX_TEXT,
-                border: Border.all(
-                    width: 1, color: CommonColor.Hint_TEXT_COLOR), //Border.
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(13),
+          child: Padding(
+            padding:  EdgeInsets.only(top: parentHeight*0.02),
+            child: Container(
+                width: parentWidth * 0.77,
+                height: parentHeight * 0.065,
+                decoration: BoxDecoration(
+                  color: CommonColor.TENDER_BOX_TEXT,
+                  border: Border.all(
+                      width: 1, color: CommonColor.Hint_TEXT_COLOR), //Border.
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(13),
+                  ),
                 ),
-              ),
-              child: Center(
-                  child: Text(
-                "Login",
-                style: TextStyle(
-                    color: CommonColor.TENDER_TEXT,
-                    fontWeight: FontWeight.w700,
-                    fontFamily: 'Roboto-Regular',
-                    fontSize: SizeConfig.blockSizeHorizontal * 4.0),
-              ))),
+                child: Center(
+                    child: Text(
+                  "Login",
+                  style: TextStyle(
+                      color: CommonColor.TENDER_TEXT,
+                      fontWeight: FontWeight.w700,
+                      fontFamily: 'Roboto-Regular',
+                      fontSize: SizeConfig.blockSizeHorizontal * 4.0),
+                ))),
+          ),
         ),
         Padding(
           padding: EdgeInsets.only(top: parentHeight * 0.02),
