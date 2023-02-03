@@ -109,6 +109,7 @@ class _ProductPhotosState extends State<ProductPhotos> {
               style: TextStyle(
                   color: CommonColor.WHITE_COLOR,
                   fontSize: SizeConfig.blockSizeHorizontal * 5.0,
+                  fontWeight: FontWeight.w500,
                   fontFamily: 'Roboto_Medium'),
             ),
             Padding(
