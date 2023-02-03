@@ -24,8 +24,7 @@ class _TenderMyProfileScreen extends State<TenderMyProfileScreen> {
     SizeConfig().init(context);
     return Scaffold(
       backgroundColor: Colors.white,
-      body: ListView(
-        shrinkWrap: true,
+      body: Column(
         children: [
           SizedBox(
             // color: Colors.red,
@@ -48,7 +47,7 @@ class _TenderMyProfileScreen extends State<TenderMyProfileScreen> {
                   )
                 ],
               ),
-              height: SizeConfig.screenHeight*0.88,
+              height: SizeConfig.screenHeight*0.65,
               child: getAllDetailsLayout(SizeConfig.screenHeight, SizeConfig.screenWidth),
             ),
           ),
@@ -564,7 +563,8 @@ class _TenderMyProfileScreen extends State<TenderMyProfileScreen> {
   }
 
   Widget getAllDetailsLayout(double parentHeight, double parentWidth){
-    return Column(
+    return ListView(
+      shrinkWrap: true,
       children: [
 
         Padding(
@@ -802,6 +802,44 @@ class _TenderMyProfileScreen extends State<TenderMyProfileScreen> {
             children: [
 
               Text("Phone No.",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: SizeConfig.blockSizeHorizontal*3.8,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Roboto_Regular'
+                ),
+              ),
+
+              Container(
+                width: parentWidth*0.4,
+                // color: Colors.red,
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Text("9960328369",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular'
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              )
+
+            ],
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(top: parentHeight*0.03, right: parentWidth*0.07,
+              left: parentWidth*0.08),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+
+              Text("Mobile No.",
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: SizeConfig.blockSizeHorizontal*3.8,
@@ -1138,7 +1176,7 @@ class _TenderMyProfileScreen extends State<TenderMyProfileScreen> {
         ),
         Padding(
           padding: EdgeInsets.only(top: parentHeight*0.03, right: parentWidth*0.07,
-              left: parentWidth*0.08),
+              left: parentWidth*0.08,bottom: parentHeight*0.02),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

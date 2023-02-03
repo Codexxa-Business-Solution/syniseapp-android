@@ -229,64 +229,67 @@ class _TenderHomeScreenState extends State<TenderHomeScreen> {
                 Column(
                   children: [
 
-                    Text("View Details",
-                      style: TextStyle(
-                          color: CommonColor.VIEW_DETAILS_COLOR,
-                          fontSize: SizeConfig.blockSizeHorizontal*4.1,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'Roboto_Regular',
-                        decoration: TextDecoration.underline,
+                    GestureDetector(
+                      onDoubleTap: (){},
+                      onTap: (){
+
+
+                        showGeneralDialog(
+                            barrierLabel: "Label",
+                            barrierDismissible: true,
+                            barrierColor: Colors.black.withOpacity(0.05),
+                            transitionDuration: Duration(milliseconds: 200),
+                            context: context,
+                            pageBuilder: (dialogContext, anim1, anim2){
+                              return Container();
+                            },
+                            transitionBuilder: (dialogContext, anim1, anim2, child) {
+                              return Transform.scale(
+                                scale: anim1.value,
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Padding(
+                                    padding: EdgeInsets.only(left: SizeConfig.screenWidth*0.03,
+                                        right: SizeConfig.screenWidth*0.03,
+                                        top: SizeConfig.screenHeight*0.02),
+                                    child: Container(
+                                      height: SizeConfig.screenHeight*0.95,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(15),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.grey.withOpacity(0.6),
+                                            spreadRadius: 5,
+                                            blurRadius: 6,
+                                            offset: Offset(0, 2),
+                                          )
+                                        ],
+                                      ),
+                                      child: getAllDialogueInfo(SizeConfig.screenHeight, SizeConfig.screenWidth),
+                                    ),
+                                  ),
+                                ),);
+
+                            });
+
+
+                      },
+                      child: Text("View Details",
+                        style: TextStyle(
+                            color: CommonColor.VIEW_DETAILS_COLOR,
+                            fontSize: SizeConfig.blockSizeHorizontal*4.1,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'Roboto_Regular',
+                          decoration: TextDecoration.underline,
+                        ),
                       ),
                     ),
 
                     Padding(
                       padding: EdgeInsets.only(right: parentWidth*0.03, top: parentHeight*0.01),
                       child: GestureDetector(
-                        onDoubleTap: (){},
-                        onTap: (){
 
-
-                          showGeneralDialog(
-                              barrierLabel: "Label",
-                              barrierDismissible: true,
-                              barrierColor: Colors.black.withOpacity(0.05),
-                              transitionDuration: Duration(milliseconds: 200),
-                              context: context,
-                              pageBuilder: (dialogContext, anim1, anim2){
-                                return Container();
-                              },
-                              transitionBuilder: (dialogContext, anim1, anim2, child) {
-                                return Transform.scale(
-                                  scale: anim1.value,
-                                  child: Align(
-                                    alignment: Alignment.center,
-                                    child: Padding(
-                                      padding: EdgeInsets.only(left: SizeConfig.screenWidth*0.03,
-                                          right: SizeConfig.screenWidth*0.03,
-                                          top: SizeConfig.screenHeight*0.02),
-                                      child: Container(
-                                        height: SizeConfig.screenHeight*0.85,
-                                        decoration: BoxDecoration(
-                                            color: Colors.white,
-                                            borderRadius: BorderRadius.circular(15),
-                                          boxShadow: [
-                                            BoxShadow(
-                                              color: Colors.grey.withOpacity(0.6),
-                                              spreadRadius: 5,
-                                              blurRadius: 6,
-                                              offset: Offset(0, 2),
-                                            )
-                                          ],
-                                        ),
-                                        child: getAllDialogueInfo(SizeConfig.screenHeight, SizeConfig.screenWidth),
-                                      ),
-                                    ),
-                                  ),);
-
-                              });
-
-
-                        },
                         child: Container(
                           height: parentHeight*0.045,
                           width: parentWidth*0.25,
@@ -325,135 +328,112 @@ class _TenderHomeScreenState extends State<TenderHomeScreen> {
         shrinkWrap: true,
         children: [
 
-          Padding(
-            padding: EdgeInsets.only(top: parentHeight*0.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-
-                Padding(
-                  padding: EdgeInsets.only(left: parentWidth*0.03),
-                  child: const Icon(Icons.clear,
-                    color: Colors.transparent,
-                  ),
-                ),
-
-                Text("Composition of Material",
-                  style: TextStyle(
-                      color: CommonColor.RANK_ID_COLOR,
-                      fontSize: SizeConfig.blockSizeHorizontal*4.0,
-                      fontWeight: FontWeight.w500,
-                      fontFamily: 'Roboto_Regular',
-                      decoration: TextDecoration.none
-
-                  ),),
-                Padding(
-                  padding: EdgeInsets.only(right: parentWidth*0.03),
-                  child: GestureDetector(
-                    onDoubleTap: (){},
-                    onTap: (){
-                      Navigator.pop(context);
-                    },
-                    child: Container(
-                      color: Colors.transparent,
-                      child: Icon(Icons.clear,
-                        color: CommonColor.CANCLE_ICON_COLOR,
-                        size: SizeConfig.blockSizeHorizontal*5.0,
-                      ),
-                    ),
-                  ),
-                )
-
-              ],
-            ),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                height: parentHeight*0.04,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
 
-                // decoration: const BoxDecoration(
-                //   color: CommonColor.EDIT_ICON_COLOR,
-                //   borderRadius: BorderRadius.only(topRight: Radius.circular(13)),
-                // ),
+                  Padding(
+                    padding: EdgeInsets.only(left: parentWidth*0.04,),
+                    child: Text("Ferro Alloys Corporation Limited.",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: SizeConfig.blockSizeHorizontal*4.2,
+                          fontWeight: FontWeight.w500,
+                          fontFamily: 'Roboto_Regular',
+                          decoration: TextDecoration.none
 
+                      ),maxLines: 1,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(left: parentWidth*0.04,top: parentHeight*0.01),
+                        child: Text("Material -",
+                          style: TextStyle(
+                              color: CommonColor.APP_BAR_COLOR,
+                              fontSize: SizeConfig.blockSizeHorizontal*3.7,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: 'Roboto_Regular',
+                              decoration: TextDecoration.none
+
+
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: parentWidth*0.02,top: parentHeight*0.01),
+                        child: Text("HC Fe-Cr/ Charge Chrome (Lumps )",
+                          style: TextStyle(
+                              color: CommonColor.TENDER_BOX_TEXT,
+                              fontSize: SizeConfig.blockSizeHorizontal*3.7,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Roboto_Regular',
+                              decoration: TextDecoration.none
+
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(left: parentWidth*0.04,top: parentHeight*0.01),
+                        child: Text("Location -",
+                          style: TextStyle(
+                              color: CommonColor.APP_BAR_COLOR,
+                              fontSize: SizeConfig.blockSizeHorizontal*3.7,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: 'Roboto_Regular',                    decoration: TextDecoration.none
+
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: parentWidth*0.02,top: parentHeight*0.01),
+                        child: Text("Pune",
+                          style: TextStyle(
+                              color: CommonColor.TENDER_BOX_TEXT,
+                              fontSize: SizeConfig.blockSizeHorizontal*3.7,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Roboto_Regular',                    decoration: TextDecoration.none
+
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+
+                ],
               ),
-              Padding(
-                padding: EdgeInsets.only(left: parentWidth*0.03,),
-                child: Text("Ferro Alloys Corporation Limited.",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: SizeConfig.blockSizeHorizontal*4.2,
-                      fontWeight: FontWeight.w500,
-                      fontFamily: 'Roboto_Regular',
-                      decoration: TextDecoration.none
 
-                  ),maxLines: 1,
+
+
+              Padding(
+                padding: EdgeInsets.only(right: parentWidth*0.03,bottom: parentHeight*0.073),
+                child: GestureDetector(
+                  onDoubleTap: (){},
+                  onTap: (){
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    color: Colors.transparent,
+                    child: Icon(Icons.clear,
+                      color: CommonColor.CANCLE_ICON_COLOR,
+                      size: SizeConfig.blockSizeHorizontal*5.3,
+                    ),
+                  ),
                 ),
               ),
-              Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(left: parentWidth*0.03,top: parentHeight*0.01),
-                    child: Text("Material -",
-                      style: TextStyle(
-                          color: CommonColor.APP_BAR_COLOR,
-                          fontSize: SizeConfig.blockSizeHorizontal*3.7,
-                          fontWeight: FontWeight.w600,
-                          fontFamily: 'Roboto_Regular',
-                          decoration: TextDecoration.none
 
-
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: parentWidth*0.02,top: parentHeight*0.01),
-                    child: Text("HC Fe-Cr/ Charge Chrome (Lumps )",
-                      style: TextStyle(
-                          color: CommonColor.TENDER_BOX_TEXT,
-                          fontSize: SizeConfig.blockSizeHorizontal*3.7,
-                          fontWeight: FontWeight.w700,
-                          fontFamily: 'Roboto_Regular',
-                          decoration: TextDecoration.none
-
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(left: parentWidth*0.03,top: parentHeight*0.01),
-                    child: Text("Location -",
-                      style: TextStyle(
-                          color: CommonColor.APP_BAR_COLOR,
-                          fontSize: SizeConfig.blockSizeHorizontal*3.7,
-                          fontWeight: FontWeight.w600,
-                          fontFamily: 'Roboto_Regular',                    decoration: TextDecoration.none
-
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: parentWidth*0.02,top: parentHeight*0.01),
-                    child: Text("Pune",
-                      style: TextStyle(
-                          color: CommonColor.TENDER_BOX_TEXT,
-                          fontSize: SizeConfig.blockSizeHorizontal*3.7,
-                          fontWeight: FontWeight.w700,
-                          fontFamily: 'Roboto_Regular',                    decoration: TextDecoration.none
-
-                      ),
-                    ),
-                  ),
-                ],
-              ),
 
             ],
           ),
+
           Padding(
             padding: EdgeInsets.only(top: parentHeight*0.03),
             child: Row(
@@ -932,7 +912,7 @@ class _TenderHomeScreenState extends State<TenderHomeScreen> {
                 Text("HCFC Size\nCompliance",
                   style: TextStyle(
                       color: Colors.black,
-                      fontSize: SizeConfig.blockSizeHorizontal*3.0,
+                      fontSize: SizeConfig.blockSizeHorizontal*3.2,
                       fontWeight: FontWeight.w500,
                       fontFamily: 'Roboto_Regular',
                       decoration: TextDecoration.none
@@ -1000,7 +980,7 @@ class _TenderHomeScreenState extends State<TenderHomeScreen> {
                 Text("Oversize",
                   style: TextStyle(
                       color: Colors.black,
-                      fontSize: SizeConfig.blockSizeHorizontal*3.0,
+                      fontSize: SizeConfig.blockSizeHorizontal*3.2,
                       fontWeight: FontWeight.w500,
                       fontFamily: 'Roboto_Regular',
                       decoration: TextDecoration.none
@@ -1069,7 +1049,7 @@ class _TenderHomeScreenState extends State<TenderHomeScreen> {
                 Text("Undersize",
                   style: TextStyle(
                       color: Colors.black,
-                      fontSize: SizeConfig.blockSizeHorizontal*3.0,
+                      fontSize: SizeConfig.blockSizeHorizontal*3.2,
                       fontWeight: FontWeight.w500,
                       fontFamily: 'Roboto_Regular',
                       decoration: TextDecoration.none
@@ -1137,7 +1117,7 @@ class _TenderHomeScreenState extends State<TenderHomeScreen> {
                 Text("Moisturfe",
                   style: TextStyle(
                       color: Colors.black,
-                      fontSize: SizeConfig.blockSizeHorizontal*3.0,
+                      fontSize: SizeConfig.blockSizeHorizontal*3.2,
                       fontWeight: FontWeight.w500,
                       fontFamily: 'Roboto_Regular',
                       decoration: TextDecoration.none

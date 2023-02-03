@@ -18,29 +18,21 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-        body: ListView(
-      shrinkWrap: true,
-      padding: EdgeInsets.zero,
-      physics: NeverScrollableScrollPhysics(),
+        body: Column(
       children: [
         SizedBox(
           height: SizeConfig.screenHeight * 0.1,
           child: MainHeading(SizeConfig.screenHeight, SizeConfig.screenWidth),
         ),
         Container(
-          height: SizeConfig.screenHeight * 0.9,
-          child: ListView(
-            shrinkWrap: true,
-            padding: EdgeInsets.only(bottom: SizeConfig.screenHeight * 0.1),
-            children: [
-              demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
-              viewBidAllParts(SizeConfig.screenHeight, SizeConfig.screenWidth)
-            ],
-          ),
+          height: SizeConfig.screenHeight * 0.15,
+          child: demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
+        ),
+        Container(
+          height: SizeConfig.screenHeight * 0.75,
+          child:
+              viewBidAllParts(SizeConfig.screenHeight, SizeConfig.screenWidth),
         )
-        /* child:
-        demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth)),
-        viewBidAllParts(SizeConfig.screenHeight, SizeConfig.screenWidth)*/
       ],
     ));
   }
@@ -172,10 +164,11 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
 
   Widget viewBidAllParts(double parentHeight, double parentWidth) {
     return SizedBox(
-      height: parentHeight * 0.9,
       child: ListView.builder(
-          itemCount: 4,
-          padding: EdgeInsets.only(bottom: SizeConfig.screenHeight * 0.07),
+          itemCount: 10,
+          padding: EdgeInsets.only(
+            bottom: SizeConfig.screenHeight * 0.03,
+          ),
           itemBuilder: (context, index) {
             return Padding(
               padding: EdgeInsets.only(top: SizeConfig.screenHeight * 0.02),
@@ -863,6 +856,53 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
                                 children: [
                                   Text(
                                     "1st Bid Price :",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize:
+                                            SizeConfig.blockSizeHorizontal *
+                                                3.8,
+                                        fontWeight: FontWeight.w500,
+                                        fontFamily: 'Roboto_Regular'),
+                                  ),
+                                  Container(
+                                    width: parentWidth * 0.4,
+                                    // color: Colors.red,
+                                    child: Row(
+                                      children: [
+                                        Expanded(
+                                          child: Text(
+                                            "-",
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: SizeConfig
+                                                        .blockSizeHorizontal *
+                                                    3.8,
+                                                fontWeight: FontWeight.w400,
+                                                fontFamily: 'Roboto_Regular'),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                            Divider(
+                              height: parentHeight * 0.02,
+                              color: CommonColor.DIVIDER_COLOR,
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(
+                                  top: parentHeight * 0.01,
+                                  right: parentWidth * 0.07,
+                                  left: parentWidth * 0.08,
+                                  bottom: parentHeight * 0.01),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Last Bid :",
                                     style: TextStyle(
                                         color: Colors.black,
                                         fontSize:

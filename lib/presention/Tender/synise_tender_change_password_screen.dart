@@ -51,9 +51,11 @@ class _TenderChangePassword extends State<TenderChangePassword> {
                   textInputAction: TextInputAction.next,
                   decoration: InputDecoration(
                     hintText: "User Name",
+                    contentPadding: const EdgeInsets.all(14),
+                    isDense: true,
                     hintStyle: TextStyle(
                         color: CommonColor.Hint_TEXT_COLOR,
-                        fontSize: SizeConfig.blockSizeHorizontal * 3.5,
+                        fontSize: SizeConfig.blockSizeHorizontal * 3.7,
                         fontFamily: 'Roboto_Regular'),
                     border: const OutlineInputBorder(
                         borderSide: BorderSide(width: 1.0, color: Colors.black)),
@@ -73,9 +75,11 @@ class _TenderChangePassword extends State<TenderChangePassword> {
                   textInputAction: TextInputAction.next,
                   decoration: InputDecoration(
                     hintText: "Old Password",
+                    contentPadding: const EdgeInsets.all(14),
+                    isDense: true,
                     hintStyle: TextStyle(
                         color: CommonColor.Hint_TEXT_COLOR,
-                        fontSize: SizeConfig.blockSizeHorizontal * 3.5,
+                        fontSize: SizeConfig.blockSizeHorizontal * 3.7,
                         fontFamily: 'Roboto_Regular'),
                     border: const OutlineInputBorder(
                         borderSide: BorderSide(width: 1.0, color: Colors.black)),
@@ -95,9 +99,11 @@ class _TenderChangePassword extends State<TenderChangePassword> {
                   textInputAction: TextInputAction.next,
                   decoration: InputDecoration(
                     hintText: "New Password",
+                    contentPadding: const EdgeInsets.all(14),
+                    isDense: true,
                     hintStyle: TextStyle(
                         color: CommonColor.Hint_TEXT_COLOR,
-                        fontSize: SizeConfig.blockSizeHorizontal * 3.5,
+                        fontSize: SizeConfig.blockSizeHorizontal * 3.7,
                         fontFamily: 'Roboto_Regular'),
                     border: const OutlineInputBorder(
                         borderSide: BorderSide(width: 1.0, color: Colors.black)),
@@ -117,9 +123,11 @@ class _TenderChangePassword extends State<TenderChangePassword> {
                   textInputAction: TextInputAction.done,
                   decoration: InputDecoration(
                     hintText: "Confirm Password",
+                    contentPadding: const EdgeInsets.all(14),
+                    isDense: true,
                     hintStyle: TextStyle(
                         color: CommonColor.Hint_TEXT_COLOR,
-                        fontSize: SizeConfig.blockSizeHorizontal * 3.5,
+                        fontSize: SizeConfig.blockSizeHorizontal * 3.7,
                         fontFamily: 'Roboto_Regular'),
                     border: const OutlineInputBorder(
                         borderSide: BorderSide(width: 1.0, color: Colors.black)),

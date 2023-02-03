@@ -872,7 +872,7 @@ class _EditMyProfileState extends State<EditMyProfile> {
                       border: Border.all(color: Colors.black38, width: 1.0)),*/
                   child: InputDecorator(
                     decoration: InputDecoration(
-                        labelText: 'No. of Consultant',
+                        labelText: 'Designation',
                         labelStyle: const TextStyle(
                             color: Colors.black54,
                             fontSize: 15,

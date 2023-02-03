@@ -3,7 +3,6 @@ import 'package:synise_project/common_file/colors.dart';
 import 'package:synise_project/common_file/size_config.dart';
 import 'package:synise_project/presention/Tender/synise_faq_screen.dart';
 import 'package:synise_project/presention/Tender/synise_feedback_Tab.dart';
-import 'package:synise_project/presention/Tender/synise_feedback_screen.dart';
 import 'package:synise_project/presention/Tender/synise_tender_bid_history.dart';
 import 'package:synise_project/presention/Tender/synise_view_submit_tenders_screen.dart';
 import 'package:synise_project/presention/Tender/synise_agreement_screen.dart';
@@ -164,42 +163,61 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
                 Navigator.pop(context);
               },
             ),
-            ListTile(
-              title: Text('Voice of Customer',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: SizeConfig.blockSizeHorizontal*4.0,
-                    fontFamily: 'Roboto_Medium'
-                ),),
-              onTap: () {
-                _pageChange(3);
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: Text('Feedback/Grievance for Seller',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: SizeConfig.blockSizeHorizontal*4.0,
-                    fontFamily: 'Roboto_Medium'
-                ),),
-              onTap: () {
-                _pageChange(6);
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: Text('Feedback/Grievance for Synise',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: SizeConfig.blockSizeHorizontal*4.0,
-                    fontFamily: 'Roboto_Medium'
-                ),),
-              onTap: () {
-                _pageChange(7);
-                Navigator.pop(context);
-              },
-            ),
+    ExpansionTile(
+    title: Text("Voice of Customer", style: TextStyle(
+    color: Colors.black,
+    fontSize: SizeConfig.blockSizeHorizontal*4.0,
+    fontFamily: 'Roboto_Medium'
+    ),),
+   //add icon
+   //children padding
+    children: [
+    ListTile(
+    title: Text("Feedback/Grievance for Seller", style: TextStyle(
+    color: Colors.black,
+    fontSize: SizeConfig.blockSizeHorizontal*4.0,
+    fontFamily: 'Roboto_Medium'
+    ),),
+    onTap: (){
+
+        _pageChange(6);
+        Navigator.pop(context);
+
+    //action on press
+    },
+    ),
+
+    ListTile(
+    title: Text("Feedback/Grievance for Synise", style: TextStyle(
+    color: Colors.black,
+    fontSize: SizeConfig.blockSizeHorizontal*4.0,
+    fontFamily: 'Roboto_Medium'
+    ),),
+      onTap: () {
+        _pageChange(7);
+        Navigator.pop(context);
+
+    //action on press
+    },
+    ),
+    ],
+    ),
+
+            // ListTile(
+            //   title: Text('Voice of Customer',
+            //     style: TextStyle(
+            //         color: Colors.black,
+            //         fontSize: SizeConfig.blockSizeHorizontal*4.0,
+            //         fontFamily: 'Roboto_Medium'
+            //     ),),
+            //
+            //
+            //   onTap: () {
+            //     _pageChange(3);
+            //     Navigator.pop(context);
+            //   },
+            // ),
+
             ListTile(
               title: Text('Agreement',
                 style: TextStyle(

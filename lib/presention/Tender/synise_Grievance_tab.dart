@@ -46,7 +46,7 @@ class _TenderGrievanceScreenState extends State<TenderGrievanceScreen> with Sing
                       return getGrievanceLayout(SizeConfig.screenHeight, SizeConfig.screenWidth);
                     }),
               ),
-              uploadDocument(SizeConfig.screenHeight, SizeConfig.screenWidth),
+              addComplaintRegistration(SizeConfig.screenHeight, SizeConfig.screenWidth),
             ],
           ),
 
@@ -343,7 +343,7 @@ Widget  getGrievanceLayout(double parentHeight, double parentWidth){
       ),
     );
   }
-  Widget uploadDocument(double parentHeight,double parentWidth){
+  Widget addComplaintRegistration(double parentHeight,double parentWidth){
     return GestureDetector(
       onTap: (){
       Navigator.push(context, MaterialPageRoute(builder: (context)=>AddComplaintRegistration()));

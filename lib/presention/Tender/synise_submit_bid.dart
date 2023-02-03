@@ -127,13 +127,7 @@ class _SubmitBidState extends State<SubmitBid> {
                 ),
               ),
             ),
-          /*  Text(
-              "Registration",
-              style: TextStyle(
-                  color: CommonColor.WHITE_COLOR,
-                  fontSize: SizeConfig.blockSizeHorizontal * 5.0,
-                  fontFamily: 'Roboto_Medium'),
-            ),*/
+
             Padding(
               padding: EdgeInsets.only(right: parentWidth * 0.05),
               child: Icon(
@@ -157,45 +151,8 @@ class _SubmitBidState extends State<SubmitBid> {
           color: CommonColor.SUBMIT_BID,
           borderRadius: BorderRadius.circular(13),
         ),
-        child:/* Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children:  [
-                Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.only(top: parentHeight*0.01,left: parentWidth*0.03),
-                    child: Text("Ferro Alloys Corporation Limited.",style: TextStyle( color: Colors.black,
-                        fontSize: SizeConfig.blockSizeHorizontal*3.5,
-                        fontWeight: FontWeight.w500,
-                        fontFamily: 'Roboto_Regular'),maxLines: 2,),
-                  ),
-                ),
-                Padding(
-                  padding:  EdgeInsets.only(right: parentHeight*0.01,bottom: parentHeight*0.01),
-                  child: Row(
-                    children: [
+        child:
 
-                      Text("Tender Id :",style: TextStyle( color: Colors.black,
-                          fontSize: SizeConfig.blockSizeHorizontal*3.5,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'Roboto_Regular'),),
-                      Text(" DEMO10220002")
-                    ],
-                  ),
-                ),
-
-              ],
-            ),
-            Padding(
-              padding:  EdgeInsets.only(right: parentWidth*0.63,top: parentHeight*0.01),
-              child: Text("Pig Iron - ESL D",style: TextStyle( color: Colors.black,
-                  fontSize: SizeConfig.blockSizeHorizontal*3.5,
-                  fontWeight: FontWeight.w400,
-                  fontFamily: 'Roboto_Regular'),),
-            )
-          ],
-        ),*/
 
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
