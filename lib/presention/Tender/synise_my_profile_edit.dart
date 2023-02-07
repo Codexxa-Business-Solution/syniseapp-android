@@ -172,25 +172,26 @@ class _EditMyProfileState extends State<EditMyProfile> {
                     focusNode: _companyFocus,
                     controller: companyNameController,
                     textInputAction: TextInputAction.next,
-                    // obscureText: true,
                     keyboardType: TextInputType.text,
-                    /*   validator: (String? value) {
-                    if (value!.isEmpty) {
-                      return 'Password Field Is Required';
-                    } else if (passwordController.text.length < 6) {
-                      return 'Password Must Be 6 Character';
-                    }
-                    return null;
-                  }*/
                     decoration: InputDecoration(
-                        labelText: 'Company Name',
-                        labelStyle: const TextStyle(
-                            color: Colors.black54,
-                            fontSize: 15,
-                            fontFamily: 'Roboto-Bold',
-                            fontWeight: FontWeight.w400),
-                        contentPadding: const EdgeInsets.all(15),
-                        isDense: true,
+                        label: RichText(
+                          text: TextSpan(
+                              text: 'Company Name',
+                              style: TextStyle(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.w400,
+                                fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                              ),
+                              children: [
+                                TextSpan(
+                                    text: '*',
+                                    style: TextStyle(
+                                        fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                                        color: Colors.red,
+                                        fontWeight: FontWeight.bold))
+                              ]),
+                        ),
+                        contentPadding: EdgeInsets.only(left: parentWidth*0.04),
                         focusedBorder: OutlineInputBorder(
                             borderSide: const BorderSide(
                                 width: 1, color: CommonColor.BLACK_COLOR),
@@ -220,18 +221,25 @@ class _EditMyProfileState extends State<EditMyProfile> {
                     focusNode: _emailAddressFocus,
                     controller: emailAddressController,
                     textInputAction: TextInputAction.next,
-                    // obscureText: true,
                     keyboardType: TextInputType.emailAddress,
-                    /*   validator: (String? value) {
-                    if (value!.isEmpty) {
-                      return 'Password Field Is Required';
-                    } else if (passwordController.text.length < 6) {
-                      return 'Password Must Be 6 Character';
-                    }
-                    return null;
-                  }*/
                     decoration: InputDecoration(
-                        labelText: 'Email Address',
+                        label: RichText(
+                          text: TextSpan(
+                              text: 'Email Address',
+                              style: TextStyle(
+                                color: Colors.black54,
+                                fontWeight: FontWeight.w400,
+                                fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                              ),
+                              children: [
+                                TextSpan(
+                                    text: '*',
+                                    style: TextStyle(
+                                        fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                                        color: Colors.red,
+                                        fontWeight: FontWeight.bold))
+                              ]),
+                        ),
                         labelStyle: const TextStyle(
                             color: Colors.black54,
                             fontSize: 15,
@@ -268,23 +276,25 @@ class _EditMyProfileState extends State<EditMyProfile> {
                     focusNode: _addressOneFocus,
                     controller: addressOneController,
                     textInputAction: TextInputAction.next,
-                    // obscureText: true,
                     keyboardType: TextInputType.text,
-                    /*   validator: (String? value) {
-                    if (value!.isEmpty) {
-                      return 'Password Field Is Required';
-                    } else if (passwordController.text.length < 6) {
-                      return 'Password Must Be 6 Character';
-                    }
-                    return null;
-                  }*/
                     decoration: InputDecoration(
-                        labelText: 'Address 1',
-                        labelStyle: const TextStyle(
-                            color: Colors.black54,
-                            fontSize: 15,
-                            fontFamily: 'Roboto-Bold',
-                            fontWeight: FontWeight.w400),
+                        label: RichText(
+                          text: TextSpan(
+                              text: 'Address 1',
+                              style: TextStyle(
+                                color: Colors.black54,
+                                fontWeight: FontWeight.w400,
+                                fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                              ),
+                              children: [
+                                TextSpan(
+                                    text: '*',
+                                    style: TextStyle(
+                                        fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                                        color: Colors.red,
+                                        fontWeight: FontWeight.bold))
+                              ]),
+                        ),
                         contentPadding: const EdgeInsets.all(15),
                         isDense: true,
                         focusedBorder: OutlineInputBorder(
@@ -316,16 +326,7 @@ class _EditMyProfileState extends State<EditMyProfile> {
                     focusNode: _addressTwoFocus,
                     controller: addressTwoController,
                     textInputAction: TextInputAction.next,
-                    // obscureText: true,
                     keyboardType: TextInputType.text,
-                    /*   validator: (String? value) {
-                    if (value!.isEmpty) {
-                      return 'Password Field Is Required';
-                    } else if (passwordController.text.length < 6) {
-                      return 'Password Must Be 6 Character';
-                    }
-                    return null;
-                  }*/
                     decoration: InputDecoration(
                         labelText: 'Address 2',
                         labelStyle: const TextStyle(
@@ -367,12 +368,23 @@ class _EditMyProfileState extends State<EditMyProfile> {
                       focusNode: _cityFocus,
                       textInputAction: TextInputAction.next,
                       decoration: InputDecoration(
-                          labelText: 'City',
-                          labelStyle: const TextStyle(
-                              color: Colors.black54,
-                              fontSize: 15,
-                              fontFamily: 'Roboto-Bold',
-                              fontWeight: FontWeight.w400),
+                          label: RichText(
+                            text: TextSpan(
+                                text: 'City',
+                                style: TextStyle(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                                ),
+                                children: [
+                                  TextSpan(
+                                      text: '*',
+                                      style: TextStyle(
+                                          fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                                          color: Colors.red,
+                                          fontWeight: FontWeight.bold))
+                                ]),
+                          ),
                           contentPadding: const EdgeInsets.all(15),
                           isDense: true,
                           focusedBorder: OutlineInputBorder(
@@ -515,7 +527,6 @@ class _EditMyProfileState extends State<EditMyProfile> {
                   padding: EdgeInsets.only(left: parentWidth * 0.05),
                   child: Container(
                     height: parentHeight * 0.066,
-
                     child: InputDecorator(
                       decoration: InputDecoration(
                           labelText: 'Phone Number',
@@ -553,11 +564,13 @@ class _EditMyProfileState extends State<EditMyProfile> {
                                     ? CommonColor.Hint_TEXT_COLOR
                                     : Colors.black),
                             icon: Padding(
-                              padding: EdgeInsets.only(right: SizeConfig.screenWidth * 0.05),
+                              padding: EdgeInsets.only(
+                                  right: SizeConfig.screenWidth * 0.05),
                               child: Row(
                                 children: [
                                   Image(
-                                    image: AssetImage("assets/images/down_arrow.png"),
+                                    image: AssetImage(
+                                        "assets/images/down_arrow.png"),
                                   ),
                                 ],
                               ),
@@ -595,16 +608,7 @@ class _EditMyProfileState extends State<EditMyProfile> {
                     focusNode: _phoneFocus,
                     controller: phoneController,
                     textInputAction: TextInputAction.next,
-                    // obscureText: true,
                     keyboardType: TextInputType.text,
-                    /*   validator: (String? value) {
-                    if (value!.isEmpty) {
-                      return 'Password Field Is Required';
-                    } else if (passwordController.text.length < 6) {
-                      return 'Password Must Be 6 Character';
-                    }
-                    return null;
-                  }*/
                     decoration: InputDecoration(
                         labelText: 'Phone Number',
                         labelStyle: const TextStyle(
@@ -643,23 +647,25 @@ class _EditMyProfileState extends State<EditMyProfile> {
                     focusNode: _mobileFocus,
                     controller: mobileController,
                     textInputAction: TextInputAction.next,
-                    // obscureText: true,
                     keyboardType: TextInputType.number,
-                    /*   validator: (String? value) {
-                    if (value!.isEmpty) {
-                      return 'Password Field Is Required';
-                    } else if (passwordController.text.length < 6) {
-                      return 'Password Must Be 6 Character';
-                    }
-                    return null;
-                  }*/
                     decoration: InputDecoration(
-                        labelText: 'Mobile Number',
-                        labelStyle: const TextStyle(
-                            color: Colors.black54,
-                            fontSize: 15,
-                            fontFamily: 'Roboto-Bold',
-                            fontWeight: FontWeight.w400),
+                        label: RichText(
+                          text: TextSpan(
+                              text: 'Mobile Number',
+                              style: TextStyle(
+                                color: Colors.black54,
+                                fontWeight: FontWeight.w400,
+                                fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                              ),
+                              children: [
+                                TextSpan(
+                                    text: '*',
+                                    style: TextStyle(
+                                        fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                                        color: Colors.red,
+                                        fontWeight: FontWeight.bold))
+                              ]),
+                        ),
                         contentPadding: const EdgeInsets.all(15),
                         isDense: true,
                         focusedBorder: OutlineInputBorder(
@@ -681,7 +687,7 @@ class _EditMyProfileState extends State<EditMyProfile> {
                             color: CommonColor.GAME_DESTRUCTION))))),
         Padding(
           padding: EdgeInsets.only(
-              top: parentHeight * 0.02,
+              top: parentHeight * 0.03,
               left: parentWidth * 0.05,
               right: parentWidth * 0.05),
           child: Row(
@@ -689,10 +695,6 @@ class _EditMyProfileState extends State<EditMyProfile> {
               Expanded(
                 child: Container(
                   height: parentHeight * 0.066,
-                /*  decoration: BoxDecoration(
-                    // color: Colors.red,
-                      borderRadius: BorderRadius.circular(5),
-                      border: Border.all(color: Colors.black38, width: 1.0)),*/
                   child: InputDecorator(
                     decoration: InputDecoration(
                         labelText: 'No. of Employee',
@@ -730,11 +732,13 @@ class _EditMyProfileState extends State<EditMyProfile> {
                                   ? CommonColor.Hint_TEXT_COLOR
                                   : Colors.black),
                           icon: Padding(
-                            padding: EdgeInsets.only(right: SizeConfig.screenWidth * 0.05),
+                            padding: EdgeInsets.only(
+                                right: SizeConfig.screenWidth * 0.05),
                             child: Row(
                               children: [
                                 Image(
-                                  image: AssetImage("assets/images/down_arrow.png"),
+                                  image: AssetImage(
+                                      "assets/images/down_arrow.png"),
                                 ),
                               ],
                             ),
@@ -771,16 +775,7 @@ class _EditMyProfileState extends State<EditMyProfile> {
                     focusNode: _companyProfileFocus,
                     controller: companyProfileController,
                     textInputAction: TextInputAction.next,
-                    // obscureText: true,
                     keyboardType: TextInputType.text,
-                    /*   validator: (String? value) {
-                    if (value!.isEmpty) {
-                      return 'Password Field Is Required';
-                    } else if (passwordController.text.length < 6) {
-                      return 'Password Must Be 6 Character';
-                    }
-                    return null;
-                  }*/
                     decoration: InputDecoration(
                         labelText: 'Company Profile',
                         labelStyle: const TextStyle(
@@ -807,7 +802,6 @@ class _EditMyProfileState extends State<EditMyProfile> {
                             fontFamily: "Roboto_Regular",
                             fontSize: SizeConfig.blockSizeHorizontal * 4.0,
                             color: CommonColor.GAME_DESTRUCTION))))),
-
         Padding(
             padding: EdgeInsets.only(
                 left: parentWidth * 0.02, right: parentWidth * 0.02),
@@ -820,23 +814,25 @@ class _EditMyProfileState extends State<EditMyProfile> {
                     focusNode: _yourNameFocus,
                     controller: yourNameController,
                     textInputAction: TextInputAction.next,
-                    // obscureText: true,
                     keyboardType: TextInputType.text,
-                    /*   validator: (String? value) {
-                    if (value!.isEmpty) {
-                      return 'Password Field Is Required';
-                    } else if (passwordController.text.length < 6) {
-                      return 'Password Must Be 6 Character';
-                    }
-                    return null;
-                  }*/
                     decoration: InputDecoration(
-                        labelText: 'Your Name',
-                        labelStyle: const TextStyle(
-                            color: Colors.black54,
-                            fontSize: 15,
-                            fontFamily: 'Roboto-Bold',
-                            fontWeight: FontWeight.w400),
+                        label: RichText(
+                          text: TextSpan(
+                              text: 'Your Name',
+                              style: TextStyle(
+                                color: Colors.black54,
+                                fontWeight: FontWeight.w400,
+                                fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                              ),
+                              children: [
+                                TextSpan(
+                                    text: '*',
+                                    style: TextStyle(
+                                        fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                                        color: Colors.red,
+                                        fontWeight: FontWeight.bold))
+                              ]),
+                        ),
                         contentPadding: const EdgeInsets.all(15),
                         isDense: true,
                         focusedBorder: OutlineInputBorder(
@@ -866,10 +862,6 @@ class _EditMyProfileState extends State<EditMyProfile> {
               Expanded(
                 child: Container(
                   height: parentHeight * 0.066,
-                  /*  decoration: BoxDecoration(
-                    // color: Colors.red,
-                      borderRadius: BorderRadius.circular(5),
-                      border: Border.all(color: Colors.black38, width: 1.0)),*/
                   child: InputDecorator(
                     decoration: InputDecoration(
                         labelText: 'Designation',
@@ -903,15 +895,17 @@ class _EditMyProfileState extends State<EditMyProfile> {
                         child: DropdownButton(
                           value: designationValue,
                           style: TextStyle(
-                              color: designationValue == "No. of Consultant"
+                              color: designationValue == "Consultant"
                                   ? CommonColor.Hint_TEXT_COLOR
                                   : Colors.black),
                           icon: Padding(
-                            padding: EdgeInsets.only(right: SizeConfig.screenWidth * 0.05),
+                            padding: EdgeInsets.only(
+                                right: SizeConfig.screenWidth * 0.05),
                             child: Row(
                               children: [
                                 Image(
-                                  image: AssetImage("assets/images/down_arrow.png"),
+                                  image: AssetImage(
+                                      "assets/images/down_arrow.png"),
                                 ),
                               ],
                             ),
@@ -1100,74 +1094,81 @@ class _EditMyProfileState extends State<EditMyProfile> {
     );
   }
 
-  Widget uploadDocument(double parentHeight,double parentWidth){
+  Widget uploadDocument(double parentHeight, double parentWidth) {
     return Padding(
-      padding:  EdgeInsets.only(left: parentWidth*0.1,top: parentHeight*0.03),
+      padding:
+          EdgeInsets.only(left: parentWidth * 0.05, top: parentHeight * 0.03),
       child: Row(
-                children: [
-          Stack(
-            children:  [
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: const [
+         /* Stack(
+            children: [
               SizedBox(
-                height: SizeConfig.screenHeight * .050,
-                width: SizeConfig.screenHeight * .050,
+                height: SizeConfig.screenHeight * .04,
+                width: SizeConfig.screenHeight * .04,
                 child: const Image(
-                  image:  AssetImage("assets/images/uploadOne.png"),
+                  image: AssetImage("assets/images/uploadOne.png"),
                   fit: BoxFit.contain,
                 ),
               ),
-             // Image(image: AssetImage('assets/images/uploadOne.png')),
+              // Image(image: AssetImage('assets/images/uploadOne.png')),
 
               Padding(
-                padding:  EdgeInsets.only(left: parentHeight*0.012,top: parentWidth*0.009),
+                padding: EdgeInsets.only(
+                    left: parentHeight * 0.012, top: parentWidth * 0.009),
                 child: SizedBox(
-                height: SizeConfig.screenHeight * .025,
-      width: SizeConfig.screenHeight * .025,
-      child: const Image(
-      image:  AssetImage("assets/images/plus.png"),
-      fit: BoxFit.contain,
-      ),
+                  height: SizeConfig.screenHeight * .025,
+                  width: SizeConfig.screenHeight * .025,
+                  child: const Image(
+                    image: AssetImage("assets/images/plus.png"),
+                    fit: BoxFit.contain,
+                  ),
                 ),
               )
-
             ],
           ),
           Padding(
-            padding:  EdgeInsets.only(bottom: parentHeight*0.015,left: parentHeight*0.02),
-            child: const Text("Uploaded Document",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: CommonColor.BLACK_COLOR,fontFamily: 'Roboto-Bold'),),
-          )
-
-
+            padding: EdgeInsets.only(
+                bottom: parentHeight * 0.015, left: parentHeight * 0.02),
+            child: const Text(
+              "Uploaded Document",
+              style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  color: CommonColor.BLACK_COLOR,
+                  fontFamily: 'Roboto-Bold'),
+            ),
+          )*/
+          Image(image: AssetImage("assets/images/upload_text.png"))
         ],
-       ),
+      ),
     );
   }
 
-  Widget updateText(double parentHeight,double parentWidth){
-    return  Padding(
+  Widget updateText(double parentHeight, double parentWidth) {
+    return Padding(
         padding: EdgeInsets.only(
-        top: SizeConfig.screenHeight * 0.03,
-        left: SizeConfig.screenWidth * 0.12,
-        right: SizeConfig.screenWidth * 0.12),
-    child: GestureDetector(
-    onDoubleTap: (){},
-    onTap: (){
-
-    },
-      child: Container(
-        decoration: BoxDecoration(
-            color: CommonColor.TENDER_BOX_TEXT,
-            borderRadius: BorderRadius.circular(7)),
-        height: SizeConfig.screenHeight * 0.06,
-        width: SizeConfig.screenWidth * 0.8,
-        child: Center(child: Text("Update",
-          style: TextStyle(
-              color: Colors.white,
-              fontSize: SizeConfig.blockSizeHorizontal*4.0,
-              fontWeight: FontWeight.w700,
-              fontFamily: 'Roboto-Medium'
-          ),)),
-      )));
-
-
+            top: SizeConfig.screenHeight * 0.03,
+            left: SizeConfig.screenWidth * 0.12,
+            right: SizeConfig.screenWidth * 0.12),
+        child: GestureDetector(
+            onDoubleTap: () {},
+            onTap: () {},
+            child: Container(
+              decoration: BoxDecoration(
+                  color: CommonColor.TENDER_BOX_TEXT,
+                  borderRadius: BorderRadius.circular(7)),
+              height: SizeConfig.screenHeight * 0.06,
+              width: SizeConfig.screenWidth * 0.8,
+              child: Center(
+                  child: Text(
+                "Update",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: SizeConfig.blockSizeHorizontal * 4.0,
+                    fontWeight: FontWeight.w700,
+                    fontFamily: 'Roboto-Medium'),
+              )),
+            )));
   }
 }

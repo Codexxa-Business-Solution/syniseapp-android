@@ -16,6 +16,7 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
 
   TextEditingController companyNameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
+  TextEditingController websiteController = TextEditingController();
   TextEditingController addressOneController = TextEditingController();
   TextEditingController addressTwoController = TextEditingController();
   TextEditingController cityController = TextEditingController();
@@ -31,6 +32,7 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
 
   final _companyFocus = FocusNode();
   final _emailFocus = FocusNode();
+  final _websiteFocus = FocusNode();
   final _addressOneFocus = FocusNode();
   final _addressTwoFocus = FocusNode();
   final _cityFocus = FocusNode();
@@ -236,6 +238,28 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
               hintText: "Email Address",
+              hintStyle: TextStyle(
+                  color: CommonColor.Hint_TEXT_COLOR,
+                  fontSize: SizeConfig.blockSizeHorizontal * 3.5,
+                  fontFamily: 'Roboto_Regular'),
+              border: const OutlineInputBorder(
+                  borderSide: BorderSide(width: 1.0, color: Colors.black)),
+              focusedBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(width: 1.0, color: Colors.black)),
+            ),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(
+              top: parentHeight * 0.02,
+              left: parentWidth * 0.05,
+              right: parentWidth * 0.05),
+          child: TextFormField(
+            controller: websiteController,
+            focusNode: _websiteFocus,
+            textInputAction: TextInputAction.next,
+            decoration: InputDecoration(
+              hintText: "Website Address",
               hintStyle: TextStyle(
                   color: CommonColor.Hint_TEXT_COLOR,
                   fontSize: SizeConfig.blockSizeHorizontal * 3.5,
@@ -745,28 +769,32 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
             ],
           ),
         ),
-        Center(
-          child: Padding(
-            padding: EdgeInsets.only(
-                top: parentHeight * 0.02,
-                left: parentWidth * 0.05,
-                right: parentWidth * 0.05),
-            child: TextFormField(
-              controller: codeController,
-              focusNode: _codeFocus,
-              textInputAction: TextInputAction.done,
-              decoration: InputDecoration(
-                hintText: "Enter Below Code",
-                hintStyle: TextStyle(
-                    color: CommonColor.Hint_TEXT_COLOR,
-                    fontSize: SizeConfig.blockSizeHorizontal * 3.5,
-                    fontFamily: 'Roboto_Regular'),
-                border: const OutlineInputBorder(
-                    borderSide: BorderSide(width: 1.0, color: Colors.black)),
-                focusedBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(width: 1.0, color: Colors.black)),
-              ),
+        Padding(
+          padding: EdgeInsets.only(
+              top: parentHeight * 0.02,
+              left: parentWidth * 0.3,
+              right: parentWidth * 0.3),
+          child: TextFormField(
+            controller: codeController,
+            focusNode: _codeFocus,
+            textInputAction: TextInputAction.done,
+            decoration: InputDecoration(
+              hintText: "Enter Below Code",
+              hintStyle: TextStyle(
+                  color: CommonColor.Hint_TEXT_COLOR,
+                  fontSize: SizeConfig.blockSizeHorizontal * 4.0,
+                  fontFamily: 'Roboto_Regular'),
+              border: const OutlineInputBorder(
+                  borderSide: BorderSide(width: 1.0, color: Colors.black)),
+              focusedBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(width: 1.0, color: Colors.black)),
             ),
+            style: TextStyle(
+                color: Colors.black,
+                fontSize: SizeConfig.blockSizeHorizontal * 4.0,
+                fontWeight: FontWeight.w400,
+                fontFamily: 'Roboto_Medium'),
+              textAlign: TextAlign.center,
           ),
         ),
         Padding(
@@ -774,28 +802,27 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
               top: parentHeight * 0.02,
               left: parentWidth * 0.05,
               right: parentWidth * 0.05),
-          child: Center(
-            child: Row(
-              children: [
-                Container(
-                  height: parentHeight * 0.06,
-                  width: parentWidth * 0.35,
-                  decoration: BoxDecoration(
-                      color: CommonColor.CAPTCHA_CODE_COLOR,
-                      borderRadius: BorderRadius.circular(7)),
-                  child: Center(
-                    child: Text(
-                      "d4847",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: SizeConfig.blockSizeHorizontal * 5.5,
-                          fontWeight: FontWeight.w400,
-                          fontFamily: 'Roboto_Medium'),
-                    ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: parentHeight * 0.06,
+                width: parentWidth * 0.35,
+                decoration: BoxDecoration(
+                    color: CommonColor.CAPTCHA_CODE_COLOR,
+                    borderRadius: BorderRadius.circular(7)),
+                child: Center(
+                  child: Text(
+                    "d4847",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: SizeConfig.blockSizeHorizontal * 5.5,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: 'Roboto_Medium'),
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
         Padding(
@@ -881,7 +908,7 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
                         child: Text(
                           "Agreement",
                           style: TextStyle(
-                              color: CommonColor.APP_BAR_COLOR,
+                              color: CommonColor.TENDER_BOX_TEXT,
                               fontFamily: 'Roboto_Medium',
                               fontSize: SizeConfig.blockSizeHorizontal * 3.5,
                               fontWeight: FontWeight.w500),

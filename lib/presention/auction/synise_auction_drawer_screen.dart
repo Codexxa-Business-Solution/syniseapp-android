@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:synise_project/common_file/colors.dart';
 import 'package:synise_project/common_file/size_config.dart';
+import 'package:synise_project/login_registration/synise_login_screen.dart';
 import 'package:synise_project/presention/auction/synise_auction_change_password_screen.dart';
 import 'package:synise_project/presention/auction/synise_close_auction_screen.dart';
 import 'package:synise_project/presention/auction/synise_auction_home_screen.dart';
-import 'package:synise_project/presention/auction/synise_auction_logout_screen.dart';
 import 'package:synise_project/presention/auction/synise_auction_my_profile_screen.dart';
 
 class AuctionDrawerScreen extends StatefulWidget {
@@ -164,12 +164,25 @@ class _DrawerScreen extends State<AuctionDrawerScreen> {
               },
             ),
             ListTile(
-              title: Text(
-                'Logout',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: SizeConfig.blockSizeHorizontal * 4.0,
-                    fontFamily: 'Roboto_Medium'),
+              title: GestureDetector(
+                onTap: (){
+                  Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(
+                      builder: (context) => const LoginPage(),
+                    ),
+                        (route) => false,
+                  );
+                },
+                child: Container(
+                  color: Colors.transparent,
+                  child: Text(
+                    'Logout',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: SizeConfig.blockSizeHorizontal * 4.0,
+                        fontFamily: 'Roboto_Medium'),
+                  ),
+                ),
               ),
               onTap: () {
                 _pageChange(5);
@@ -208,10 +221,7 @@ class _DrawerScreen extends State<AuctionDrawerScreen> {
         _title = 'Closed Auction';
         _widget = const CloseAuction();
         _actions = [];
-        break;
-      case 5:
-        _widget = const LogoutScreen();
-        _actions = [];
+
         break;
     }
 

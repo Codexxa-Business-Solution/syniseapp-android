@@ -111,7 +111,7 @@ class _SubmitBidState extends State<SubmitBid> {
       height: parentHeight * 0.1,
       color: CommonColor.APP_BAR_COLOR,
       child: Padding(
-        padding: EdgeInsets.only(top: parentHeight * 0.03),
+        padding: EdgeInsets.only(top: parentHeight * 0.05),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -126,6 +126,15 @@ class _SubmitBidState extends State<SubmitBid> {
                   color: CommonColor.WHITE_COLOR,
                 ),
               ),
+            ),
+
+            Text(
+              "Material Description",
+              style: TextStyle(
+                  color: CommonColor.WHITE_COLOR,
+                  fontSize: SizeConfig.blockSizeHorizontal * 5.0,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Roboto_Medium'),
             ),
 
             Padding(
@@ -412,7 +421,7 @@ class _SubmitBidState extends State<SubmitBid> {
             focusNode: _LotRequiredFocus,
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
-              hintText: "Lot Required",
+              hintText: "Lot Required (1 lot = 100 T )",
               contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
 
               hintStyle: TextStyle(

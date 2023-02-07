@@ -77,7 +77,7 @@ class _MyProfileScreen extends State<MyProfileScreen> {
                           height: SizeConfig.screenHeight * 0.066,
                           width: SizeConfig.screenWidth*0.94,
                           decoration: BoxDecoration(
-                            color: CommonColor.REGISTER_AS_COLOR,
+                            color: CommonColor.SUBMIT_BID,
                             borderRadius: BorderRadius.circular(13),
                           ),
                           child: Row(
@@ -124,7 +124,7 @@ class _MyProfileScreen extends State<MyProfileScreen> {
                           height: SizeConfig.screenHeight * 0.066,
                           width: SizeConfig.screenWidth*0.94,
                           decoration: BoxDecoration(
-                            color: CommonColor.REGISTER_AS_COLOR,
+                            color: CommonColor.SUBMIT_BID,
                             borderRadius: BorderRadius.only(topLeft: Radius.circular(13),
                                 topRight: Radius.circular(13)),
                           ),
@@ -560,7 +560,6 @@ class _MyProfileScreen extends State<MyProfileScreen> {
   Widget getAllDetailsLayout(double parentHeight, double parentWidth){
     return Column(
       children: [
-
         Padding(
           padding: EdgeInsets.only(top: parentHeight*0.03, right: parentWidth*0.07,
               left: parentWidth*0.08),
@@ -622,6 +621,44 @@ class _MyProfileScreen extends State<MyProfileScreen> {
                   children: [
                     Expanded(
                       child: Text("jayashrig@synise.com",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: SizeConfig.blockSizeHorizontal*3.4,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Roboto_Regular'
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              )
+
+            ],
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(top: parentHeight*0.03, right: parentWidth*0.07,
+              left: parentWidth*0.08),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+
+              Text("Website",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Roboto_Regular'
+                ),
+              ),
+
+              Container(
+                width: parentWidth*0.4,
+                // color: Colors.red,
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Text("www.abcd.com",
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: SizeConfig.blockSizeHorizontal*3.4,
