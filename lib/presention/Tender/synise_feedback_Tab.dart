@@ -3,6 +3,8 @@ import 'package:synise_project/common_file/colors.dart';
 import 'package:synise_project/common_file/size_config.dart';
 import 'package:synise_project/presention/Tender/seller_Grievance_tab.dart';
 import 'package:synise_project/presention/Tender/seller_product_tab.dart';
+import 'package:synise_project/presention/Tender/synise_grievence_tab.dart';
+import 'package:synise_project/presention/Tender/synise_tender_website_review_screen.dart';
 
 class TenderFeedbackSyniseScreen extends StatefulWidget {
   const TenderFeedbackSyniseScreen({Key? key}) : super(key: key);
@@ -102,12 +104,12 @@ class _TenderFeedbackSyniseScreenState extends State<TenderFeedbackSyniseScreen>
               child: TabBarView(
                 controller: _tabController,
                 children: [
-                  TenderProductScreen(
+                  TenderWebsiteReview(
                     onNext: () {
                       _tabController.index = 1;
                     },
                   ),
-                  TenderGrievanceScreen(
+                  TenderSyniseGrievanceScreen(
                     onNext: () {
                       _tabController.index = 2;
                     },

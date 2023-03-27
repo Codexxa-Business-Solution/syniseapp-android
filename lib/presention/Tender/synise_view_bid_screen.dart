@@ -18,35 +18,43 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        slivers: <Widget>[
-          SliverList(
-            delegate: SliverChildListDelegate([
-              Column(
-                children: [
-                  MainHeading(SizeConfig.screenHeight, SizeConfig.screenWidth),
-                  demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
-                ],
-              ),
-            ]),
-          ),
-          SliverList(
-            delegate: SliverChildListDelegate(
-              [
-                Container(
-                  height: SizeConfig.screenHeight * 0.02,
+      body: Stack(
+        alignment: Alignment.topCenter,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(top: SizeConfig.screenHeight*0.1),
+            child: CustomScrollView(
+              slivers: <Widget>[
+                SliverList(
+                  delegate: SliverChildListDelegate([
+                    Column(
+                      children: [
+                        demoTender(SizeConfig.screenHeight, SizeConfig.screenWidth),
+                      ],
+                    ),
+                  ]),
                 ),
+                SliverList(
+                  delegate: SliverChildListDelegate(
+                    [
+                      Container(
+                        height: SizeConfig.screenHeight * 0.02,
+                      ),
+                    ],
+                  ),
+                ),
+                SliverList(
+                    delegate: SliverChildBuilderDelegate(
+                  childCount: 2,
+                  (context, index) {
+                    return viewBidAllParts(
+                        SizeConfig.screenHeight, SizeConfig.screenWidth, index);
+                  },
+                ))
               ],
             ),
           ),
-          SliverList(
-              delegate: SliverChildBuilderDelegate(
-            childCount: 2,
-            (context, index) {
-              return viewBidAllParts(
-                  SizeConfig.screenHeight, SizeConfig.screenWidth, index);
-            },
-          ))
+          MainHeading(SizeConfig.screenHeight, SizeConfig.screenWidth),
         ],
       ),
     );
@@ -84,8 +92,8 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
               Padding(
                 padding: EdgeInsets.only(right: parentWidth * 0.05),
                 child: Icon(
-                  Icons.arrow_back_ios,
-                  color: Colors.transparent,
+                  Icons.picture_as_pdf,
+                  color: Colors.white,
                 ),
               ),
             ],
@@ -196,8 +204,8 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
                   ],
                   color: CommonColor.SUBMIT_BID,
                   borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(7),
-                      topRight: Radius.circular(7)),
+                      topLeft: Radius.circular(10),
+                      topRight: Radius.circular(10)),
 
                 ),
                 child: Row(
@@ -253,12 +261,15 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
                           color: CommonColor.GAME_DESTRUCTION,
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.grey.withOpacity(0.2),
-                              spreadRadius: 5,
+                              color: Colors.black.withOpacity(0.07),
+                              spreadRadius: 3,
                               blurRadius: 6,
-                              offset: const Offset(0, 8),
+                              offset: const Offset(0, 5),
                             )
                           ],
+                          borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(7),
+                              bottomRight: Radius.circular(7)),
                         ),
                         child: Column(
                           children: [
@@ -266,7 +277,7 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
                               padding: EdgeInsets.only(
                                   top: parentHeight * 0.01,
                                   right: parentWidth * 0.07,
-                                  left: parentWidth * 0.08,
+                                  left: parentWidth * 0.05,
                                   bottom: parentHeight * 0.01),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -311,7 +322,7 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
                               padding: EdgeInsets.only(
                                   top: parentHeight * 0.01,
                                   right: parentWidth * 0.07,
-                                  left: parentWidth * 0.08,
+                                  left: parentWidth * 0.05,
                                   bottom: parentHeight * 0.01),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -356,7 +367,7 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
                               padding: EdgeInsets.only(
                                   top: parentHeight * 0.01,
                                   right: parentWidth * 0.07,
-                                  left: parentWidth * 0.08,
+                                  left: parentWidth * 0.05,
                                   bottom: parentHeight * 0.01),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -401,7 +412,7 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
                               padding: EdgeInsets.only(
                                   top: parentHeight * 0.01,
                                   right: parentWidth * 0.07,
-                                  left: parentWidth * 0.08,
+                                  left: parentWidth * 0.05,
                                   bottom: parentHeight * 0.01),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -446,7 +457,7 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
                               padding: EdgeInsets.only(
                                   top: parentHeight * 0.01,
                                   right: parentWidth * 0.07,
-                                  left: parentWidth * 0.08,
+                                  left: parentWidth * 0.05,
                                   bottom: parentHeight * 0.01),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -491,7 +502,7 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
                               padding: EdgeInsets.only(
                                   top: parentHeight * 0.01,
                                   right: parentWidth * 0.07,
-                                  left: parentWidth * 0.08,
+                                  left: parentWidth * 0.05,
                                   bottom: parentHeight * 0.01),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -536,7 +547,7 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
                               padding: EdgeInsets.only(
                                   top: parentHeight * 0.01,
                                   right: parentWidth * 0.07,
-                                  left: parentWidth * 0.08,
+                                  left: parentWidth * 0.05,
                                   bottom: parentHeight * 0.01),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -581,7 +592,7 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
                               padding: EdgeInsets.only(
                                   top: parentHeight * 0.01,
                                   right: parentWidth * 0.07,
-                                  left: parentWidth * 0.08,
+                                  left: parentWidth * 0.05,
                                   bottom: parentHeight * 0.01),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -626,7 +637,7 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
                               padding: EdgeInsets.only(
                                   top: parentHeight * 0.01,
                                   right: parentWidth * 0.07,
-                                  left: parentWidth * 0.08,
+                                  left: parentWidth * 0.05,
                                   bottom: parentHeight * 0.01),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -671,7 +682,7 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
                               padding: EdgeInsets.only(
                                   top: parentHeight * 0.01,
                                   right: parentWidth * 0.07,
-                                  left: parentWidth * 0.08,
+                                  left: parentWidth * 0.05,
                                   bottom: parentHeight * 0.01),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -716,7 +727,7 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
                               padding: EdgeInsets.only(
                                   top: parentHeight * 0.01,
                                   right: parentWidth * 0.07,
-                                  left: parentWidth * 0.08,
+                                  left: parentWidth * 0.05,
                                   bottom: parentHeight * 0.01),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -761,7 +772,7 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
                               padding: EdgeInsets.only(
                                   top: parentHeight * 0.01,
                                   right: parentWidth * 0.07,
-                                  left: parentWidth * 0.08,
+                                  left: parentWidth * 0.05,
                                   bottom: parentHeight * 0.01),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -806,7 +817,7 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
                               padding: EdgeInsets.only(
                                   top: parentHeight * 0.01,
                                   right: parentWidth * 0.07,
-                                  left: parentWidth * 0.08,
+                                  left: parentWidth * 0.05,
                                   bottom: parentHeight * 0.01),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -851,7 +862,7 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
                               padding: EdgeInsets.only(
                                   top: parentHeight * 0.01,
                                   right: parentWidth * 0.07,
-                                  left: parentWidth * 0.08,
+                                  left: parentWidth * 0.05,
                                   bottom: parentHeight * 0.01),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -896,7 +907,7 @@ class _TenderViewBidScreenState extends State<TenderViewBidScreen> {
                               padding: EdgeInsets.only(
                                   top: parentHeight * 0.01,
                                   right: parentWidth * 0.07,
-                                  left: parentWidth * 0.08,
+                                  left: parentWidth * 0.05,
                                   bottom: parentHeight * 0.02),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

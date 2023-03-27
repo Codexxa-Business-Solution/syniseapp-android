@@ -49,7 +49,7 @@ class _TenderMyProfileScreen extends State<TenderMyProfileScreen> {
                   )
                 ],
               ),
-              height: SizeConfig.screenHeight*0.87,
+              height: SizeConfig.screenHeight*0.8,
               child: getAllDetailsLayout(SizeConfig.screenHeight, SizeConfig.screenWidth),
             ),
           ),
@@ -82,11 +82,6 @@ class _TenderMyProfileScreen extends State<TenderMyProfileScreen> {
                     )
                   ],
                 ),
-            /*    child: Center(
-                    child: Image(
-                      image: AssetImage("assets/images/tender_profile.png"),
-                    )
-                ),*/
               ),
             ),
           ],
@@ -593,7 +588,7 @@ class _TenderMyProfileScreen extends State<TenderMyProfileScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
 
-              Text("GST",
+              Text("GST/VAT/IE Code",
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: SizeConfig.blockSizeHorizontal*3.8,
@@ -624,7 +619,7 @@ class _TenderMyProfileScreen extends State<TenderMyProfileScreen> {
             ],
           ),
         ),
-        Padding(
+        /*Padding(
           padding: EdgeInsets.only(top: parentHeight*0.03, right: parentWidth*0.07,
               left: parentWidth*0.08),
           child: Row(
@@ -699,7 +694,7 @@ class _TenderMyProfileScreen extends State<TenderMyProfileScreen> {
 
             ],
           ),
-        ),
+        ),*/
         Padding(
           padding: EdgeInsets.only(top: parentHeight*0.03, right: parentWidth*0.07,
               left: parentWidth*0.08),

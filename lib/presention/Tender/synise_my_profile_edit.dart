@@ -458,7 +458,7 @@ class _EditMyProfileState extends State<EditMyProfile> {
                     height: parentHeight * 0.066,
                     child: InputDecorator(
                       decoration: InputDecoration(
-                          labelText: 'Phone Number',
+                          labelText: 'Country',
                           labelStyle: const TextStyle(
                               color: Colors.black54,
                               fontSize: 15,
@@ -529,7 +529,7 @@ class _EditMyProfileState extends State<EditMyProfile> {
                     height: parentHeight * 0.066,
                     child: InputDecorator(
                       decoration: InputDecoration(
-                          labelText: 'Phone Number',
+                          labelText: 'State',
                           labelStyle: const TextStyle(
                               color: Colors.black54,
                               fontSize: 15,
@@ -945,7 +945,23 @@ class _EditMyProfileState extends State<EditMyProfile> {
                       focusNode: _gstFocus,
                       textInputAction: TextInputAction.next,
                       decoration: InputDecoration(
-                          labelText: 'GST',
+                          label: RichText(
+                            text: TextSpan(
+                                text: 'GST/VAT/IE Code',
+                                style: TextStyle(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                                ),
+                                children: [
+                                  TextSpan(
+                                      text: '*',
+                                      style: TextStyle(
+                                          fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                                          color: Colors.red,
+                                          fontWeight: FontWeight.bold))
+                                ]),
+                          ),
                           labelStyle: const TextStyle(
                               color: Colors.black54,
                               fontSize: 15,
@@ -1139,7 +1155,7 @@ class _EditMyProfileState extends State<EditMyProfile> {
                   fontFamily: 'Roboto-Bold'),
             ),
           )*/
-          Image(image: AssetImage("assets/images/upload_text.png"))
+          // Image(image: AssetImage("assets/images/upload_text.png"))
         ],
       ),
     );

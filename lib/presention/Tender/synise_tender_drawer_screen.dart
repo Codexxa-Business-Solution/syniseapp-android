@@ -4,6 +4,7 @@ import 'package:synise_project/common_file/size_config.dart';
 import 'package:synise_project/presention/Tender/synise_faq_screen.dart';
 import 'package:synise_project/presention/Tender/synise_feedback_Tab.dart';
 import 'package:synise_project/presention/Tender/synise_tender_bid_history.dart';
+import 'package:synise_project/presention/Tender/synise_tender_contact_us.dart';
 import 'package:synise_project/presention/Tender/synise_view_submit_tenders_screen.dart';
 import 'package:synise_project/presention/Tender/synise_agreement_screen.dart';
 import 'package:synise_project/presention/Tender/synise_tender_change_password_screen.dart';
@@ -12,7 +13,6 @@ import 'package:synise_project/presention/Tender/synise_tender_home_screen.dart'
 import 'package:synise_project/presention/Tender/synise_tender_logout_screen.dart';
 import 'package:synise_project/presention/Tender/synise_tender_my_profile_screen.dart';
 import 'package:synise_project/presention/Tender/synise_register_complain_screen.dart';
-
 
 class TenderDrawerScreen extends StatefulWidget {
   const TenderDrawerScreen({Key? key}) : super(key: key);
@@ -27,13 +27,11 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
   List<Widget>? _actions;
   late TabController _tabController;
 
-
   @override
   void initState() {
     super.initState();
 
     _pageChange(0);
-
   }
 
   @override
@@ -66,33 +64,28 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
                 onPressed: () {
                   Scaffold.of(context).openDrawer();
                 },
-                tooltip:
-                MaterialLocalizations.of(context).openAppDrawerTooltip,
+                tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
               ),
             );
-
           },
         ),
       ),
       drawer: Padding(
-        padding: EdgeInsets.only(top: SizeConfig.screenHeight*0.05),
+        padding: EdgeInsets.only(top: SizeConfig.screenHeight * 0.05),
         child: ClipRRect(
           borderRadius: const BorderRadius.only(
             topRight: Radius.circular(40),
           ),
           child: Container(
-              height: SizeConfig.screenHeight*0.98 ,
-              width: SizeConfig.screenWidth*0.7,
+              height: SizeConfig.screenHeight * 0.98,
+              width: SizeConfig.screenWidth * 0.7,
               decoration: const BoxDecoration(),
-              child: _drawer()
-          ),
+              child: _drawer()),
         ),
       ),
-      body:_widget,
-
+      body: _widget,
     );
   }
-
 
   Drawer _drawer() {
     return Drawer(
@@ -103,24 +96,24 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
           children: <Widget>[
             ListTile(
                 title: Center(
-                  child: Padding(
-                    padding: EdgeInsets.only(top: SizeConfig.screenHeight*0.01),
-                    child: const Image(
-                      image: AssetImage("assets/images/applogo.png"),
-                    ),
-                  ),
-                )
-            ),
+              child: Padding(
+                padding: EdgeInsets.only(top: SizeConfig.screenHeight * 0.01),
+                child: const Image(
+                  image: AssetImage("assets/images/applogo.png"),
+                ),
+              ),
+            )),
 
             Padding(
-              padding: EdgeInsets.only(top: SizeConfig.screenHeight*0.01),
+              padding: EdgeInsets.only(top: SizeConfig.screenHeight * 0.01),
               child: ListTile(
-                title: Text('Home',
+                title: Text(
+                  'Home',
                   style: TextStyle(
                       color: Colors.black,
-                      fontSize: SizeConfig.blockSizeHorizontal*4.0,
-                      fontFamily: 'Roboto_Medium'
-                  ),),
+                      fontSize: SizeConfig.blockSizeHorizontal * 4.0,
+                      fontFamily: 'Roboto_Medium'),
+                ),
                 onTap: () {
                   _pageChange(0);
                   Navigator.pop(context);
@@ -128,134 +121,139 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
               ),
             ),
             ListTile(
-              title: Text('My Profile',
+              title: Text(
+                'My Profile',
                 style: TextStyle(
                     color: Colors.black,
-                    fontSize: SizeConfig.blockSizeHorizontal*4.0,
-                    fontFamily: 'Roboto_Medium'
-                ),),
+                    fontSize: SizeConfig.blockSizeHorizontal * 4.0,
+                    fontFamily: 'Roboto_Medium'),
+              ),
               onTap: () {
                 _pageChange(1);
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text('Bid History',
+              title: Text(
+                'Bid History',
                 style: TextStyle(
                     color: Colors.black,
-                    fontSize: SizeConfig.blockSizeHorizontal*4.0,
-                    fontFamily: 'Roboto_Medium'
-                ),),
+                    fontSize: SizeConfig.blockSizeHorizontal * 4.0,
+                    fontFamily: 'Roboto_Medium'),
+              ),
+              onTap: () {
+                _pageChange(2);
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text(
+                'Change Password',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: SizeConfig.blockSizeHorizontal * 4.0,
+                    fontFamily: 'Roboto_Medium'),
+              ),
               onTap: () {
                 _pageChange(3);
                 Navigator.pop(context);
               },
             ),
-            ListTile(
-              title: Text('Change Password',
+            ExpansionTile(
+              title: Text(
+                "Voice of Customer",
                 style: TextStyle(
                     color: Colors.black,
-                    fontSize: SizeConfig.blockSizeHorizontal*4.0,
-                    fontFamily: 'Roboto_Medium'
-                ),),
+                    fontSize: SizeConfig.blockSizeHorizontal * 4.0,
+                    fontFamily: 'Roboto_Medium'),
+              ),
+              //add icon
+              //children padding
+              children: [
+                ListTile(
+                  title: Text(
+                    "Feedback/Grievance for Seller",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: SizeConfig.blockSizeHorizontal * 4.0,
+                        fontFamily: 'Roboto_Medium'),
+                  ),
+                  onTap: () {
+                    _pageChange(4);
+                    Navigator.pop(context);
+
+                    //action on press
+                  },
+                ),
+                ListTile(
+                  title: Text(
+                    "Feedback/Grievance for Synise",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: SizeConfig.blockSizeHorizontal * 4.0,
+                        fontFamily: 'Roboto_Medium'),
+                  ),
+                  onTap: () {
+                    _pageChange(5);
+                    Navigator.pop(context);
+
+                    //action on press
+                  },
+                ),
+              ],
+            ),
+            ListTile(
+              title: Text(
+                'Agreement',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: SizeConfig.blockSizeHorizontal * 4.0,
+                    fontFamily: 'Roboto_Medium'),
+              ),
               onTap: () {
-                _pageChange(4);
+                _pageChange(6);
                 Navigator.pop(context);
               },
             ),
-    ExpansionTile(
-    title: Text("Voice of Customer", style: TextStyle(
-    color: Colors.black,
-    fontSize: SizeConfig.blockSizeHorizontal*4.0,
-    fontFamily: 'Roboto_Medium'
-    ),),
-   //add icon
-   //children padding
-    children: [
-    ListTile(
-    title: Text("Feedback/Grievance for Seller", style: TextStyle(
-    color: Colors.black,
-    fontSize: SizeConfig.blockSizeHorizontal*4.0,
-    fontFamily: 'Roboto_Medium'
-    ),),
-    onTap: (){
-
-        _pageChange(6);
-        Navigator.pop(context);
-
-    //action on press
-    },
-    ),
-
-    ListTile(
-    title: Text("Feedback/Grievance for Synise", style: TextStyle(
-    color: Colors.black,
-    fontSize: SizeConfig.blockSizeHorizontal*4.0,
-    fontFamily: 'Roboto_Medium'
-    ),),
-      onTap: () {
-        _pageChange(7);
-        Navigator.pop(context);
-
-    //action on press
-    },
-    ),
-    ],
-    ),
-
-            // ListTile(
-            //   title: Text('Voice of Customer',
-            //     style: TextStyle(
-            //         color: Colors.black,
-            //         fontSize: SizeConfig.blockSizeHorizontal*4.0,
-            //         fontFamily: 'Roboto_Medium'
-            //     ),),
-            //
-            //
-            //   onTap: () {
-            //     _pageChange(3);
-            //     Navigator.pop(context);
-            //   },
-            // ),
-
             ListTile(
-              title: Text('Agreement',
+              title: Text(
+                'FAQ',
                 style: TextStyle(
                     color: Colors.black,
-                    fontSize: SizeConfig.blockSizeHorizontal*4.0,
-                    fontFamily: 'Roboto_Medium'
-                ),),
+                    fontSize: SizeConfig.blockSizeHorizontal * 4.0,
+                    fontFamily: 'Roboto_Medium'),
+              ),
+              onTap: () {
+                _pageChange(7);
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text(
+                'Contact Us',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: SizeConfig.blockSizeHorizontal * 4.0,
+                    fontFamily: 'Roboto_Medium'),
+              ),
               onTap: () {
                 _pageChange(8);
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text('FAQ',
+              title: Text(
+                'Logout',
                 style: TextStyle(
                     color: Colors.black,
-                    fontSize: SizeConfig.blockSizeHorizontal*4.0,
-                    fontFamily: 'Roboto_Medium'
-                ),),
-              onTap: () {
-                _pageChange(9);
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: Text('Logout',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: SizeConfig.blockSizeHorizontal*4.0,
-                    fontFamily: 'Roboto_Medium'
-                ),),
+                    fontSize: SizeConfig.blockSizeHorizontal * 4.0,
+                    fontFamily: 'Roboto_Medium'),
+              ),
               onTap: () {
                 _pageChange(10);
                 Navigator.pop(context);
               },
             ),
-
-
           ],
         ),
       ),
@@ -275,56 +273,41 @@ class _TenderDrawerScreen extends State<TenderDrawerScreen> {
         _actions = [];
         break;
       case 2:
-        _title = '';
-        _widget = const ViewSubmitTenderHomeScreen();
-        _actions = [];
-        break;
-      case 3:
         _title = 'Bid History';
         _widget = const TenderBidHistoryScreen();
         _actions = [];
         break;
-      case 4:
+      case 3:
         _title = 'Change Password';
         _widget = const TenderChangePassword();
         _actions = [];
         break;
-      case 5:
-        _title = 'Complaint Register';
-        _widget = const TenderRegisterComplaintScreen();
-        _actions = [
-          IconButton(
-            icon: const Icon(
-              Icons.settings,
-              color: Colors.white,
-            ),
-            onPressed: () {
-              // do something
-            },
-          )
-        ];
-        break;
-      case 6:
+      case 4:
         _title = 'Feedback of Seller';
         _widget = const TenderFeedbackScreen();
         _actions = [];
         break;
-      case 7:
+      case 5:
         _title = 'Feedback of Synise';
         _widget = const TenderFeedbackSyniseScreen();
         _actions = [];
         break;
-      case 8:
+      case 6:
         _title = 'Agreement';
         _widget = const TenderAgreementScreen();
         _actions = [];
         break;
-      case 9:
-     _title = 'FAQ';
+      case 7:
+        _title = 'FAQ';
         _widget = const TenderFAQScreen();
         _actions = [];
         break;
-      case 10:
+      case 8:
+        _title = 'Contact Us';
+        _widget = const TenderContactUs();
+        _actions = [];
+      break;
+      case 9:
         _widget = const TenderLogoutScreen();
         _actions = [];
         break;

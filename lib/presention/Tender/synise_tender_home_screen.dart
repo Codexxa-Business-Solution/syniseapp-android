@@ -298,7 +298,7 @@ class _TenderHomeScreenState extends State<TenderHomeScreen> {
                             borderRadius: BorderRadius.circular(10)
                           ),
                           child: Center(
-                            child: Text("Submit",
+                            child: Text("Go",
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: SizeConfig.blockSizeHorizontal*3.5,
@@ -1183,7 +1183,7 @@ class _TenderHomeScreenState extends State<TenderHomeScreen> {
                     borderRadius: BorderRadius.circular(7)
                 ),
                 child: Center(
-                  child: Text("Submit",
+                  child: Text("Next",
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: SizeConfig.blockSizeHorizontal*4.0,
