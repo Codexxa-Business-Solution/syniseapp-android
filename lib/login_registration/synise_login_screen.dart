@@ -3,7 +3,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:synise_project/common_file/colors.dart';
 import 'package:synise_project/common_file/size_config.dart';
-import 'package:synise_project/login_registration/synise_supplier_registration.dart';
+import 'package:synise_project/login_registration/auction_registration_screen.dart';
+import 'package:synise_project/login_registration/tender_registration.dart';
 import 'package:synise_project/presention/auction/synise_auction_drawer_screen.dart';
 
 import '../presention/Tender/synise_tender_drawer_screen.dart';
@@ -38,8 +39,8 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: GestureDetector(
-        onDoubleTap: (){},
-        onTap: (){
+        onDoubleTap: () {},
+        onTap: () {
           FocusScope.of(context).requestFocus(FocusNode());
         },
         child: ListView(
@@ -63,13 +64,13 @@ class _LoginPageState extends State<LoginPage> {
           top: parentHeight * 0.15,
           left: parentWidth * 0.3,
           right: parentWidth * 0.3),
-      child:  Center(
+      child: Center(
           child: Image(
-              image: AssetImage(
-        "assets/images/applogo.png",
-
-      ),
-          height: SizeConfig.screenHeight*0.08,)),
+        image: AssetImage(
+          "assets/images/applogo.png",
+        ),
+        height: SizeConfig.screenHeight * 0.08,
+      )),
     ));
   }
 
@@ -188,8 +189,8 @@ class _LoginPageState extends State<LoginPage> {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 hintText: 'User Name',
-                contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
-
+                contentPadding:
+                    const EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
                 fillColor: Colors.white,
                 hintStyle: TextStyle(
                     fontSize: SizeConfig.blockSizeHorizontal * 4.0,
@@ -223,8 +224,8 @@ class _LoginPageState extends State<LoginPage> {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 hintText: 'Password',
-                contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
-
+                contentPadding:
+                    const EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
                 fillColor: Colors.white,
                 hintStyle: TextStyle(
                     fontSize: SizeConfig.blockSizeHorizontal * 4.0,
@@ -263,82 +264,26 @@ class _LoginPageState extends State<LoginPage> {
               left: parentWidth * 0.04, top: parentHeight * 0.02),
           child: Row(
             children: [
-              // Padding(
-              //   padding: EdgeInsets.only(bottom: parentHeight * 0.017),
-              //   child: Stack(
-              //     children: [
-              //       Visibility(
-              //         visible: !isChecked,
-              //         child: GestureDetector(
-              //           onTap: () {
-              //             if (mounted) {
-              //               setState(() {
-              //                 isChecked = !isChecked;
-              //               });
-              //             }
-              //           },
-              //           child: Container(
-              //             height: parentHeight * 0.027,
-              //             width: parentWidth * 0.059,
-              //             decoration: BoxDecoration(
-              //                 // color: Colors.red,
-              //                 borderRadius: BorderRadius.circular(3),
-              //                 border:
-              //                     Border.all(color: Colors.black, width: 1)),
-              //             child: const Text(
-              //               "Hiii",
-              //               style: TextStyle(color: Colors.transparent),
-              //             ),
-              //           ),
-              //         ),
-              //       ),
-              //       Visibility(
-              //         visible: isChecked,
-              //         child: GestureDetector(
-              //           onTap: () {
-              //             if (mounted) {
-              //               setState(() {
-              //                 isChecked = !isChecked;
-              //               });
-              //             }
-              //           },
-              //           child: Container(
-              //             height: parentHeight * 0.027,
-              //             width: parentWidth * 0.059,
-              //             decoration: BoxDecoration(
-              //                 // color: Colors.red,
-              //                 borderRadius: BorderRadius.circular(5),
-              //                 border:
-              //                     Border.all(color: Colors.black, width: 1)),
-              //             child: Center(
-              //                 child: Icon(
-              //               Icons.check,
-              //               size: parentHeight * 0.02,
-              //               color: CommonColor.APP_BAR_COLOR,
-              //             )),
-              //           ),
-              //         ),
-              //       )
-              //     ],
-              //   ),
-              // ),
-    Container(
-      height: parentHeight * 0.07,
-               width: parentWidth * 0.069,
-      child: Column(
-      children: <Widget>[
-      const SizedBox(height: 0,),
-      Checkbox(
-      checkColor: Colors.white,
-      value: isChecked,
-      onChanged: (bool? value) {
-      setState(() {
-      isChecked = value!;
-      });
-      },
-      ),
-      ],),
-    ),
+              Container(
+                height: parentHeight * 0.07,
+                width: parentWidth * 0.069,
+                child: Column(
+                  children: <Widget>[
+                    const SizedBox(
+                      height: 0,
+                    ),
+                    Checkbox(
+                      checkColor: Colors.white,
+                      value: isChecked,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          isChecked = value!;
+                        });
+                      },
+                    ),
+                  ],
+                ),
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -384,20 +329,19 @@ class _LoginPageState extends State<LoginPage> {
         ),
         GestureDetector(
           onTap: () {
-
-            index == 1 ?
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const TenderDrawerScreen())) :
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const AuctionDrawerScreen()));
+            index == 1
+                ? Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const TenderDrawerScreen()))
+                : Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const AuctionDrawerScreen()));
           },
           onDoubleTap: () {},
           child: Padding(
-            padding:  EdgeInsets.only(top: parentHeight*0.02),
+            padding: EdgeInsets.only(top: parentHeight * 0.02),
             child: Container(
                 width: parentWidth * 0.77,
                 height: parentHeight * 0.065,
@@ -430,27 +374,32 @@ class _LoginPageState extends State<LoginPage> {
                     text: TextSpan(
                         text: "Dont have an Account? ",
                         style: TextStyle(
-                          fontSize: SizeConfig.blockSizeHorizontal*3.5,
-                          color: CommonColor.BLACK_COLOR,
-                          fontFamily: 'Roboto_Regular',
-                          fontWeight: FontWeight.w500
-                        ),
+                            fontSize: SizeConfig.blockSizeHorizontal * 3.5,
+                            color: CommonColor.BLACK_COLOR,
+                            fontFamily: 'Roboto_Regular',
+                            fontWeight: FontWeight.w500),
                         children: [
                           TextSpan(
                               text: "Signup",
                               style: TextStyle(
-                                  fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                                  fontSize:
+                                      SizeConfig.blockSizeHorizontal * 3.5,
                                   color: CommonColor.TENDER_BOX_TEXT,
                                   fontFamily: 'Roboto_Regular',
-                                  fontWeight: FontWeight.w500
-                              ),
+                                  fontWeight: FontWeight.w500),
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const SupplierRegistration()));
+                                  index == 1
+                                      ? Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const TenderRegistration()))
+                                      : Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const AuctionRegistration()));
                                 })
                         ]),
                   ),

@@ -3,14 +3,14 @@ import 'package:synise_project/common_file/colors.dart';
 import 'package:synise_project/common_file/size_config.dart';
 import 'package:synise_project/presention/auction/synise_auction_drawer_screen.dart';
 
-class SupplierRegistration extends StatefulWidget {
-  const SupplierRegistration({Key? key}) : super(key: key);
+class AuctionRegistration extends StatefulWidget {
+  const AuctionRegistration({Key? key}) : super(key: key);
 
   @override
-  State<SupplierRegistration> createState() => _SupplierRegistrationState();
+  State<AuctionRegistration> createState() => _AuctionRegistrationState();
 }
 
-class _SupplierRegistrationState extends State<SupplierRegistration> {
+class _AuctionRegistrationState extends State<AuctionRegistration> {
 
 
 
@@ -22,6 +22,7 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
   TextEditingController cityController = TextEditingController();
   TextEditingController zipCodeController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
+  TextEditingController mobileController = TextEditingController();
   TextEditingController profileController = TextEditingController();
   TextEditingController nameController = TextEditingController();
   TextEditingController gstController = TextEditingController();
@@ -38,6 +39,7 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
   final _cityFocus = FocusNode();
   final _zipCodeFocus = FocusNode();
   final _phoneFocus = FocusNode();
+  final _mobileFocus = FocusNode();
   final _profileFocus = FocusNode();
   final _nameFocus = FocusNode();
   final _gstFocus = FocusNode();
@@ -100,7 +102,7 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
             Container(
               height: SizeConfig.screenHeight * 0.1,
               child:
-                  getHeadingName(SizeConfig.screenHeight, SizeConfig.screenWidth),
+              getHeadingName(SizeConfig.screenHeight, SizeConfig.screenWidth),
             ),
             Container(
               height: SizeConfig.screenHeight * 0.9,
@@ -132,9 +134,9 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
           children: [
             GestureDetector(
 
-            onTap: () {
-      Navigator.pop(context);
-      },
+              onTap: () {
+                Navigator.pop(context);
+              },
               child: Padding(
                 padding: EdgeInsets.only(left: parentWidth * 0.05),
                 child: Icon(
@@ -215,8 +217,24 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
             focusNode: _companyFocus,
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
-              hintText: "Company Name",
-              hintStyle: TextStyle(
+              label: RichText(
+                text: TextSpan(
+                    text: 'Company Name',
+                    style: TextStyle(
+                      color: Colors.black54,
+                      fontWeight: FontWeight.w400,
+                      fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                    ),
+                    children: [
+                      TextSpan(
+                          text: '*',
+                          style: TextStyle(
+                              fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold))
+                    ]),
+              ),
+              labelStyle: TextStyle(
                   color: CommonColor.Hint_TEXT_COLOR,
                   fontSize: SizeConfig.blockSizeHorizontal * 3.5,
                   fontFamily: 'Roboto_Regular'),
@@ -237,8 +255,24 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
             focusNode: _emailFocus,
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
-              hintText: "Email Address",
-              hintStyle: TextStyle(
+              label: RichText(
+                text: TextSpan(
+                    text: 'Email Address',
+                    style: TextStyle(
+                      color: Colors.black54,
+                      fontWeight: FontWeight.w400,
+                      fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                    ),
+                    children: [
+                      TextSpan(
+                          text: '*',
+                          style: TextStyle(
+                              fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold))
+                    ]),
+              ),
+              labelStyle: TextStyle(
                   color: CommonColor.Hint_TEXT_COLOR,
                   fontSize: SizeConfig.blockSizeHorizontal * 3.5,
                   fontFamily: 'Roboto_Regular'),
@@ -281,8 +315,24 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
             focusNode: _addressOneFocus,
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
-              hintText: "Address 1",
-              hintStyle: TextStyle(
+              label: RichText(
+                text: TextSpan(
+                    text: 'Address 1',
+                    style: TextStyle(
+                      color: Colors.black54,
+                      fontWeight: FontWeight.w400,
+                      fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                    ),
+                    children: [
+                      TextSpan(
+                          text: '*',
+                          style: TextStyle(
+                              fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold))
+                    ]),
+              ),
+              labelStyle: TextStyle(
                   color: CommonColor.Hint_TEXT_COLOR,
                   fontSize: SizeConfig.blockSizeHorizontal * 3.5,
                   fontFamily: 'Roboto_Regular'),
@@ -330,17 +380,33 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
                     focusNode: _cityFocus,
                     textInputAction: TextInputAction.next,
                     decoration: InputDecoration(
-                      hintText: "City",
-                      hintStyle: TextStyle(
+                      label: RichText(
+                        text: TextSpan(
+                            text: 'City',
+                            style: TextStyle(
+                              color: Colors.black54,
+                              fontWeight: FontWeight.w400,
+                              fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                            ),
+                            children: [
+                              TextSpan(
+                                  text: '*',
+                                  style: TextStyle(
+                                      fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                                      color: Colors.red,
+                                      fontWeight: FontWeight.bold))
+                            ]),
+                      ),
+                      labelStyle: TextStyle(
                           color: CommonColor.Hint_TEXT_COLOR,
                           fontSize: SizeConfig.blockSizeHorizontal * 3.5,
                           fontFamily: 'Roboto_Regular'),
                       border: const OutlineInputBorder(
                           borderSide:
-                              BorderSide(width: 1.0, color: Colors.black)),
+                          BorderSide(width: 1.0, color: Colors.black)),
                       focusedBorder: const OutlineInputBorder(
                           borderSide:
-                              BorderSide(width: 1.0, color: Colors.black)),
+                          BorderSide(width: 1.0, color: Colors.black)),
                     ),
                   ),
                 ),
@@ -360,10 +426,10 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
                           fontFamily: 'Roboto_Regular'),
                       border: const OutlineInputBorder(
                           borderSide:
-                              BorderSide(width: 1.0, color: Colors.black)),
+                          BorderSide(width: 1.0, color: Colors.black)),
                       focusedBorder: const OutlineInputBorder(
                           borderSide:
-                              BorderSide(width: 1.0, color: Colors.black)),
+                          BorderSide(width: 1.0, color: Colors.black)),
                     ),
                   ),
                 ),
@@ -384,7 +450,7 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
                   child: Container(
                     height: parentHeight * 0.066,
                     decoration: BoxDecoration(
-                        // color: Colors.red,
+                      // color: Colors.red,
                         borderRadius: BorderRadius.circular(5),
                         border: Border.all(color: Colors.black38, width: 1.0)),
                     child: DropdownButtonHideUnderline(
@@ -429,7 +495,7 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
                   child: Container(
                     height: parentHeight * 0.066,
                     decoration: BoxDecoration(
-                        // color: Colors.red,
+                      // color: Colors.red,
                         borderRadius: BorderRadius.circular(5),
                         border: Border.all(color: Colors.black38, width: 1.0)),
                     child: DropdownButtonHideUnderline(
@@ -498,13 +564,51 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
               top: parentHeight * 0.02,
               left: parentWidth * 0.05,
               right: parentWidth * 0.05),
+          child: TextFormField(
+            controller: mobileController,
+            focusNode: _mobileFocus,
+            textInputAction: TextInputAction.next,
+            decoration: InputDecoration(
+              label: RichText(
+                text: TextSpan(
+                    text: 'Mobile Number',
+                    style: TextStyle(
+                      color: Colors.black54,
+                      fontWeight: FontWeight.w400,
+                      fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                    ),
+                    children: [
+                      TextSpan(
+                          text: '*',
+                          style: TextStyle(
+                              fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold))
+                    ]),
+              ),
+              labelStyle: TextStyle(
+                  color: CommonColor.Hint_TEXT_COLOR,
+                  fontSize: SizeConfig.blockSizeHorizontal * 3.5,
+                  fontFamily: 'Roboto_Regular'),
+              border: const OutlineInputBorder(
+                  borderSide: BorderSide(width: 1.0, color: Colors.black)),
+              focusedBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(width: 1.0, color: Colors.black)),
+            ),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(
+              top: parentHeight * 0.02,
+              left: parentWidth * 0.05,
+              right: parentWidth * 0.05),
           child: Row(
             children: [
               Expanded(
                 child: Container(
                   height: parentHeight * 0.066,
                   decoration: BoxDecoration(
-                      // color: Colors.red,
+                    // color: Colors.red,
                       borderRadius: BorderRadius.circular(5),
                       border: Border.all(color: Colors.black38, width: 1.0)),
                   child: DropdownButtonHideUnderline(
@@ -593,8 +697,24 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
             focusNode: _nameFocus,
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
-              hintText: "Your Name",
-              hintStyle: TextStyle(
+              label: RichText(
+                text: TextSpan(
+                    text: 'Your Name',
+                    style: TextStyle(
+                      color: Colors.black54,
+                      fontWeight: FontWeight.w400,
+                      fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                    ),
+                    children: [
+                      TextSpan(
+                          text: '*',
+                          style: TextStyle(
+                              fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold))
+                    ]),
+              ),
+              labelStyle: TextStyle(
                   color: CommonColor.Hint_TEXT_COLOR,
                   fontSize: SizeConfig.blockSizeHorizontal * 3.5,
                   fontFamily: 'Roboto_Regular'),
@@ -616,7 +736,7 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
                 child: Container(
                   height: parentHeight * 0.066,
                   decoration: BoxDecoration(
-                      // color: Colors.red,
+                    // color: Colors.red,
                       borderRadius: BorderRadius.circular(5),
                       border: Border.all(color: Colors.black38, width: 1.0)),
                   child: DropdownButtonHideUnderline(
@@ -679,10 +799,10 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
                           fontFamily: 'Roboto_Regular'),
                       border: const OutlineInputBorder(
                           borderSide:
-                              BorderSide(width: 1.0, color: Colors.black)),
+                          BorderSide(width: 1.0, color: Colors.black)),
                       focusedBorder: const OutlineInputBorder(
                           borderSide:
-                              BorderSide(width: 1.0, color: Colors.black)),
+                          BorderSide(width: 1.0, color: Colors.black)),
                     ),
                   ),
                 ),
@@ -702,10 +822,10 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
                           fontFamily: 'Roboto_Regular'),
                       border: const OutlineInputBorder(
                           borderSide:
-                              BorderSide(width: 1.0, color: Colors.black)),
+                          BorderSide(width: 1.0, color: Colors.black)),
                       focusedBorder: const OutlineInputBorder(
                           borderSide:
-                              BorderSide(width: 1.0, color: Colors.black)),
+                          BorderSide(width: 1.0, color: Colors.black)),
                     ),
                   ),
                 ),
@@ -735,10 +855,10 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
                           fontFamily: 'Roboto_Regular'),
                       border: const OutlineInputBorder(
                           borderSide:
-                              BorderSide(width: 1.0, color: Colors.black)),
+                          BorderSide(width: 1.0, color: Colors.black)),
                       focusedBorder: const OutlineInputBorder(
                           borderSide:
-                              BorderSide(width: 1.0, color: Colors.black)),
+                          BorderSide(width: 1.0, color: Colors.black)),
                     ),
                   ),
                 ),
@@ -758,10 +878,10 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
                           fontFamily: 'Roboto_Regular'),
                       border: const OutlineInputBorder(
                           borderSide:
-                              BorderSide(width: 1.0, color: Colors.black)),
+                          BorderSide(width: 1.0, color: Colors.black)),
                       focusedBorder: const OutlineInputBorder(
                           borderSide:
-                              BorderSide(width: 1.0, color: Colors.black)),
+                          BorderSide(width: 1.0, color: Colors.black)),
                     ),
                   ),
                 ),
@@ -779,8 +899,24 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
             focusNode: _codeFocus,
             textInputAction: TextInputAction.done,
             decoration: InputDecoration(
-              hintText: "Enter Below Code",
-              hintStyle: TextStyle(
+              label: RichText(
+                text: TextSpan(
+                    text: 'Enter Below Code',
+                    style: TextStyle(
+                      color: Colors.black54,
+                      fontWeight: FontWeight.w400,
+                      fontSize: SizeConfig.blockSizeHorizontal*3.5,
+                    ),
+                    children: [
+                      TextSpan(
+                          text: '*',
+                          style: TextStyle(
+                              fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold))
+                    ]),
+              ),
+              labelStyle: TextStyle(
                   color: CommonColor.Hint_TEXT_COLOR,
                   fontSize: SizeConfig.blockSizeHorizontal * 4.0,
                   fontFamily: 'Roboto_Regular'),
@@ -794,7 +930,7 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
                 fontSize: SizeConfig.blockSizeHorizontal * 4.0,
                 fontWeight: FontWeight.w400,
                 fontFamily: 'Roboto_Medium'),
-              textAlign: TextAlign.center,
+            textAlign: TextAlign.center,
           ),
         ),
         Padding(
@@ -848,7 +984,7 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
                         height: parentHeight * 0.027,
                         width: parentWidth * 0.059,
                         decoration: BoxDecoration(
-                            // color: Colors.red,
+                          // color: Colors.red,
                             borderRadius: BorderRadius.circular(5),
                             border: Border.all(color: Colors.black, width: 1)),
                         child: const Text(
@@ -872,15 +1008,15 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
                         height: parentHeight * 0.027,
                         width: parentWidth * 0.059,
                         decoration: BoxDecoration(
-                            // color: Colors.red,
+                          // color: Colors.red,
                             borderRadius: BorderRadius.circular(5),
                             border: Border.all(color: Colors.black, width: 1)),
                         child: Center(
                             child: Icon(
-                          Icons.check,
-                          size: parentHeight * 0.02,
-                          color: CommonColor.APP_BAR_COLOR,
-                        )),
+                              Icons.check,
+                              size: parentHeight * 0.02,
+                              color: CommonColor.APP_BAR_COLOR,
+                            )),
                       ),
                     ),
                   )
@@ -938,12 +1074,12 @@ class _SupplierRegistrationState extends State<SupplierRegistration> {
               height: parentHeight * 0.06,
               width: parentWidth * 0.8,
               child: Center(child: Text("Register",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: SizeConfig.blockSizeHorizontal*4.0,
-                fontWeight: FontWeight.w700,
-                fontFamily: 'Roboto-Medium'
-              ),)),
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: SizeConfig.blockSizeHorizontal*4.0,
+                    fontWeight: FontWeight.w700,
+                    fontFamily: 'Roboto-Medium'
+                ),)),
             ),
           ),
         ),

@@ -14,7 +14,6 @@ class TenderFeedbackScreen extends StatefulWidget {
 
 class _TenderFeedbackScreenState extends State<TenderFeedbackScreen>
     with SingleTickerProviderStateMixin {
-
   late TabController _tabController;
 
   TextEditingController ComplaintDetails = TextEditingController();
@@ -36,7 +35,7 @@ class _TenderFeedbackScreenState extends State<TenderFeedbackScreen>
     SizeConfig().init(context);
     return Scaffold(
       body: ListView(
-        physics: const NeverScrollableScrollPhysics(),
+        // physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         padding: const EdgeInsets.only(bottom: 20),
         children: [

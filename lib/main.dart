@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:synise_project/common_file/size_config.dart';
-import 'package:synise_project/login_registration/synise_supplier_registration.dart';
+import 'package:synise_project/login_registration/tender_registration.dart';
 import 'package:synise_project/login_registration/synise_login_screen.dart';
 
 

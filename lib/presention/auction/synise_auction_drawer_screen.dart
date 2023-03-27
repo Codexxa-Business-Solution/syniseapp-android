@@ -139,7 +139,7 @@ class _DrawerScreen extends State<AuctionDrawerScreen> {
             ),
             ListTile(
               title: Text(
-                'Bid For Auction Multibid',
+                'Bid For Auction',
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: SizeConfig.blockSizeHorizontal * 4.0,

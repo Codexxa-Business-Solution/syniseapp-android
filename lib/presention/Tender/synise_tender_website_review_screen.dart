@@ -3,31 +3,39 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:synise_project/common_file/colors.dart';
 import 'package:synise_project/common_file/size_config.dart';
 
-class TenderProductScreen extends StatefulWidget {
-  const TenderProductScreen({
-    Key? key,
-    required this.onNext,
-  }) : super(key: key);
+
+
+
+
+class TenderWebsiteReview extends StatefulWidget {
+
   final VoidCallback onNext;
 
+  const TenderWebsiteReview({Key? key, required this.onNext}) : super(key: key);
+
   @override
-  State<TenderProductScreen> createState() => _TenderProductScreenState();
+  State<TenderWebsiteReview> createState() => _TenderWebsiteReviewState();
 }
 
-class _TenderProductScreenState extends State<TenderProductScreen>
-    with SingleTickerProviderStateMixin {
+class _TenderWebsiteReviewState extends State<TenderWebsiteReview> with SingleTickerProviderStateMixin{
+
+
+
   bool _isVertical = false;
   IconData? _selectedIcon;
 
   double _rating = 0.5;
-  TextEditingController ComplaintDetails = TextEditingController();
-  final _ComplaintDetails = FocusNode();
+  TextEditingController suggestionController = TextEditingController();
+  final suggestionFocus = FocusNode();
+
+
+
 
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      body:  CustomScrollView(
+      body: CustomScrollView(
         slivers: <Widget>[
           SliverList(
               delegate: SliverChildBuilderDelegate(
@@ -42,14 +50,18 @@ class _TenderProductScreenState extends State<TenderProductScreen>
                           top: SizeConfig.screenHeight * 0.025,
                           bottom: SizeConfig.screenHeight * 0.02,
                         ),
-                        child: const Text(
-                          "Chemical Quality Conformance to guaranteed Specification and Test Certificate issued.",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w400,
-                              fontFamily: 'Robot_Regular'),
-                          // textAlign: TextAlign.justify,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text("Auction Team Support",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily: 'Robot_Regular'),
+                              // textAlign: TextAlign.justify,
+                            ),
+                          ],
                         ),
                       ),
                       Row(
@@ -96,24 +108,15 @@ class _TenderProductScreenState extends State<TenderProductScreen>
           SliverList(
             delegate: SliverChildListDelegate(
               [
-                addFeedback(SizeConfig.screenHeight, SizeConfig.screenWidth)
+                addSuggestion(SizeConfig.screenHeight, SizeConfig.screenWidth)
               ],
             ),
           ),
         ],
       ),
-
-      /*ListView(
-        shrinkWrap: true,
-        children: [
-          Container(
-              child: allReview(SizeConfig.screenHeight, SizeConfig.screenWidth)
-          ),
-          addFeedback(SizeConfig.screenHeight, SizeConfig.screenWidth)
-        ],
-      )*/
     );
   }
+
 
   Widget allReview(double parentHeight, double parentWidth) {
     return SizedBox(
@@ -130,8 +133,7 @@ class _TenderProductScreenState extends State<TenderProductScreen>
                     top: SizeConfig.screenHeight * 0.02,
                     bottom: SizeConfig.screenHeight * 0.02,
                   ),
-                  child: const Text(
-                    "Chemical Quality Conformance to guaranteed Spe cification and Test Certificate issued.",
+                  child: const Text("Auction Team Support",
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 15,
@@ -151,14 +153,13 @@ class _TenderProductScreenState extends State<TenderProductScreen>
                               initialRating: 3,
                               minRating: 0.5,
                               direction:
-                                  _isVertical ? Axis.vertical : Axis.horizontal,
+                              _isVertical ? Axis.vertical : Axis.horizontal,
                               allowHalfRating: true,
-                              unratedColor: CommonColor
-                                  .PROFILE_FRAGMENT_REVIEWS_STAR_COLOR,
+                              unratedColor: CommonColor.PROFILE_FRAGMENT_REVIEWS_STAR_COLOR,
                               itemCount: 5,
                               itemSize: 25.0,
                               itemPadding:
-                                  const EdgeInsets.symmetric(horizontal: 5.0),
+                              const EdgeInsets.symmetric(horizontal: 5.0),
                               itemBuilder: (context, _) => Icon(
                                 _selectedIcon ?? Icons.star_rate,
                                 color: CommonColor.RATING_STAR_COLOR,
@@ -182,19 +183,24 @@ class _TenderProductScreenState extends State<TenderProductScreen>
     );
   }
 
-  Widget addFeedback(double parentHeight, double parentWidth) {
+  Widget addSuggestion(double parentHeight, double parentWidth) {
     return Column(
       children: [
         Padding(
           padding: EdgeInsets.only(
-              top: parentHeight * 0.02, right: parentWidth * 0.35),
-          child: const Text(
-            "Additional Feedback or Input",
-            style: TextStyle(
-                color: Colors.black,
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-                fontFamily: 'Robot_Regular'),
+              top: parentHeight * 0.02, left: parentWidth*0.02),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              const Text(
+                "Any Other Suggestions",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'Robot_Regular'),
+              ),
+            ],
           ),
         ),
         Padding(
@@ -203,8 +209,8 @@ class _TenderProductScreenState extends State<TenderProductScreen>
               left: parentWidth * 0.02,
               right: parentWidth * 0.02),
           child: TextFormField(
-            controller: ComplaintDetails,
-            focusNode: _ComplaintDetails,
+            controller: suggestionController,
+            focusNode: suggestionFocus,
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
               hintText: "Add Feedback",
@@ -231,13 +237,13 @@ class _TenderProductScreenState extends State<TenderProductScreen>
               ),
               child: const Center(
                   child: Text(
-                "Submit",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500,
-                    fontFamily: 'Roboto_Bold',
-                    fontSize: 15),
-              ))),
+                    "Submit",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: 'Roboto_Bold',
+                        fontSize: 15),
+                  ))),
         )
       ],
     );

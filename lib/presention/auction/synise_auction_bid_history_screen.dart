@@ -270,7 +270,7 @@ class _AuctionBidHistoryState extends State<AuctionBidHistory> {
                             child: Text(
                               "\u{20B9} 500.00",
                               style: TextStyle(
-                                  color: CommonColor.APP_BAR_COLOR,
+                                  color: CommonColor.BLACK_COLOR,
                                   fontSize:
                                       SizeConfig.blockSizeHorizontal * 3.5,
                                   fontWeight: FontWeight.w400,
@@ -285,7 +285,7 @@ class _AuctionBidHistoryState extends State<AuctionBidHistory> {
                           Text(
                             "11:52:09 AM",
                             style: TextStyle(
-                                color: CommonColor.APP_BAR_COLOR,
+                                color: CommonColor.BLACK_COLOR,
                                 fontSize: SizeConfig.blockSizeHorizontal * 3.5,
                                 fontWeight: FontWeight.w400,
                                 fontFamily: 'Roboto_Regular'),
@@ -300,7 +300,7 @@ class _AuctionBidHistoryState extends State<AuctionBidHistory> {
                             child: Text(
                               "500",
                               style: TextStyle(
-                                  color: CommonColor.APP_BAR_COLOR,
+                                  color: CommonColor.BLACK_COLOR,
                                   fontSize:
                                       SizeConfig.blockSizeHorizontal * 3.5,
                                   fontWeight: FontWeight.w400,

@@ -93,39 +93,34 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
                           ),
                         ),
                       ),
-                      GestureDetector(
-                        onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>LotDescription()));
-                        },
-                        child: Container(
-                          // color: CommonColor.CAPTCHA_CODE_COLOR,
-                          height: SizeConfig.screenHeight * 0.05,
-                          child: Padding(
-                            padding: EdgeInsets.only(right: SizeConfig.screenWidth * 0.04),
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Text(
-                                  "Date : ",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: SizeConfig.blockSizeHorizontal * 3.5,
-                                      fontFamily: 'Roboto_normal',
-                                      fontWeight: FontWeight.w500),
-                                  maxLines: 1,
-                                ),
-                                Text(
-                                  "11/12/2022",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: SizeConfig.blockSizeHorizontal * 3.5,
-                                      fontFamily: 'Roboto_normal',
-                                      fontWeight: FontWeight.w500),
-                                  maxLines: 1,
-                                ),
-                              ],
-                            ),
+                      Container(
+                        // color: CommonColor.CAPTCHA_CODE_COLOR,
+                        height: SizeConfig.screenHeight * 0.05,
+                        child: Padding(
+                          padding: EdgeInsets.only(right: SizeConfig.screenWidth * 0.04),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Text(
+                                "Date : ",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: SizeConfig.blockSizeHorizontal * 3.5,
+                                    fontFamily: 'Roboto_normal',
+                                    fontWeight: FontWeight.w500),
+                                maxLines: 1,
+                              ),
+                              Text(
+                                "11/12/2022",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: SizeConfig.blockSizeHorizontal * 3.5,
+                                    fontFamily: 'Roboto_normal',
+                                    fontWeight: FontWeight.w500),
+                                maxLines: 1,
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -479,7 +474,7 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
                 child: Row(
                   children: [
                     Text(
-                      "Material            :",
+                      "Lot No.              :",
                       style: TextStyle(
                           color: CommonColor.APP_BAR_COLOR,
                           fontSize: SizeConfig.blockSizeHorizontal * 2.7,
@@ -502,31 +497,37 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
               ),
               Padding(
                 padding: EdgeInsets.only(
-                    left: parentWidth * 0.03, top: parentHeight * 0.02),
+                    left: parentWidth * 0.03, top: parentHeight * 0.01),
                 child: Row(
                   children: [
                     Text(
-                      "Lot No.              :",
+                      "Material            :",
                       style: TextStyle(
                           color: CommonColor.APP_BAR_COLOR,
                           fontSize: SizeConfig.blockSizeHorizontal * 2.7,
-                          fontFamily: 'Roboto_normal',
+                          fontFamily: 'Roboto_bold',
                           fontWeight: FontWeight.w600),
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: parentWidth * 0.02),
-                      child: Text(
-                        "Lot A1 Jan/022:Jigging slag / Bhadrak.",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: SizeConfig.blockSizeHorizontal * 2.7,
-                            fontFamily: 'Roboto_normal',
-                            fontWeight: FontWeight.w400),
+                      child: Container(
+                        color: Colors.transparent,
+                        width: parentWidth*0.67,
+                        child: Text(
+                          "Lot A1 Jan/022:Jigging slag / Bhadrak.",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: SizeConfig.blockSizeHorizontal * 2.7,
+                              fontFamily: 'Roboto_bold',
+                              height: parentHeight*0.0015,
+                              fontWeight: FontWeight.w600),
+                        ),
                       ),
                     ),
                   ],
                 ),
               ),
+
             ],
           ),
         ),
@@ -576,7 +577,7 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
                           Column(
                             children: [
                               Text(
-                                "My Quantity",
+                                "My Bid Quantity",
                                 style: TextStyle(
                                     color: CommonColor.APP_BAR_COLOR,
                                     fontSize:
@@ -602,7 +603,7 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
                           Column(
                             children: [
                               Text(
-                                "My Bid",
+                                "My Bid Price",
                                 style: TextStyle(
                                     color: CommonColor.APP_BAR_COLOR,
                                     fontSize:
@@ -760,11 +761,11 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
                                 padding:
                                     EdgeInsets.only(left: parentWidth * 0.02),
                                 child: Text(
-                                  "/MT",
+                                  "RSPMT",
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontSize:
-                                          SizeConfig.blockSizeHorizontal * 3.5,
+                                          SizeConfig.blockSizeHorizontal * 3.0,
                                       fontFamily: 'Roboto_normal',
                                       fontWeight: FontWeight.w400),
                                 ),
@@ -871,23 +872,29 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                      color: CommonColor.APP_BAR_COLOR,
-                                      borderRadius: BorderRadius.circular(7)),
-                                  height: SizeConfig.screenHeight * 0.04,
-                                  width: SizeConfig.screenWidth * 0.2,
-                                  child: Center(
-                                      child: Text(
-                                    "View Details",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize:
-                                            SizeConfig.blockSizeHorizontal *
-                                                3.0,
-                                        fontWeight: FontWeight.w600,
-                                        fontFamily: 'Roboto-Medium'),
-                                  )),
+                                GestureDetector(
+                                  onDoubleTap:(){},
+                                  onTap: (){
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>LotDescription()));
+                                  },
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        color: CommonColor.APP_BAR_COLOR,
+                                        borderRadius: BorderRadius.circular(7)),
+                                    height: SizeConfig.screenHeight * 0.04,
+                                    width: SizeConfig.screenWidth * 0.2,
+                                    child: Center(
+                                        child: Text(
+                                      "View Details",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize:
+                                              SizeConfig.blockSizeHorizontal *
+                                                  3.0,
+                                          fontWeight: FontWeight.w600,
+                                          fontFamily: 'Roboto-Medium'),
+                                    )),
+                                  ),
                                 ),
                                 Padding(
                                   padding:

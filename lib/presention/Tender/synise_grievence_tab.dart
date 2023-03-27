@@ -4,25 +4,18 @@ import 'package:synise_project/common_file/size_config.dart';
 
 import 'add_complaint_registration.dart';
 
-class TenderGrievanceScreen extends StatefulWidget {
-  const TenderGrievanceScreen({Key? key,   required this.onNext,}) : super(key: key);
+class TenderSyniseGrievanceScreen extends StatefulWidget {
+  const TenderSyniseGrievanceScreen({Key? key,   required this.onNext,}) : super(key: key);
 
   final VoidCallback onNext;
 
   @override
-  State<TenderGrievanceScreen> createState() => _TenderGrievanceScreenState();
+  State<TenderSyniseGrievanceScreen> createState() => _TenderSyniseGrievanceScreen();
 }
 
 
 
-class _TenderGrievanceScreenState extends State<TenderGrievanceScreen> with SingleTickerProviderStateMixin {
-
-
-
-
-  TextEditingController ComplaintDetails = TextEditingController();
-
-
+class _TenderSyniseGrievanceScreen extends State<TenderSyniseGrievanceScreen> with SingleTickerProviderStateMixin {
 
 
   @override
@@ -55,7 +48,7 @@ class _TenderGrievanceScreenState extends State<TenderGrievanceScreen> with Sing
     );
   }
 
-Widget  getGrievanceLayout(double parentHeight, double parentWidth){
+  Widget  getGrievanceLayout(double parentHeight, double parentWidth){
     return Padding(
       padding: EdgeInsets.only(top: parentHeight*0.03,
         left: parentWidth*0.01,
@@ -107,7 +100,7 @@ Widget  getGrievanceLayout(double parentHeight, double parentWidth){
                                 fontFamily: 'Roboto_Regular'
                             ),),
                         ),
-                     Padding(
+                        Padding(
                           padding:  EdgeInsets.only(top: parentHeight*0.01),
                           child: Text("122234644 ",
                             style: TextStyle(
@@ -372,9 +365,9 @@ Widget  getGrievanceLayout(double parentHeight, double parentWidth){
   Widget uploadDocument(double parentHeight,double parentWidth){
     return GestureDetector(
       onTap: (){
-      Navigator.push(context, MaterialPageRoute(builder: (context)=>AddComplaintRegistration()));
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>AddComplaintRegistration()));
 
-    },onDoubleTap: (){},
+      },onDoubleTap: (){},
 
       child: Padding(
         padding:  EdgeInsets.only(left: parentWidth*0.73,top: parentHeight*0.66),

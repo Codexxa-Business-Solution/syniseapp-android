@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:synise_project/common_file/colors.dart';
 import 'package:synise_project/common_file/size_config.dart';
+import 'package:synise_project/presention/auction/auction_edit_profile_screen.dart';
 
 
 
@@ -545,9 +546,18 @@ class _MyProfileScreen extends State<MyProfileScreen> {
               ),
               Padding(
                 padding: EdgeInsets.only(left: parentWidth*0.01, bottom: parentHeight*0.005),
-                child: Icon(Icons.edit,
-                size: SizeConfig.blockSizeHorizontal*5,
-                color: CommonColor.EDIT_ICON_COLOR,),
+                child: GestureDetector(
+                  onDoubleTap: (){},
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>EditAuctionProfile()));
+                  },
+                  child: Container(
+                    color: Colors.transparent,
+                    child: Icon(Icons.edit,
+                    size: SizeConfig.blockSizeHorizontal*5,
+                    color: CommonColor.EDIT_ICON_COLOR,),
+                  ),
+                ),
               )
             ],
           ),

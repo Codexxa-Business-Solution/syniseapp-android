@@ -59,13 +59,8 @@ class _ProductPhotosState extends State<ProductPhotos> {
                             )
                           ],
                         ),
-                        child: GestureDetector(
-                          onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>AuctionBidHistory()));
-                          },
-                          child: Image(
-                            image: AssetImage("assets/images/no_image.png"),
-                          ),
+                        child: Image(
+                          image: AssetImage("assets/images/no_image.png"),
                         ),
                       ),
                     ),
