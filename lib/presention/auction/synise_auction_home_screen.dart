@@ -823,105 +823,95 @@ class _AuctionHomeScreenState extends State<AuctionHomeScreen> {
                     Padding(
                       padding:
                           EdgeInsets.only(top: SizeConfig.screenHeight * 0.03),
-                      child: GestureDetector(
-                        onDoubleTap: () {},
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      DemoAuctionParentScreen()));
-                        },
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            GestureDetector(
-                              onDoubleTap: () {},
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            AuctionBidHistory()));
-                              },
-                              child: Container(
-                                height: parentHeight * 0.027,
-                                decoration: BoxDecoration(
-                                  color: Colors.transparent,
-                                  border: Border(
-                                      bottom: BorderSide(
-                                    color: CommonColor.RANK_ID_COLOR,
-                                    width: 1.5, // Underline thickness
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          GestureDetector(
+                            onDoubleTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          AuctionBidHistory()));
+                            },
+                            child: Container(
+                              height: parentHeight * 0.027,
+                              decoration: BoxDecoration(
+                                color: Colors.transparent,
+                                border: Border(
+                                    bottom: BorderSide(
+                                  color: CommonColor.RANK_ID_COLOR,
+                                  width: 1.5, // Underline thickness
+                                )),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  "Bid History",
+                                  style: TextStyle(
+                                      color: CommonColor.RANK_ID_COLOR,
+                                      fontSize:
+                                          SizeConfig.blockSizeHorizontal *
+                                              3.5,
+                                      fontWeight: FontWeight.w600,
+                                      fontFamily: 'Roboto-Medium'),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              GestureDetector(
+                                onDoubleTap:(){},
+                                onTap: (){
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>LotDescription()));
+                                },
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      color: CommonColor.APP_BAR_COLOR,
+                                      borderRadius: BorderRadius.circular(7)),
+                                  height: SizeConfig.screenHeight * 0.04,
+                                  width: SizeConfig.screenWidth * 0.2,
+                                  child: Center(
+                                      child: Text(
+                                    "View Details",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize:
+                                            SizeConfig.blockSizeHorizontal *
+                                                3.0,
+                                        fontWeight: FontWeight.w600,
+                                        fontFamily: 'Roboto-Medium'),
                                   )),
                                 ),
-                                child: Center(
-                                  child: Text(
-                                    "Bid History",
+                              ),
+                              Padding(
+                                padding:
+                                    EdgeInsets.only(left: parentWidth * 0.05),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      color: CommonColor.RANK_ID_COLOR,
+                                      borderRadius: BorderRadius.circular(7)),
+                                  height: SizeConfig.screenHeight * 0.04,
+                                  width: SizeConfig.screenWidth * 0.2,
+                                  child: Center(
+                                      child: Text(
+                                    "Submit",
                                     style: TextStyle(
-                                        color: CommonColor.RANK_ID_COLOR,
+                                        color: Colors.white,
                                         fontSize:
                                             SizeConfig.blockSizeHorizontal *
                                                 3.5,
                                         fontWeight: FontWeight.w600,
                                         fontFamily: 'Roboto-Medium'),
-                                  ),
+                                  )),
                                 ),
                               ),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                GestureDetector(
-                                  onDoubleTap:(){},
-                                  onTap: (){
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>LotDescription()));
-                                  },
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        color: CommonColor.APP_BAR_COLOR,
-                                        borderRadius: BorderRadius.circular(7)),
-                                    height: SizeConfig.screenHeight * 0.04,
-                                    width: SizeConfig.screenWidth * 0.2,
-                                    child: Center(
-                                        child: Text(
-                                      "View Details",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              SizeConfig.blockSizeHorizontal *
-                                                  3.0,
-                                          fontWeight: FontWeight.w600,
-                                          fontFamily: 'Roboto-Medium'),
-                                    )),
-                                  ),
-                                ),
-                                Padding(
-                                  padding:
-                                      EdgeInsets.only(left: parentWidth * 0.05),
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        color: CommonColor.RANK_ID_COLOR,
-                                        borderRadius: BorderRadius.circular(7)),
-                                    height: SizeConfig.screenHeight * 0.04,
-                                    width: SizeConfig.screenWidth * 0.2,
-                                    child: Center(
-                                        child: Text(
-                                      "Submit",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              SizeConfig.blockSizeHorizontal *
-                                                  3.5,
-                                          fontWeight: FontWeight.w600,
-                                          fontFamily: 'Roboto-Medium'),
-                                    )),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ],
